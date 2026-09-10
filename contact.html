@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us | Guru Communication Tech Hub & Repair Lab</title>
+  <meta name="description" content="Get in touch with Guru Communication for mobile repair bookings, iPhone service, YMT machinery quotes, spare parts enquiries, or visit our city center lab.">
+  <link rel="icon" type="image/png" href="./guru-logo.png">
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          maxWidth: {
+            '7xl': '100%',
+            '6xl': '100%',
+            '5xl': '100%',
+            '8xl': '100%',
+          },
+          colors: {
+            dark: { 950: '#050505', 900: '#0a0b0e', 800: '#12141a', 700: '#1a1d26' },
+            cyan: { glow: '#00f2fe' },
+            purple: { glow: '#7928ca' }
+          },
+          fontFamily: { sans: ['Inter', 'sans-serif'], heading: ['Space Grotesk', 'sans-serif'] },
+          boxShadow: { 'glow-cyan': '0 0 25px -5px rgba(0, 242, 254, 0.4)', 'glass': '0 8px 32px 0 rgba(0, 0, 0, 0.37)' }
+        }
+      }
+    }
+  </script>
+  <link rel="stylesheet" href="./index.css">
+  <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body class="bg-dark-900 text-gray-100 font-sans antialiased selection:bg-cyan-glow selection:text-dark-900">
+
+  <!-- NAVBAR -->
+  <header id="navbar" class="fixed top-0 left-0 w-full z-40 py-4 px-4 lg:px-8">
+    <div class="max-w-7xl mx-auto glass-panel rounded-2xl px-6 py-3 flex items-center justify-between border border-white/10 shadow-glass">
+      <a href="index.html" class="flex items-center gap-3 group">
+        <div class="p-1 bg-dark-900/90 border border-cyan-glow/40 rounded-xl shadow-glow-cyan">
+          <img src="./guru-logo.png" alt="Guru Communication Logo" class="w-10 h-10 object-contain group-hover:scale-105 transition-transform">
+        </div>
+        <div>
+          <span class="text-lg md:text-xl font-heading font-bold text-white tracking-wide group-hover:text-cyan-glow transition-colors">GURU <span class="text-cyan-glow">COMMUNICATION</span></span>
+          <span class="block text-[10px] text-gray-400 font-mono tracking-wider uppercase">Contact Center</span>
+        </div>
+      </a>
+      <nav class="hidden xl:flex items-center gap-6 text-sm font-medium text-gray-300">
+        <a href="index.html" class="hover:text-cyan-glow transition-colors">Home</a>
+        <a href="services.html" class="hover:text-cyan-glow transition-colors">Services</a>
+        <a href="iphone-repair.html" class="hover:text-cyan-glow transition-colors">iPhone Repair</a>
+        <a href="machinery.html" class="hover:text-cyan-glow transition-colors">Machinery</a>
+        <a href="spare-parts.html" class="hover:text-cyan-glow transition-colors">Spare Parts</a>
+        <a href="accessories.html" class="hover:text-cyan-glow transition-colors">Accessories</a>
+        <a href="about.html" class="hover:text-cyan-glow transition-colors">About</a>
+        <a href="contact.html" class="text-cyan-glow font-bold">Contact</a>
+      </nav>
+      <a href="tel:+917051383473" class="hidden sm:inline-flex items-center justify-center px-5 py-2.5 text-xs font-heading font-bold text-dark-900 uppercase bg-cyan-glow rounded-xl shadow-glow-cyan hover:brightness-110 transition-all">
+        <i data-lucide="phone" class="w-4 h-4 mr-2"></i> Call: +91 70513 83473
+      </a>
+      <button id="mobile-menu-btn" class="xl:hidden flex flex-col justify-center items-center gap-1.5 w-11 h-11 rounded-xl bg-dark-800 border border-white/10 hover:border-cyan-glow/50 focus:outline-none z-50 cursor-pointer" aria-label="Toggle Menu" aria-expanded="false">
+        <span class="w-5 h-0.5 bg-cyan-glow rounded-full pointer-events-none"></span>
+        <span class="w-5 h-0.5 bg-cyan-glow rounded-full pointer-events-none"></span>
+        <span class="w-5 h-0.5 bg-cyan-glow rounded-full pointer-events-none"></span>
+      </button>
+    </div>
+
+    <!-- Mobile Drawer -->
+    <div id="mobile-drawer" class="hidden xl:hidden max-w-7xl mx-auto mt-2 glass-panel rounded-2xl p-6 border border-white/10 shadow-2xl transition-all duration-300">
+      <nav class="flex flex-col gap-4 text-sm font-medium text-gray-300">
+        <a href="index.html" class="mobile-nav-link hover:text-cyan-glow py-1">Home</a>
+        <a href="services.html" class="mobile-nav-link hover:text-cyan-glow py-1">Services</a>
+        <a href="iphone-repair.html" class="mobile-nav-link hover:text-cyan-glow py-1">iPhone Repair</a>
+        <a href="machinery.html" class="mobile-nav-link hover:text-cyan-glow py-1">Machinery</a>
+        <a href="spare-parts.html" class="mobile-nav-link hover:text-cyan-glow py-1">Spare Parts</a>
+        <a href="accessories.html" class="mobile-nav-link hover:text-cyan-glow py-1">Accessories</a>
+        <a href="about.html" class="mobile-nav-link hover:text-cyan-glow py-1">About</a>
+        <a href="contact.html" class="mobile-nav-link text-cyan-glow font-bold py-1">Contact</a>
+        <div class="pt-4 border-t border-white/10 flex flex-col gap-2">
+          <a href="https://wa.me/917051383473" target="_blank" class="w-full inline-flex items-center justify-center px-4 py-3 text-xs font-heading font-bold text-white uppercase bg-emerald-600 rounded-xl">
+            <i data-lucide="message-square" class="w-4 h-4 mr-2"></i> WhatsApp Us
+          </a>
+          <a href="tel:+917051383473" class="w-full inline-flex items-center justify-center px-4 py-3 text-xs font-heading font-bold text-dark-900 uppercase bg-cyan-glow rounded-xl">
+            <i data-lucide="phone" class="w-4 h-4 mr-2"></i> Call Directly
+          </a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="pt-36 pb-16 relative overflow-hidden bg-dark-800/60 border-b border-white/10">
+    <div class="max-w-7xl mx-auto px-4 lg:px-8 text-center space-y-4">
+      <span class="text-xs font-mono text-cyan-glow uppercase tracking-widest">Immediate Technician Response</span>
+      <h1 class="text-4xl sm:text-6xl font-heading font-black text-white">
+        CONTACT <span class="text-gradient-cyan">OUR LAB</span>
+      </h1>
+      <p class="text-gray-400 text-sm sm:text-base max-w-2xl mx-auto">Submit a repair request, ask for equipment quotes, or visit our central tech hub in person.</p>
+    </div>
+  </section>
+
+  <!-- CONTACT GRID -->
+  <section class="py-20 max-w-7xl mx-auto px-4 lg:px-8">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
+      
+      <!-- Contact Form -->
+      <div class="lg:col-span-7 glass-card rounded-3xl p-8 border border-cyan-glow/20 space-y-6">
+        <div>
+          <h2 class="text-2xl font-heading font-bold text-white">Direct Service Enquiry</h2>
+          <p class="text-xs text-gray-400 mt-1">Fill out the details below to instantly connect with our master technician on WhatsApp.</p>
+        </div>
+        
+        <form id="contact-form" class="space-y-4">
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div>
+              <label class="block text-xs font-mono text-gray-300 mb-1">Your Full Name *</label>
+              <input type="text" required placeholder="e.g. Rahul Sharma" class="w-full px-4 py-3 bg-dark-900/80 border border-white/10 rounded-xl text-sm text-white focus:border-cyan-glow focus:outline-none transition-colors">
+            </div>
+            <div>
+              <label class="block text-xs font-mono text-gray-300 mb-1">Mobile / WhatsApp *</label>
+              <input type="tel" required placeholder="+91 98765 43210" class="w-full px-4 py-3 bg-dark-900/80 border border-white/10 rounded-xl text-sm text-white focus:border-cyan-glow focus:outline-none transition-colors">
+            </div>
+          </div>
+          
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div>
+              <label class="block text-xs font-mono text-gray-300 mb-1">Device Model *</label>
+              <input type="text" required placeholder="e.g. iPhone 14 Pro / S23 Ultra" class="w-full px-4 py-3 bg-dark-900/80 border border-white/10 rounded-xl text-sm text-white focus:border-cyan-glow focus:outline-none transition-colors">
+            </div>
+            <div>
+              <label class="block text-xs font-mono text-gray-300 mb-1">Service Required</label>
+              <select class="w-full px-4 py-3 bg-dark-900/80 border border-white/10 rounded-xl text-sm text-gray-300 focus:border-cyan-glow focus:outline-none transition-colors">
+                <option>Mobile Screen / Display Replacement</option>
+                <option>iPhone True Tone / Face ID Fix</option>
+                <option>Motherboard IC Micro-Soldering</option>
+                <option>Battery Replacement</option>
+                <option>OCA Display Refurbishing</option>
+                <option>Water Damage De-oxidation</option>
+                <option>YMT OCA Machinery Purchase</option>
+                <option>Technician Spare Parts Wholesale</option>
+                <option>Premium Mobile Accessories</option>
+              </select>
+            </div>
+          </div>
+          
+          <div>
+            <label class="block text-xs font-mono text-gray-300 mb-1">Problem Description</label>
+            <textarea rows="4" placeholder="Describe the problem with your device or the machinery enquiry..." class="w-full px-4 py-3 bg-dark-900/80 border border-white/10 rounded-xl text-sm text-white focus:border-cyan-glow focus:outline-none transition-colors"></textarea>
+          </div>
+          
+          <button type="submit" class="w-full py-4 text-xs font-heading font-bold text-dark-900 uppercase bg-cyan-glow rounded-xl shadow-glow-cyan flex items-center justify-center gap-2 hover:brightness-110 active:scale-[0.98] transition-all cursor-pointer">
+            <i data-lucide="send" class="w-4 h-4"></i> Submit & Connect on WhatsApp
+          </button>
+        </form>
+      </div>
+
+      <!-- Contact Details & Map -->
+      <div class="lg:col-span-5 space-y-6">
+        <div class="glass-card rounded-3xl p-8 border border-white/10 space-y-6">
+          <h3 class="text-xl font-heading font-bold text-white">Direct Laboratory Channels</h3>
+          
+          <div class="space-y-4 text-sm text-gray-300">
+            <div class="flex items-start gap-3">
+              <div class="w-10 h-10 rounded-xl bg-cyan-glow/10 text-cyan-glow flex items-center justify-center shrink-0 border border-cyan-glow/30">
+                <i data-lucide="map-pin" class="w-5 h-5"></i>
+              </div>
+              <div>
+                <span class="block text-xs font-mono text-gray-400 uppercase">Lab Location</span>
+                <span id="contact-address-text" class="text-white font-medium">Opp. Punjab National Bank (PNB), Near Bus Stand Market, Ramban, Jammu & Kashmir - 182148</span>
+              </div>
+            </div>
+
+            <div class="flex items-start gap-3">
+              <div class="w-10 h-10 rounded-xl bg-cyan-glow/10 text-cyan-glow flex items-center justify-center shrink-0 border border-cyan-glow/30">
+                <i data-lucide="phone-call" class="w-5 h-5"></i>
+              </div>
+              <div>
+                <span class="block text-xs font-mono text-gray-400 uppercase">Direct Helpline</span>
+                <a href="tel:+917051383473" id="contact-phone-text" class="text-white font-bold text-cyan-glow hover:underline">+91 70513 83473</a>
+              </div>
+            </div>
+
+            <div class="flex items-start gap-3">
+              <div class="w-10 h-10 rounded-xl bg-cyan-glow/10 text-cyan-glow flex items-center justify-center shrink-0 border border-cyan-glow/30">
+                <i data-lucide="clock" class="w-5 h-5"></i>
+              </div>
+              <div>
+                <span class="block text-xs font-mono text-gray-400 uppercase">Working Hours</span>
+                <span id="contact-hours-text" class="text-white">Mon - Sat: 10:00 AM - 09:00 PM | Sunday: Closed</span>
+              </div>
+            </div>
+
+            <div class="flex items-start gap-3">
+              <div class="w-10 h-10 rounded-xl bg-cyan-glow/10 text-cyan-glow flex items-center justify-center shrink-0 border border-cyan-glow/30">
+                <i data-lucide="mail" class="w-5 h-5"></i>
+              </div>
+              <div>
+                <span class="block text-xs font-mono text-gray-400 uppercase">Email Enquiries</span>
+                <a href="mailto:contact@gurucommunication.com" class="text-white hover:text-cyan-glow">contact@gurucommunication.com</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="pt-4 border-t border-white/10 flex flex-col sm:flex-row gap-3">
+            <a id="form-whatsapp-btn" href="https://wa.me/917051383473" target="_blank" class="flex-1 py-3.5 text-xs font-heading font-bold text-white uppercase bg-emerald-600 hover:bg-emerald-500 rounded-xl flex items-center justify-center gap-2 shadow-lg transition-all">
+              <i data-lucide="message-square" class="w-4 h-4"></i> WhatsApp Chat
+            </a>
+            <a href="tel:+917051383473" class="flex-1 py-3.5 text-xs font-heading font-bold text-dark-900 uppercase bg-cyan-glow hover:brightness-110 rounded-xl flex items-center justify-center gap-2 transition-all">
+              <i data-lucide="phone" class="w-4 h-4"></i> Call Technician
+            </a>
+          </div>
+        </div>
+
+        <!-- Google Map Iframe Container -->
+        <div class="glass-card rounded-3xl overflow-hidden border border-white/10 h-72 relative group">
+          <a href="https://www.google.com/maps/place/Guru+Communication/@33.2378014,75.2378984,909m/data=!3m2!1e3!4b1!4m6!3m5!1s0x391dc3a435da446b:0x70ff042584d68217!8m2!3d33.2377969!4d75.2404733!16s%2Fg%2F11kn0m6s7y" target="_blank" rel="noopener noreferrer" class="absolute top-3 left-3 z-10 px-3.5 py-1.5 rounded-xl bg-dark-950/85 backdrop-blur-md border border-cyan-glow/40 text-xs font-mono font-bold text-cyan-glow hover:bg-cyan-glow hover:text-dark-950 transition-all flex items-center gap-2 shadow-xl cursor-pointer">
+            <span>Open in Google Maps</span>
+            <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
+          </a>
+          <iframe 
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3326.6961559858767!2d75.2378984!3d33.2377969!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x391dc3a435da446b%3A0x70ff042584d68217!2sGuru%20Communication!5e0!3m2!1sen!2sin!4v1710000000000!5m2!1sen!2sin" 
+            width="100%" 
+            height="100%" 
+            style="border:0; filter: invert(90%) hue-rotate(180deg) contrast(1.1);" 
+            allowfullscreen="" 
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            title="Guru Communication Location Map Ramban">
+          </iframe>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="bg-dark-950 border-t border-white/10 py-12 text-gray-400 text-xs text-center">
+    <div class="max-w-7xl mx-auto px-4 space-y-4">
+      <p class="font-heading font-bold text-white text-base">GURU <span class="text-cyan-glow">COMMUNICATION</span></p>
+      <p>Tech Hub & Precision Mobile Repair Laboratory | WhatsApp: +91 70513 83473</p>
+      <p class="text-gray-500">© 2026 Guru Communication. All Rights Reserved.</p>
+    </div>
+  </footer>
+
+  <!-- FLOATING WHATSAPP -->
+  <a id="floating-whatsapp" href="https://wa.me/917051383473" target="_blank" class="fixed bottom-6 right-6 z-50 w-14 h-14 bg-emerald-500 text-white rounded-full flex items-center justify-center shadow-2xl hover:scale-110 active:scale-95 transition-transform border border-emerald-300/40">
+    <i data-lucide="message-circle" class="w-7 h-7"></i>
+  </a>
+
+  <script src="./config.js"></script>
+  <script src="./main.js"></script>
+</body>
+</html>

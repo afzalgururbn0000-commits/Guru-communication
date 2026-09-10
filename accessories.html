@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mobile Accessories | Guru Communication - Premium Gear & Chargers</title>
+  <meta name="description" content="Shop premium mobile accessories: 65W GaN Chargers, Braided Type-C & Lightning Cables, UV Tempered Glass, MagSafe Armor Covers, and Hi-Fi Earbuds. Instant WhatsApp Order.">
+  <link rel="icon" type="image/png" href="./guru-logo.png">
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          maxWidth: {
+            '7xl': '100%',
+            '6xl': '100%',
+            '5xl': '100%',
+            '8xl': '100%',
+          },
+          colors: {
+            dark: { 950: '#050505', 900: '#0a0b0e', 800: '#12141a', 700: '#1a1d26' },
+            purple: { glow: '#7928ca', accent: '#9333ea', light: '#c084fc' },
+            cyan: { glow: '#00f2fe' }
+          },
+          fontFamily: { sans: ['Inter', 'sans-serif'], heading: ['Space Grotesk', 'sans-serif'] },
+          boxShadow: { 'glow-purple': '0 0 25px -5px rgba(121, 40, 202, 0.4)', 'glass': '0 8px 32px 0 rgba(0, 0, 0, 0.37)' }
+        }
+      }
+    }
+  </script>
+  <link rel="stylesheet" href="./index.css">
+  <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body class="bg-dark-900 text-gray-100 font-sans antialiased selection:bg-purple-glow selection:text-white">
+
+  <!-- NAVBAR -->
+  <header id="navbar" class="fixed top-0 left-0 w-full z-40 py-4 px-4 lg:px-8">
+    <div class="max-w-7xl mx-auto glass-panel rounded-2xl px-6 py-3 flex items-center justify-between border border-white/10 shadow-glass">
+      <a href="index.html" class="flex items-center gap-3 group">
+        <div class="p-1 bg-dark-900/90 border border-purple-glow/40 rounded-xl shadow-glow-purple">
+          <img src="./guru-logo.png" alt="Guru Communication Logo" class="w-10 h-10 object-contain group-hover:scale-105 transition-transform">
+        </div>
+        <div>
+          <span class="text-lg md:text-xl font-heading font-bold text-white tracking-wide group-hover:text-purple-300 transition-colors">GURU <span class="text-purple-400">COMMUNICATION</span></span>
+          <span class="block text-[10px] text-gray-400 font-mono tracking-wider uppercase">Accessories Store</span>
+        </div>
+      </a>
+      <nav class="hidden xl:flex items-center gap-6 text-sm font-medium text-gray-300">
+        <a href="index.html" class="hover:text-cyan-glow transition-colors">Home</a>
+        <a href="services.html" class="hover:text-cyan-glow transition-colors">Services</a>
+        <a href="iphone-repair.html" class="hover:text-cyan-glow transition-colors">iPhone Repair</a>
+        <a href="machinery.html" class="hover:text-cyan-glow transition-colors">Machinery</a>
+        <a href="spare-parts.html" class="hover:text-cyan-glow transition-colors">Spare Parts</a>
+        <a href="accessories.html" class="text-purple-400 font-bold">Accessories</a>
+        <a href="about.html" class="hover:text-cyan-glow transition-colors">About</a>
+        <a href="contact.html" class="hover:text-cyan-glow transition-colors">Contact</a>
+      </nav>
+      <a href="https://wa.me/917051383473?text=Hello%20Guru%20Communication%2C%20I%20want%20to%20buy%20mobile%20accessories." target="_blank" class="hidden sm:inline-flex items-center justify-center px-5 py-2.5 text-xs font-heading font-bold text-white uppercase bg-emerald-600 rounded-xl shadow-lg hover:bg-emerald-500 transition-all">
+        <i data-lucide="message-square" class="w-4 h-4 mr-2"></i> WhatsApp Order
+      </a>
+      <button id="mobile-menu-btn" class="xl:hidden flex flex-col justify-center items-center gap-1.5 w-11 h-11 rounded-xl bg-dark-800 border border-white/10 hover:border-purple-glow/50 focus:outline-none z-50 cursor-pointer" aria-label="Toggle Menu" aria-expanded="false">
+        <span class="w-5 h-0.5 bg-purple-400 rounded-full pointer-events-none"></span>
+        <span class="w-5 h-0.5 bg-purple-400 rounded-full pointer-events-none"></span>
+        <span class="w-5 h-0.5 bg-purple-400 rounded-full pointer-events-none"></span>
+      </button>
+    </div>
+
+    <!-- Mobile Drawer -->
+    <div id="mobile-drawer" class="hidden xl:hidden max-w-7xl mx-auto mt-2 glass-panel rounded-2xl p-6 border border-white/10 shadow-2xl transition-all duration-300">
+      <nav class="flex flex-col gap-4 text-sm font-medium text-gray-300">
+        <a href="index.html" class="mobile-nav-link hover:text-cyan-glow py-1">Home</a>
+        <a href="services.html" class="mobile-nav-link hover:text-cyan-glow py-1">Services</a>
+        <a href="iphone-repair.html" class="mobile-nav-link hover:text-cyan-glow py-1">iPhone Repair</a>
+        <a href="machinery.html" class="mobile-nav-link hover:text-cyan-glow py-1">Machinery</a>
+        <a href="spare-parts.html" class="mobile-nav-link hover:text-cyan-glow py-1">Spare Parts</a>
+        <a href="accessories.html" class="mobile-nav-link text-purple-400 font-bold py-1">Accessories</a>
+        <a href="about.html" class="mobile-nav-link hover:text-cyan-glow py-1">About</a>
+        <a href="contact.html" class="mobile-nav-link hover:text-cyan-glow py-1">Contact</a>
+        <div class="pt-4 border-t border-white/10 flex flex-col gap-2">
+          <a href="https://wa.me/917051383473?text=Hello%20Guru%20Communication%2C%20I%20want%20to%20buy%20mobile%20accessories." target="_blank" class="w-full inline-flex items-center justify-center px-4 py-3 text-xs font-heading font-bold text-white uppercase bg-emerald-600 rounded-xl">
+            <i data-lucide="message-square" class="w-4 h-4 mr-2"></i> WhatsApp Order
+          </a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="pt-36 pb-20 relative overflow-hidden bg-dark-800/60 border-b border-white/10">
+    <div class="max-w-7xl mx-auto px-4 lg:px-8 text-center space-y-4">
+      <span class="text-xs font-mono text-purple-400 uppercase tracking-widest">Premium Mobile Tech Gear</span>
+      <h1 class="text-4xl sm:text-6xl font-heading font-black text-white">
+        PREMIUM <span class="text-gradient-purple">MOBILE ACCESSORIES</span>
+      </h1>
+      <p class="text-gray-400 text-sm sm:text-base max-w-2xl mx-auto">GaN 65W ultra-fast chargers, military drop-tested cases, curved liquid UV glass, and audiophile sound. Order with 1 click on WhatsApp.</p>
+    </div>
+  </section>
+
+  <!-- ACCESSORIES PRODUCT CARDS -->
+  <section class="py-20 max-w-7xl mx-auto px-4 lg:px-8">
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+      
+      <!-- Product 1 -->
+      <div class="glass-card glass-card-purple rounded-2xl overflow-hidden border border-white/10 flex flex-col justify-between hover:border-purple-glow/50 transition-all group">
+        <div class="relative h-52 overflow-hidden bg-dark-800 border-b border-white/5">
+          <img src="https://images.unsplash.com/photo-1583863788434-e58a36330cf0?auto=format&fit=crop&w=600&q=80" alt="65W GaN Charger" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+          <span class="absolute top-3 left-3 px-2.5 py-1 rounded-full bg-purple-glow text-white font-heading font-bold text-[10px] uppercase">Chargers</span>
+          <span class="absolute top-3 right-3 px-2.5 py-1 rounded-full bg-emerald-500/20 border border-emerald-500/40 text-emerald-400 font-mono text-[10px]">65W GaN PD</span>
+        </div>
+        <div class="p-6 space-y-4 flex-1 flex flex-col justify-between">
+          <div class="space-y-2">
+            <h3 class="text-lg font-heading font-bold text-white group-hover:text-purple-300 transition-colors">GaN 65W Super Fast Power Adapter</h3>
+            <p class="text-xs text-gray-400 leading-relaxed">Dual USB Type-C + USB-A ports. Powers iPhones, Samsung Galaxy, MacBooks, and iPads at maximum speed with smart chip power allocation.</p>
+          </div>
+          <a href="https://wa.me/917051383473?text=Hello%20Guru%20Communication%2C%20I%20want%20to%20buy%20the%20GaN%2065W%20Super%20Fast%20Power%20Adapter." target="_blank" class="w-full py-3 text-xs font-heading font-bold text-white uppercase bg-emerald-600 hover:bg-emerald-500 rounded-xl text-center flex items-center justify-center gap-2 shadow-lg transition-all">
+            <i data-lucide="shopping-bag" class="w-4 h-4"></i> Buy on WhatsApp
+          </a>
+        </div>
+      </div>
+
+      <!-- Product 2 -->
+      <div class="glass-card glass-card-purple rounded-2xl overflow-hidden border border-white/10 flex flex-col justify-between hover:border-purple-glow/50 transition-all group">
+        <div class="relative h-52 overflow-hidden bg-dark-800 border-b border-white/5">
+          <img src="https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?auto=format&fit=crop&w=600&q=80" alt="Braided Cable" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+          <span class="absolute top-3 left-3 px-2.5 py-1 rounded-full bg-purple-glow text-white font-heading font-bold text-[10px] uppercase">Cables</span>
+          <span class="absolute top-3 right-3 px-2.5 py-1 rounded-full bg-purple-500/20 border border-purple-500/40 text-purple-300 font-mono text-[10px]">240W Kevlar</span>
+        </div>
+        <div class="p-6 space-y-4 flex-1 flex flex-col justify-between">
+          <div class="space-y-2">
+            <h3 class="text-lg font-heading font-bold text-white group-hover:text-purple-300 transition-colors">Braided 240W Type-C to Type-C Cable</h3>
+            <p class="text-xs text-gray-400 leading-relaxed">Military-grade ballistic Kevlar braided cable tested for 50,000+ bends. Supports USB Power Delivery 3.1 and 480Mbps data transfer.</p>
+          </div>
+          <a href="https://wa.me/917051383473?text=Hello%20Guru%20Communication%2C%20I%20want%20to%20buy%20the%20Braided%20240W%20Type-C%20Cable." target="_blank" class="w-full py-3 text-xs font-heading font-bold text-white uppercase bg-emerald-600 hover:bg-emerald-500 rounded-xl text-center flex items-center justify-center gap-2 shadow-lg transition-all">
+            <i data-lucide="shopping-bag" class="w-4 h-4"></i> Buy on WhatsApp
+          </a>
+        </div>
+      </div>
+
+      <!-- Product 3 -->
+      <div class="glass-card glass-card-purple rounded-2xl overflow-hidden border border-white/10 flex flex-col justify-between hover:border-purple-glow/50 transition-all group">
+        <div class="relative h-52 overflow-hidden bg-dark-800 border-b border-white/5">
+          <img src="https://images.unsplash.com/photo-1598327105666-5b89351aff97?auto=format&fit=crop&w=600&q=80" alt="Curved UV Glass Guard" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+          <span class="absolute top-3 left-3 px-2.5 py-1 rounded-full bg-purple-glow text-white font-heading font-bold text-[10px] uppercase">Tempered Glass</span>
+          <span class="absolute top-3 right-3 px-2.5 py-1 rounded-full bg-cyan-500/20 border border-cyan-500/40 text-cyan-glow font-mono text-[10px]">9H Hardness</span>
+        </div>
+        <div class="p-6 space-y-4 flex-1 flex flex-col justify-between">
+          <div class="space-y-2">
+            <h3 class="text-lg font-heading font-bold text-white group-hover:text-purple-300 transition-colors">9H Curved UV Optical Glass Guard</h3>
+            <p class="text-xs text-gray-400 leading-relaxed">Edge-to-edge optical liquid full glue adhesive with UV curing. Crystal clear transparency and fingerprint-resistant oleophobic coating.</p>
+          </div>
+          <a href="https://wa.me/917051383473?text=Hello%20Guru%20Communication%2C%20I%20want%20to%20buy%20the%209H%20Curved%20UV%20Glass%20Guard." target="_blank" class="w-full py-3 text-xs font-heading font-bold text-white uppercase bg-emerald-600 hover:bg-emerald-500 rounded-xl text-center flex items-center justify-center gap-2 shadow-lg transition-all">
+            <i data-lucide="shopping-bag" class="w-4 h-4"></i> Buy on WhatsApp
+          </a>
+        </div>
+      </div>
+
+      <!-- Product 4 -->
+      <div class="glass-card glass-card-purple rounded-2xl overflow-hidden border border-white/10 flex flex-col justify-between hover:border-purple-glow/50 transition-all group">
+        <div class="relative h-52 overflow-hidden bg-dark-800 border-b border-white/5">
+          <img src="https://images.unsplash.com/photo-1601593346740-925612772716?auto=format&fit=crop&w=600&q=80" alt="MagSafe Armor Case" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+          <span class="absolute top-3 left-3 px-2.5 py-1 rounded-full bg-purple-glow text-white font-heading font-bold text-[10px] uppercase">Phone Covers</span>
+          <span class="absolute top-3 right-3 px-2.5 py-1 rounded-full bg-purple-500/20 border border-purple-500/40 text-purple-300 font-mono text-[10px]">MagSafe Armor</span>
+        </div>
+        <div class="p-6 space-y-4 flex-1 flex flex-col justify-between">
+          <div class="space-y-2">
+            <h3 class="text-lg font-heading font-bold text-white group-hover:text-purple-300 transition-colors">MagSafe Shockproof Military Armor Case</h3>
+            <p class="text-xs text-gray-400 leading-relaxed">Built-in 36-piece N52 neodymium magnet ring for ultra-strong magnetic latching with reinforced corner air-cushion drop dampening.</p>
+          </div>
+          <a href="https://wa.me/917051383473?text=Hello%20Guru%20Communication%2C%20I%20want%20to%20buy%20the%20MagSafe%20Shockproof%20Armor%20Case." target="_blank" class="w-full py-3 text-xs font-heading font-bold text-white uppercase bg-emerald-600 hover:bg-emerald-500 rounded-xl text-center flex items-center justify-center gap-2 shadow-lg transition-all">
+            <i data-lucide="shopping-bag" class="w-4 h-4"></i> Buy on WhatsApp
+          </a>
+        </div>
+      </div>
+
+      <!-- Product 5 -->
+      <div class="glass-card glass-card-purple rounded-2xl overflow-hidden border border-white/10 flex flex-col justify-between hover:border-purple-glow/50 transition-all group">
+        <div class="relative h-52 overflow-hidden bg-dark-800 border-b border-white/5">
+          <img src="https://images.unsplash.com/photo-1590658268037-6bf12165a8df?auto=format&fit=crop&w=600&q=80" alt="Wireless Earbuds Pro" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+          <span class="absolute top-3 left-3 px-2.5 py-1 rounded-full bg-purple-glow text-white font-heading font-bold text-[10px] uppercase">Audio</span>
+          <span class="absolute top-3 right-3 px-2.5 py-1 rounded-full bg-emerald-500/20 border border-emerald-500/40 text-emerald-400 font-mono text-[10px]">ANC Pro</span>
+        </div>
+        <div class="p-6 space-y-4 flex-1 flex flex-col justify-between">
+          <div class="space-y-2">
+            <h3 class="text-lg font-heading font-bold text-white group-hover:text-purple-300 transition-colors">Wireless Active Noise Cancelling Earbuds</h3>
+            <p class="text-xs text-gray-400 leading-relaxed">Dual microphone environmental noise suppression, deep composite diaphragm bass, transparency audio mode, and 32 hours battery life.</p>
+          </div>
+          <a href="https://wa.me/917051383473?text=Hello%20Guru%20Communication%2C%20I%20want%20to%20buy%20Wireless%20ANC%20Earbuds." target="_blank" class="w-full py-3 text-xs font-heading font-bold text-white uppercase bg-emerald-600 hover:bg-emerald-500 rounded-xl text-center flex items-center justify-center gap-2 shadow-lg transition-all">
+            <i data-lucide="shopping-bag" class="w-4 h-4"></i> Buy on WhatsApp
+          </a>
+        </div>
+      </div>
+
+      <!-- Product 6 -->
+      <div class="glass-card glass-card-purple rounded-2xl overflow-hidden border border-white/10 flex flex-col justify-between hover:border-purple-glow/50 transition-all group">
+        <div class="relative h-52 overflow-hidden bg-dark-800 border-b border-white/5">
+          <img src="https://images.unsplash.com/photo-1586105251261-72a756497a11?auto=format&fit=crop&w=600&q=80" alt="Aluminum Desktop Stand" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+          <span class="absolute top-3 left-3 px-2.5 py-1 rounded-full bg-purple-glow text-white font-heading font-bold text-[10px] uppercase">Stands</span>
+          <span class="absolute top-3 right-3 px-2.5 py-1 rounded-full bg-purple-500/20 border border-purple-500/40 text-purple-300 font-mono text-[10px]">CNC Metal</span>
+        </div>
+        <div class="p-6 space-y-4 flex-1 flex flex-col justify-between">
+          <div class="space-y-2">
+            <h3 class="text-lg font-heading font-bold text-white group-hover:text-purple-300 transition-colors">360° Aluminum Alloy Foldable Desk Stand</h3>
+            <p class="text-xs text-gray-400 leading-relaxed">Precision CNC machined aluminum alloy with dual mechanical damping hinges. Compatible with all smartphones, iPads, and e-readers.</p>
+          </div>
+          <a href="https://wa.me/917051383473?text=Hello%20Guru%20Communication%2C%20I%20want%20to%20buy%20the%20Aluminum%20Desktop%20Stand." target="_blank" class="w-full py-3 text-xs font-heading font-bold text-white uppercase bg-emerald-600 hover:bg-emerald-500 rounded-xl text-center flex items-center justify-center gap-2 shadow-lg transition-all">
+            <i data-lucide="shopping-bag" class="w-4 h-4"></i> Buy on WhatsApp
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="bg-dark-950 border-t border-white/10 py-12 text-gray-400 text-xs text-center">
+    <div class="max-w-7xl mx-auto px-4 space-y-4">
+      <p class="font-heading font-bold text-white text-base">GURU <span class="text-purple-400">COMMUNICATION</span></p>
+      <p>Premium Mobile Gear, Chargers & Audiophile Accessories | WhatsApp: +91 70513 83473</p>
+      <p class="text-gray-500">© 2026 Guru Communication. All Rights Reserved.</p>
+    </div>
+  </footer>
+
+  <!-- FLOATING WHATSAPP -->
+  <a id="floating-whatsapp" href="https://wa.me/917051383473" target="_blank" class="fixed bottom-6 right-6 z-50 w-14 h-14 bg-emerald-500 text-white rounded-full flex items-center justify-center shadow-2xl hover:scale-110 active:scale-95 transition-transform border border-emerald-300/40">
+    <i data-lucide="message-circle" class="w-7 h-7"></i>
+  </a>
+
+  <script src="./config.js"></script>
+  <script src="./main.js"></script>
+</body>
+</html>

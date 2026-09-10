@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>iPhone Repair Lab | Guru Communication - Specialized Apple Hardware Service</title>
+  <meta name="description" content="Dedicated iPhone Hardware & Motherboard Repair Laboratory. Face ID diagnostics, True Tone restoration, Audio IC, Baseband, laser back glass, and OLED screen replacement.">
+  <link rel="icon" type="image/png" href="./guru-logo.png">
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          maxWidth: {
+            '7xl': '100%',
+            '6xl': '100%',
+            '5xl': '100%',
+            '8xl': '100%',
+          },
+          colors: {
+            dark: { 950: '#050505', 900: '#0a0b0e', 800: '#12141a', 700: '#1a1d26' },
+            cyan: { glow: '#00f2fe' },
+            purple: { glow: '#7928ca', accent: '#9333ea', bright: '#c084fc' }
+          },
+          fontFamily: { sans: ['Inter', 'sans-serif'], heading: ['Space Grotesk', 'sans-serif'] },
+          boxShadow: { 'glow-purple': '0 0 25px -5px rgba(121, 40, 202, 0.4)', 'glass': '0 8px 32px 0 rgba(0, 0, 0, 0.37)' }
+        }
+      }
+    }
+  </script>
+  <link rel="stylesheet" href="./index.css">
+  <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body class="bg-dark-900 text-gray-100 font-sans antialiased selection:bg-purple-glow selection:text-white">
+
+  <!-- NAVBAR -->
+  <header id="navbar" class="fixed top-0 left-0 w-full z-40 py-4 px-4 lg:px-8">
+    <div class="max-w-7xl mx-auto glass-panel rounded-2xl px-6 py-3 flex items-center justify-between border border-white/10 shadow-glass">
+      <a href="index.html" class="flex items-center gap-3 group">
+        <div class="p-1 bg-dark-900/90 border border-purple-glow/40 rounded-xl shadow-glow-purple">
+          <img src="./guru-logo.png" alt="Guru Communication Logo" class="w-10 h-10 object-contain group-hover:scale-105 transition-transform">
+        </div>
+        <div>
+          <span class="text-lg md:text-xl font-heading font-bold text-white tracking-wide group-hover:text-purple-300 transition-colors">GURU <span class="text-purple-400">COMMUNICATION</span></span>
+          <span class="block text-[10px] text-gray-400 font-mono tracking-wider uppercase">iPhone Tech Lab</span>
+        </div>
+      </a>
+      <nav class="hidden xl:flex items-center gap-6 text-sm font-medium text-gray-300">
+        <a href="index.html" class="hover:text-cyan-glow transition-colors">Home</a>
+        <a href="services.html" class="hover:text-cyan-glow transition-colors">Services</a>
+        <a href="iphone-repair.html" class="text-purple-400 font-bold">iPhone Repair</a>
+        <a href="machinery.html" class="hover:text-cyan-glow transition-colors">Machinery</a>
+        <a href="spare-parts.html" class="hover:text-cyan-glow transition-colors">Spare Parts</a>
+        <a href="accessories.html" class="hover:text-cyan-glow transition-colors">Accessories</a>
+        <a href="about.html" class="hover:text-cyan-glow transition-colors">About</a>
+        <a href="contact.html" class="hover:text-cyan-glow transition-colors">Contact</a>
+      </nav>
+      <a href="https://wa.me/917051383473?text=Hello%20Guru%20Communication%2C%20I%20want%20to%20book%20an%20iPhone%20Repair." target="_blank" class="hidden sm:inline-flex items-center justify-center px-5 py-2.5 text-xs font-heading font-bold text-white uppercase bg-purple-glow rounded-xl shadow-glow-purple hover:brightness-110 transition-all">
+        <i data-lucide="apple" class="w-4 h-4 mr-2"></i> iPhone Service
+      </a>
+      <button id="mobile-menu-btn" class="xl:hidden flex flex-col justify-center items-center gap-1.5 w-11 h-11 rounded-xl bg-dark-800 border border-white/10 hover:border-purple-glow/50 focus:outline-none z-50 cursor-pointer" aria-label="Toggle Menu" aria-expanded="false">
+        <span class="w-5 h-0.5 bg-purple-400 rounded-full pointer-events-none"></span>
+        <span class="w-5 h-0.5 bg-purple-400 rounded-full pointer-events-none"></span>
+        <span class="w-5 h-0.5 bg-purple-400 rounded-full pointer-events-none"></span>
+      </button>
+    </div>
+
+    <!-- Mobile Drawer -->
+    <div id="mobile-drawer" class="hidden xl:hidden max-w-7xl mx-auto mt-2 glass-panel rounded-2xl p-6 border border-white/10 shadow-2xl transition-all duration-300">
+      <nav class="flex flex-col gap-4 text-sm font-medium text-gray-300">
+        <a href="index.html" class="mobile-nav-link hover:text-cyan-glow py-1">Home</a>
+        <a href="services.html" class="mobile-nav-link hover:text-cyan-glow py-1">Services</a>
+        <a href="iphone-repair.html" class="mobile-nav-link text-purple-400 font-bold py-1">iPhone Repair</a>
+        <a href="machinery.html" class="mobile-nav-link hover:text-cyan-glow py-1">Machinery</a>
+        <a href="spare-parts.html" class="mobile-nav-link hover:text-cyan-glow py-1">Spare Parts</a>
+        <a href="accessories.html" class="mobile-nav-link hover:text-cyan-glow py-1">Accessories</a>
+        <a href="about.html" class="mobile-nav-link hover:text-cyan-glow py-1">About</a>
+        <a href="contact.html" class="mobile-nav-link hover:text-cyan-glow py-1">Contact</a>
+        <div class="pt-4 border-t border-white/10 flex flex-col gap-2">
+          <a href="https://wa.me/917051383473?text=Hello%20Guru%20Communication%2C%20I%20want%20to%20book%20an%20iPhone%20Repair." target="_blank" class="w-full inline-flex items-center justify-center px-4 py-3 text-xs font-heading font-bold text-white uppercase bg-purple-glow rounded-xl">iPhone Service</a>
+          <a href="https://wa.me/917051383473" target="_blank" class="w-full inline-flex items-center justify-center px-4 py-3 text-xs font-heading font-bold text-white uppercase bg-emerald-600 rounded-xl">
+            <i data-lucide="message-square" class="w-4 h-4 mr-2"></i> WhatsApp Us
+          </a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="pt-36 pb-20 relative overflow-hidden bg-dark-800/60 border-b border-white/10">
+    <div class="max-w-7xl mx-auto px-4 lg:px-8 text-center space-y-4">
+      <span class="text-xs font-mono text-purple-400 uppercase tracking-widest">Apple iOS Hardware Specialists</span>
+      <h1 class="text-4xl sm:text-6xl font-heading font-black text-white">
+        PRECISION <span class="text-gradient-purple">iPHONE REPAIR LAB</span>
+      </h1>
+      <p class="text-gray-300 text-sm sm:text-base max-w-2xl mx-auto">From iPhone 8 to iPhone 15 Pro Max: True Tone restoration, Face ID alignment, OEM battery swaps & sandwich motherboard micro-soldering.</p>
+    </div>
+  </section>
+
+  <!-- SUPPORTED MODELS HUD BAR -->
+  <section class="py-8 bg-dark-950 border-b border-white/5">
+    <div class="max-w-7xl mx-auto px-4 flex flex-wrap items-center justify-center gap-3 text-xs font-mono text-gray-400">
+      <span class="text-purple-400 font-bold uppercase tracking-wider">Models Serviced:</span>
+      <span class="px-3 py-1 bg-white/5 rounded-lg border border-white/10">iPhone 17 / 17 Pro Max</span>
+      <span class="px-3 py-1 bg-white/5 rounded-lg border border-white/10">iPhone 16 / 16 Pro Max</span>
+      <span class="px-3 py-1 bg-white/5 rounded-lg border border-white/10">iPhone 15 / 15 Pro Max</span>
+      <span class="px-3 py-1 bg-white/5 rounded-lg border border-white/10">iPhone 14 / 14 Pro Max</span>
+      <span class="px-3 py-1 bg-white/5 rounded-lg border border-white/10">iPhone 13 / 13 Pro Max</span>
+      <span class="px-3 py-1 bg-white/5 rounded-lg border border-white/10">iPhone 12 / 12 Pro</span>
+      <span class="px-3 py-1 bg-white/5 rounded-lg border border-white/10">iPhone 11 / 11 Pro</span>
+      <span class="px-3 py-1 bg-white/5 rounded-lg border border-white/10">iPhone X / XS / XR</span>
+      <span class="px-3 py-1 bg-white/5 rounded-lg border border-white/10">iPhone SE / 8 / 8 Plus</span>
+    </div>
+  </section>
+
+  <!-- DETAILED IPHONE SERVICES LIST -->
+  <section class="py-20 max-w-7xl mx-auto px-4 lg:px-8">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+      
+      <div class="glass-card rounded-2xl p-6 border border-purple-glow/20 space-y-4 flex flex-col justify-between hover:border-purple-glow/60 transition-all">
+        <div class="space-y-3">
+          <div class="w-10 h-10 rounded-xl bg-purple-glow/20 text-purple-300 flex items-center justify-center">
+            <i data-lucide="smartphone" class="w-5 h-5"></i>
+          </div>
+          <h3 class="text-lg font-heading font-bold text-white">OLED Screen & True Tone</h3>
+          <p class="text-xs text-gray-400 leading-relaxed">Original Super Retina XDR OLED replacement with EEPROM programmer data copy to retain genuine TrueTone and high color accuracy.</p>
+        </div>
+        <a href="https://wa.me/917051383473?text=Hello%20Guru%20Communication%2C%20I%20need%20iPhone%20Screen%20Repair%20with%20TrueTone." target="_blank" class="w-full py-2.5 text-xs font-heading font-bold text-white uppercase bg-purple-glow/80 hover:bg-purple-glow rounded-xl text-center block transition-all">
+          Book Screen Fix
+        </a>
+      </div>
+
+      <div class="glass-card rounded-2xl p-6 border border-purple-glow/20 space-y-4 flex flex-col justify-between hover:border-purple-glow/60 transition-all">
+        <div class="space-y-3">
+          <div class="w-10 h-10 rounded-xl bg-purple-glow/20 text-purple-300 flex items-center justify-center">
+            <i data-lucide="scan-face" class="w-5 h-5"></i>
+          </div>
+          <h3 class="text-lg font-heading font-bold text-white">Face ID & TrueDepth Repair</h3>
+          <p class="text-xs text-gray-400 leading-relaxed">Dot projector alignment, flood illuminator flex repair, and TrueDepth camera system diagnostics without triggering iOS warning messages.</p>
+        </div>
+        <a href="https://wa.me/917051383473?text=Hello%20Guru%20Communication%2C%20I%20need%20iPhone%20Face%20ID%20Repair." target="_blank" class="w-full py-2.5 text-xs font-heading font-bold text-white uppercase bg-purple-glow/80 hover:bg-purple-glow rounded-xl text-center block transition-all">
+          Fix Face ID
+        </a>
+      </div>
+
+      <div class="glass-card rounded-2xl p-6 border border-purple-glow/20 space-y-4 flex flex-col justify-between hover:border-purple-glow/60 transition-all">
+        <div class="space-y-3">
+          <div class="w-10 h-10 rounded-xl bg-purple-glow/20 text-purple-300 flex items-center justify-center">
+            <i data-lucide="cpu" class="w-5 h-5"></i>
+          </div>
+          <h3 class="text-lg font-heading font-bold text-white">Sandwich Motherboard Soldering</h3>
+          <p class="text-xs text-gray-400 leading-relaxed">Microscopic separation of layered Apple logic boards, Baseband 'No Service' fix, Audio IC loop fix, and middle layer frame reballing.</p>
+        </div>
+        <a href="https://wa.me/917051383473?text=Hello%20Guru%20Communication%2C%20I%20need%20iPhone%20Motherboard%20Repair." target="_blank" class="w-full py-2.5 text-xs font-heading font-bold text-white uppercase bg-purple-glow/80 hover:bg-purple-glow rounded-xl text-center block transition-all">
+          Consult Micro-Soldering
+        </a>
+      </div>
+
+      <div class="glass-card rounded-2xl p-6 border border-purple-glow/20 space-y-4 flex flex-col justify-between hover:border-purple-glow/60 transition-all">
+        <div class="space-y-3">
+          <div class="w-10 h-10 rounded-xl bg-purple-glow/20 text-purple-300 flex items-center justify-center">
+            <i data-lucide="sparkles" class="w-5 h-5"></i>
+          </div>
+          <h3 class="text-lg font-heading font-bold text-white">Laser Back Glass Removal</h3>
+          <p class="text-xs text-gray-400 leading-relaxed">Auto-focus high speed fiber laser back glass removal preventing heat damage to internal wireless charging coils and battery seals.</p>
+        </div>
+        <a href="https://wa.me/917051383473?text=Hello%20Guru%20Communication%2C%20I%20need%20Laser%20Back%20Glass%20Replacement." target="_blank" class="w-full py-2.5 text-xs font-heading font-bold text-white uppercase bg-purple-glow/80 hover:bg-purple-glow rounded-xl text-center block transition-all">
+          Laser Glass Fix
+        </a>
+      </div>
+
+      <div class="glass-card rounded-2xl p-6 border border-purple-glow/20 space-y-4 flex flex-col justify-between hover:border-purple-glow/60 transition-all">
+        <div class="space-y-3">
+          <div class="w-10 h-10 rounded-xl bg-purple-glow/20 text-purple-300 flex items-center justify-center">
+            <i data-lucide="battery-charging" class="w-5 h-5"></i>
+          </div>
+          <h3 class="text-lg font-heading font-bold text-white">Battery Health Calibration</h3>
+          <p class="text-xs text-gray-400 leading-relaxed">OEM Grade High Capacity battery swaps with spot welding original BMS flex transfer for 100% genuine iOS battery health percentage display.</p>
+        </div>
+        <a href="https://wa.me/917051383473?text=Hello%20Guru%20Communication%2C%20I%20need%20iPhone%20Battery%20Replacement%20with%20100%25%20Health." target="_blank" class="w-full py-2.5 text-xs font-heading font-bold text-white uppercase bg-purple-glow/80 hover:bg-purple-glow rounded-xl text-center block transition-all">
+          Calibrate Battery
+        </a>
+      </div>
+
+      <div class="glass-card rounded-2xl p-6 border border-purple-glow/20 space-y-4 flex flex-col justify-between hover:border-purple-glow/60 transition-all">
+        <div class="space-y-3">
+          <div class="w-10 h-10 rounded-xl bg-purple-glow/20 text-purple-300 flex items-center justify-center">
+            <i data-lucide="droplets" class="w-5 h-5"></i>
+          </div>
+          <h3 class="text-lg font-heading font-bold text-white">Water Damage & Data Recovery</h3>
+          <p class="text-xs text-gray-400 leading-relaxed">Ultrasonic chemical cleansing of oxidized components, short circuit clearance on VDD_MAIN line, and emergency NAND chip data extraction.</p>
+        </div>
+        <a href="https://wa.me/917051383473?text=Hello%20Guru%20Communication%2C%20I%20need%20Emergency%20iPhone%20Data%20Recovery." target="_blank" class="w-full py-2.5 text-xs font-heading font-bold text-white uppercase bg-purple-glow/80 hover:bg-purple-glow rounded-xl text-center block transition-all">
+          Recover Data
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- CTA BANNER -->
+  <section class="py-16 bg-gradient-to-b from-dark-900 to-dark-950 border-t border-white/10">
+    <div class="max-w-4xl mx-auto px-4 text-center space-y-6">
+      <h2 class="text-3xl font-heading font-extrabold text-white">Have an iPhone with a Complex Hardware Issue?</h2>
+      <p class="text-gray-400 text-sm">Don't risk irreversible damage at untrained shops. Bring your Apple device to Guru Communication's cleanroom laboratory for certified diagnostic and repair.</p>
+      <a href="https://wa.me/917051383473?text=Hello%20Guru%20Communication%2C%20I%20have%20an%20iPhone%20issue%20I%20want%20to%20consult%20about." target="_blank" class="inline-flex items-center gap-2 px-8 py-4 text-xs font-heading font-bold text-white uppercase bg-purple-glow rounded-xl shadow-glow-purple hover:brightness-110 transition-all">
+        <i data-lucide="message-square" class="w-4 h-4"></i> Chat Directly with iPhone Specialist
+      </a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="bg-dark-950 border-t border-white/10 py-12 text-gray-400 text-xs text-center">
+    <div class="max-w-7xl mx-auto px-4 space-y-4">
+      <p class="font-heading font-bold text-white text-base">GURU <span class="text-purple-400">COMMUNICATION</span></p>
+      <p>Precision iPhone Laboratory & Component-Level Repair | WhatsApp: +91 70513 83473</p>
+      <p class="text-gray-500">© 2026 Guru Communication. All Rights Reserved.</p>
+    </div>
+  </footer>
+
+  <!-- FLOATING WHATSAPP -->
+  <a id="floating-whatsapp" href="https://wa.me/917051383473" target="_blank" class="fixed bottom-6 right-6 z-50 w-14 h-14 bg-emerald-500 text-white rounded-full flex items-center justify-center shadow-2xl hover:scale-110 active:scale-95 transition-transform border border-emerald-300/40">
+    <i data-lucide="message-circle" class="w-7 h-7"></i>
+  </a>
+
+  <script src="./config.js"></script>
+  <script src="./main.js"></script>
+</body>
+</html>

@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Us | Guru Communication - Professional Mobile Technology Laboratory</title>
+  <meta name="description" content="Learn about Guru Communication's decade-long legacy in mobile repair engineering, YMT machinery distribution, cleanroom display refurbishing, and customer trust.">
+  <link rel="icon" type="image/png" href="./guru-logo.png">
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          maxWidth: {
+            '7xl': '100%',
+            '6xl': '100%',
+            '5xl': '100%',
+            '8xl': '100%',
+          },
+          colors: {
+            dark: { 950: '#050505', 900: '#0a0b0e', 800: '#12141a', 700: '#1a1d26' },
+            cyan: { glow: '#00f2fe' },
+            purple: { glow: '#7928ca' },
+            orange: { glow: '#ff4e00' }
+          },
+          fontFamily: { sans: ['Inter', 'sans-serif'], heading: ['Space Grotesk', 'sans-serif'] },
+          boxShadow: { 'glow-cyan': '0 0 25px -5px rgba(0, 242, 254, 0.4)', 'glass': '0 8px 32px 0 rgba(0, 0, 0, 0.37)' }
+        }
+      }
+    }
+  </script>
+  <link rel="stylesheet" href="./index.css">
+  <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body class="bg-dark-900 text-gray-100 font-sans antialiased selection:bg-cyan-glow selection:text-dark-900">
+
+  <!-- NAVBAR -->
+  <header id="navbar" class="fixed top-0 left-0 w-full z-40 py-4 px-4 lg:px-8">
+    <div class="max-w-7xl mx-auto glass-panel rounded-2xl px-6 py-3 flex items-center justify-between border border-white/10 shadow-glass">
+      <a href="index.html" class="flex items-center gap-3 group">
+        <div class="p-1 bg-dark-900/90 border border-cyan-glow/40 rounded-xl shadow-glow-cyan">
+          <img src="./guru-logo.png" alt="Guru Communication Logo" class="w-10 h-10 object-contain group-hover:scale-105 transition-transform">
+        </div>
+        <div>
+          <span class="text-lg md:text-xl font-heading font-bold text-white tracking-wide group-hover:text-cyan-glow transition-colors">GURU <span class="text-cyan-glow">COMMUNICATION</span></span>
+          <span class="block text-[10px] text-gray-400 font-mono tracking-wider uppercase">Tech & Repair Lab</span>
+        </div>
+      </a>
+      <nav class="hidden xl:flex items-center gap-6 text-sm font-medium text-gray-300">
+        <a href="index.html" class="hover:text-cyan-glow transition-colors">Home</a>
+        <a href="services.html" class="hover:text-cyan-glow transition-colors">Services</a>
+        <a href="iphone-repair.html" class="hover:text-cyan-glow transition-colors">iPhone Repair</a>
+        <a href="machinery.html" class="hover:text-cyan-glow transition-colors">Machinery</a>
+        <a href="spare-parts.html" class="hover:text-cyan-glow transition-colors">Spare Parts</a>
+        <a href="accessories.html" class="hover:text-cyan-glow transition-colors">Accessories</a>
+        <a href="about.html" class="text-cyan-glow font-bold">About</a>
+        <a href="contact.html" class="hover:text-cyan-glow transition-colors">Contact</a>
+      </nav>
+      <a href="contact.html" class="hidden sm:inline-flex items-center justify-center px-5 py-2.5 text-xs font-heading font-bold text-dark-900 uppercase bg-cyan-glow rounded-xl shadow-glow-cyan hover:brightness-110 transition-all">
+        Book Repair
+      </a>
+      <button id="mobile-menu-btn" class="xl:hidden flex flex-col justify-center items-center gap-1.5 w-11 h-11 rounded-xl bg-dark-800 border border-white/10 hover:border-cyan-glow/50 focus:outline-none z-50 cursor-pointer" aria-label="Toggle Menu" aria-expanded="false">
+        <span class="w-5 h-0.5 bg-cyan-glow rounded-full pointer-events-none"></span>
+        <span class="w-5 h-0.5 bg-cyan-glow rounded-full pointer-events-none"></span>
+        <span class="w-5 h-0.5 bg-cyan-glow rounded-full pointer-events-none"></span>
+      </button>
+    </div>
+
+    <!-- Mobile Drawer -->
+    <div id="mobile-drawer" class="hidden xl:hidden max-w-7xl mx-auto mt-2 glass-panel rounded-2xl p-6 border border-white/10 shadow-2xl transition-all duration-300">
+      <nav class="flex flex-col gap-4 text-sm font-medium text-gray-300">
+        <a href="index.html" class="mobile-nav-link hover:text-cyan-glow py-1">Home</a>
+        <a href="services.html" class="mobile-nav-link hover:text-cyan-glow py-1">Services</a>
+        <a href="iphone-repair.html" class="mobile-nav-link hover:text-cyan-glow py-1">iPhone Repair</a>
+        <a href="machinery.html" class="mobile-nav-link hover:text-cyan-glow py-1">Machinery</a>
+        <a href="spare-parts.html" class="mobile-nav-link hover:text-cyan-glow py-1">Spare Parts</a>
+        <a href="accessories.html" class="mobile-nav-link hover:text-cyan-glow py-1">Accessories</a>
+        <a href="about.html" class="mobile-nav-link text-cyan-glow font-bold py-1">About</a>
+        <a href="contact.html" class="mobile-nav-link hover:text-cyan-glow py-1">Contact</a>
+        <div class="pt-4 border-t border-white/10 flex flex-col gap-2">
+          <a href="contact.html" class="w-full inline-flex items-center justify-center px-4 py-3 text-xs font-heading font-bold text-dark-950 uppercase bg-cyan-glow rounded-xl">Book a Repair</a>
+          <a href="https://wa.me/917051383473" target="_blank" class="w-full inline-flex items-center justify-center px-4 py-3 text-xs font-heading font-bold text-white uppercase bg-emerald-600 rounded-xl">
+            <i data-lucide="message-square" class="w-4 h-4 mr-2"></i> WhatsApp Us
+          </a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="pt-36 pb-20 relative overflow-hidden bg-dark-800/60 border-b border-white/10">
+    <div class="max-w-7xl mx-auto px-4 lg:px-8 text-center space-y-4">
+      <span class="text-xs font-mono text-cyan-glow uppercase tracking-widest">Our Engineering Heritage & Values</span>
+      <h1 class="text-4xl sm:text-6xl font-heading font-black text-white">
+        ABOUT <span class="text-gradient-cyan">GURU COMMUNICATION</span>
+      </h1>
+      <p class="text-gray-400 text-sm sm:text-base max-w-2xl mx-auto">More than a repair counter: We operate an industrial-grade mobile technology laboratory, machinery distribution center, and precision display refurbishing cleanroom.</p>
+    </div>
+  </section>
+
+  <!-- ABOUT DETAILED SECTIONS -->
+  <section class="py-20 max-w-5xl mx-auto px-4 space-y-12">
+    
+    <div class="glass-card rounded-3xl p-8 border border-cyan-glow/20 space-y-4">
+      <h2 class="text-2xl font-heading font-bold text-white">Pioneering High-Precision Mobile Engineering</h2>
+      <p class="text-gray-300 text-sm leading-relaxed">
+        Founded over a decade ago with a mission to eliminate disposable electronics culture, **Guru Communication** brings factory-grade diagnostics and chip-level restoration directly to end consumers and commercial repair businesses.
+      </p>
+      <p class="text-gray-400 text-sm leading-relaxed">
+        While conventional repair shops swap whole modular assemblies at high costs, our cleanroom facility specializes in microscopic component restoration: micro-soldering damaged logic board traces, reprogramming Face ID dot projectors, and utilizing YMT vacuum OCA laminators to replace cracked outer glass while preserving 100% of your factory-original OLED display panel.
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+      
+      <div class="glass-card rounded-2xl p-6 border border-white/10 space-y-3">
+        <div class="w-10 h-10 rounded-xl bg-cyan-glow/10 text-cyan-glow flex items-center justify-center border border-cyan-glow/30">
+          <i data-lucide="shield-check" class="w-5 h-5"></i>
+        </div>
+        <h3 class="text-lg font-heading font-bold text-white">Dust-Free Cleanroom Stations</h3>
+        <p class="text-xs text-gray-400 leading-relaxed">Class 100 positive-pressure laminar flow workstations ensure zero dust contamination during optical OCA display lamination.</p>
+      </div>
+
+      <div class="glass-card rounded-2xl p-6 border border-white/10 space-y-3">
+        <div class="w-10 h-10 rounded-xl bg-purple-glow/20 text-purple-300 flex items-center justify-center border border-purple-glow/40">
+          <i data-lucide="award" class="w-5 h-5"></i>
+        </div>
+        <h3 class="text-lg font-heading font-bold text-white">10+ Years of Proven Expertise</h3>
+        <p class="text-xs text-gray-400 leading-relaxed">Over 5,000 successful complex repairs completed across Apple iOS, Samsung Galaxy, and all flagship Android platforms.</p>
+      </div>
+
+      <div class="glass-card rounded-2xl p-6 border border-white/10 space-y-3">
+        <div class="w-10 h-10 rounded-xl bg-orange-glow/20 text-orange-glow flex items-center justify-center border border-orange-glow/40">
+          <i data-lucide="cog" class="w-5 h-5"></i>
+        </div>
+        <h3 class="text-lg font-heading font-bold text-white">Authorized YMT Equipment Partner</h3>
+        <p class="text-xs text-gray-400 leading-relaxed">Direct importer and distributor of authentic YMT vacuum laminators, laser separators, and commercial repair tooling.</p>
+      </div>
+
+      <div class="glass-card rounded-2xl p-6 border border-white/10 space-y-3">
+        <div class="w-10 h-10 rounded-xl bg-emerald-500/20 text-emerald-400 flex items-center justify-center border border-emerald-500/40">
+          <i data-lucide="check-circle-2" class="w-5 h-5"></i>
+        </div>
+        <h3 class="text-lg font-heading font-bold text-white">25-Point Rigorous Quality Control</h3>
+        <p class="text-xs text-gray-400 leading-relaxed">Every device undergoes comprehensive post-repair testing: touch digitizer latency, proximity sensor, cellular antennas, thermals, and battery health.</p>
+      </div>
+
+    </div>
+
+    <!-- STATS HIGHLIGHT -->
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-4 pt-6">
+      <div class="glass-panel p-6 rounded-2xl text-center border border-white/10">
+        <div class="text-3xl font-heading font-extrabold text-cyan-glow">10+</div>
+        <div class="text-xs font-mono text-gray-400 mt-1 uppercase">Years Experience</div>
+      </div>
+      <div class="glass-panel p-6 rounded-2xl text-center border border-white/10">
+        <div class="text-3xl font-heading font-extrabold text-cyan-glow">5,000+</div>
+        <div class="text-xs font-mono text-gray-400 mt-1 uppercase">Repairs Completed</div>
+      </div>
+      <div class="glass-panel p-6 rounded-2xl text-center border border-white/10">
+        <div class="text-3xl font-heading font-extrabold text-cyan-glow">1,000+</div>
+        <div class="text-xs font-mono text-gray-400 mt-1 uppercase">Happy Clients</div>
+      </div>
+      <div class="glass-panel p-6 rounded-2xl text-center border border-white/10">
+        <div class="text-3xl font-heading font-extrabold text-cyan-glow">100%</div>
+        <div class="text-xs font-mono text-gray-400 mt-1 uppercase">Quality Standard</div>
+      </div>
+    </div>
+
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="bg-dark-950 border-t border-white/10 py-12 text-gray-400 text-xs text-center">
+    <div class="max-w-7xl mx-auto px-4 space-y-4">
+      <p class="font-heading font-bold text-white text-base">GURU <span class="text-cyan-glow">COMMUNICATION</span></p>
+      <p>Mobile Technology Center & Professional Cleanroom Laboratory | WhatsApp: +91 70513 83473</p>
+      <p class="text-gray-500">© 2026 Guru Communication. All Rights Reserved.</p>
+    </div>
+  </footer>
+
+  <!-- FLOATING WHATSAPP -->
+  <a id="floating-whatsapp" href="https://wa.me/917051383473" target="_blank" class="fixed bottom-6 right-6 z-50 w-14 h-14 bg-emerald-500 text-white rounded-full flex items-center justify-center shadow-2xl hover:scale-110 active:scale-95 transition-transform border border-emerald-300/40">
+    <i data-lucide="message-circle" class="w-7 h-7"></i>
+  </a>
+
+  <script src="./config.js"></script>
+  <script src="./main.js"></script>
+</body>
+</html>

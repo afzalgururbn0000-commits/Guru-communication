@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Machinery Showroom | Guru Communication - Authorized YMT Equipment Distributor</title>
+  <meta name="description" content="Authorized supplier of YMT Vacuum OCA Laminating Machines, Laser Back Glass Cutters, Screen Separators, and Repair Lab Autoclaves. Industrial repair technology.">
+  <link rel="icon" type="image/png" href="./guru-logo.png">
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          maxWidth: {
+            '7xl': '100%',
+            '6xl': '100%',
+            '5xl': '100%',
+            '8xl': '100%',
+          },
+          colors: {
+            dark: { 950: '#050505', 900: '#0a0b0e', 800: '#12141a', 700: '#1a1d26' },
+            cyan: { glow: '#00f2fe' },
+            orange: { glow: '#ff4e00', bright: '#ff7733', accent: '#f97316' }
+          },
+          fontFamily: { sans: ['Inter', 'sans-serif'], heading: ['Space Grotesk', 'sans-serif'] },
+          boxShadow: { 'glow-orange': '0 0 25px -5px rgba(255, 78, 0, 0.4)', 'glass': '0 8px 32px 0 rgba(0, 0, 0, 0.37)' }
+        }
+      }
+    }
+  </script>
+  <link rel="stylesheet" href="./index.css">
+  <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body class="bg-dark-900 text-gray-100 font-sans antialiased selection:bg-orange-glow selection:text-dark-900">
+
+  <!-- NAVBAR -->
+  <header id="navbar" class="fixed top-0 left-0 w-full z-40 py-4 px-4 lg:px-8">
+    <div class="max-w-7xl mx-auto glass-panel rounded-2xl px-6 py-3 flex items-center justify-between border border-white/10 shadow-glass">
+      <a href="index.html" class="flex items-center gap-3 group">
+        <div class="p-1 bg-dark-900/90 border border-orange-glow/40 rounded-xl shadow-glow-orange">
+          <img src="./guru-logo.png" alt="Guru Communication Logo" class="w-10 h-10 object-contain group-hover:scale-105 transition-transform">
+        </div>
+        <div>
+          <span class="text-lg md:text-xl font-heading font-bold text-white tracking-wide group-hover:text-orange-glow transition-colors">GURU <span class="text-orange-glow">COMMUNICATION</span></span>
+          <span class="block text-[10px] text-gray-400 font-mono tracking-wider uppercase">Machinery Showroom</span>
+        </div>
+      </a>
+      <nav class="hidden xl:flex items-center gap-6 text-sm font-medium text-gray-300">
+        <a href="index.html" class="hover:text-cyan-glow transition-colors">Home</a>
+        <a href="services.html" class="hover:text-cyan-glow transition-colors">Services</a>
+        <a href="iphone-repair.html" class="hover:text-cyan-glow transition-colors">iPhone Repair</a>
+        <a href="machinery.html" class="text-orange-glow font-bold">Machinery</a>
+        <a href="spare-parts.html" class="hover:text-cyan-glow transition-colors">Spare Parts</a>
+        <a href="accessories.html" class="hover:text-cyan-glow transition-colors">Accessories</a>
+        <a href="about.html" class="hover:text-cyan-glow transition-colors">About</a>
+        <a href="contact.html" class="hover:text-cyan-glow transition-colors">Contact</a>
+      </nav>
+      <a href="https://wa.me/917051383473?text=Hello%20Guru%20Communication%2C%20I%20want%20to%20enquire%20about%20Repair%20Machinery." target="_blank" class="hidden sm:inline-flex items-center justify-center px-5 py-2.5 text-xs font-heading font-bold text-dark-900 uppercase bg-gradient-to-r from-orange-glow to-amber-500 rounded-xl shadow-glow-orange hover:brightness-110 transition-all">
+        <i data-lucide="shopping-bag" class="w-4 h-4 mr-2"></i> Machinery Enquiry
+      </a>
+      <button id="mobile-menu-btn" class="xl:hidden flex flex-col justify-center items-center gap-1.5 w-11 h-11 rounded-xl bg-dark-800 border border-white/10 hover:border-orange-glow/50 focus:outline-none z-50 cursor-pointer" aria-label="Toggle Menu" aria-expanded="false">
+        <span class="w-5 h-0.5 bg-orange-glow rounded-full pointer-events-none"></span>
+        <span class="w-5 h-0.5 bg-orange-glow rounded-full pointer-events-none"></span>
+        <span class="w-5 h-0.5 bg-orange-glow rounded-full pointer-events-none"></span>
+      </button>
+    </div>
+
+    <!-- Mobile Drawer -->
+    <div id="mobile-drawer" class="hidden xl:hidden max-w-7xl mx-auto mt-2 glass-panel rounded-2xl p-6 border border-white/10 shadow-2xl transition-all duration-300">
+      <nav class="flex flex-col gap-4 text-sm font-medium text-gray-300">
+        <a href="index.html" class="mobile-nav-link hover:text-cyan-glow py-1">Home</a>
+        <a href="services.html" class="mobile-nav-link hover:text-cyan-glow py-1">Services</a>
+        <a href="iphone-repair.html" class="mobile-nav-link hover:text-cyan-glow py-1">iPhone Repair</a>
+        <a href="machinery.html" class="mobile-nav-link text-orange-glow font-bold py-1">Machinery</a>
+        <a href="spare-parts.html" class="mobile-nav-link hover:text-cyan-glow py-1">Spare Parts</a>
+        <a href="accessories.html" class="mobile-nav-link hover:text-cyan-glow py-1">Accessories</a>
+        <a href="about.html" class="mobile-nav-link hover:text-cyan-glow py-1">About</a>
+        <a href="contact.html" class="mobile-nav-link hover:text-cyan-glow py-1">Contact</a>
+        <div class="pt-4 border-t border-white/10 flex flex-col gap-2">
+          <a href="https://wa.me/917051383473?text=Hello%20Guru%20Communication%2C%20I%20want%20to%20enquire%20about%20Repair%20Machinery." target="_blank" class="w-full inline-flex items-center justify-center px-4 py-3 text-xs font-heading font-bold text-dark-900 uppercase bg-orange-glow rounded-xl">Machinery Enquiry</a>
+          <a href="https://wa.me/917051383473" target="_blank" class="w-full inline-flex items-center justify-center px-4 py-3 text-xs font-heading font-bold text-white uppercase bg-emerald-600 rounded-xl">
+            <i data-lucide="message-square" class="w-4 h-4 mr-2"></i> WhatsApp Us
+          </a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="pt-36 pb-20 relative overflow-hidden bg-dark-800/60 border-b border-white/10">
+    <div class="max-w-7xl mx-auto px-4 lg:px-8 text-center space-y-4">
+      <span class="text-xs font-mono text-orange-glow uppercase tracking-widest">Industrial Lab Equipment & Distribution</span>
+      <h1 class="text-4xl sm:text-6xl font-heading font-black text-white">
+        PROFESSIONAL <span class="text-gradient-orange">REPAIR MACHINERY</span>
+      </h1>
+      <p class="text-gray-400 text-sm sm:text-base max-w-2xl mx-auto">Equip your commercial mobile repair lab with industrial YMT automatic vacuum laminators, 20W fiber laser cutters, and screen separators.</p>
+    </div>
+  </section>
+
+  <!-- MACHINERY CATALOG GRID -->
+  <section class="py-20 max-w-7xl mx-auto px-4 lg:px-8">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      
+      <!-- Machine 1 -->
+      <div class="glass-card glass-card-orange rounded-2xl overflow-hidden border border-orange-glow/30 flex flex-col justify-between group hover:border-orange-glow transition-all">
+        <div class="relative h-56 overflow-hidden bg-dark-800">
+          <img src="https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=600&q=80" alt="YMT Automatic OCA Laminator" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 opacity-90 group-hover:opacity-100">
+          <span class="absolute top-3 left-3 px-2.5 py-1 rounded-full bg-orange-glow text-dark-900 font-heading font-bold text-[10px] uppercase">Best Seller</span>
+          <span class="absolute top-3 right-3 px-2.5 py-1 rounded-full bg-dark-900/80 border border-white/10 text-orange-glow font-mono text-[10px]">OCA Lamination</span>
+        </div>
+        <div class="p-6 space-y-4 flex-1 flex flex-col justify-between">
+          <div class="space-y-2">
+            <h3 class="text-lg font-heading font-bold text-white">YMT Automatic OCA Vacuum Laminator</h3>
+            <p class="text-xs text-gray-400 leading-relaxed">Integrated bubble remover & silent oil-free vacuum pump. Fits flat & edge curved displays up to 7.9 inches.</p>
+            <ul class="text-[11px] font-mono text-gray-300 space-y-1.5 pt-3 border-t border-white/10">
+              <li>✓ Touchscreen PLC Micro-Computer Control</li>
+              <li>✓ Dual Cylinder Automatic Pneumatic Press</li>
+              <li>✓ 1-Year Full Warranty & Technical Training</li>
+            </ul>
+          </div>
+          <a href="https://wa.me/917051383473?text=Hello%20Guru%20Communication%2C%20I%20want%20to%20enquire%20price%20for%20YMT%20Automatic%20OCA%20Vacuum%20Laminator." target="_blank" class="w-full py-3 text-xs font-heading font-bold text-dark-900 uppercase bg-gradient-to-r from-orange-glow to-amber-500 rounded-xl text-center flex items-center justify-center gap-2 hover:brightness-110 transition-all">
+            <i data-lucide="message-square" class="w-4 h-4"></i> Get Quote on WhatsApp
+          </a>
+        </div>
+      </div>
+
+      <!-- Machine 2 -->
+      <div class="glass-card glass-card-orange rounded-2xl overflow-hidden border border-orange-glow/30 flex flex-col justify-between group hover:border-orange-glow transition-all">
+        <div class="relative h-56 overflow-hidden bg-dark-800">
+          <img src="https://images.unsplash.com/photo-1581092335397-9583fe92d232?auto=format&fit=crop&w=600&q=80" alt="20W Fiber Laser Separator" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 opacity-90 group-hover:opacity-100">
+          <span class="absolute top-3 left-3 px-2.5 py-1 rounded-full bg-orange-glow text-dark-900 font-heading font-bold text-[10px] uppercase">Laser Tech</span>
+          <span class="absolute top-3 right-3 px-2.5 py-1 rounded-full bg-dark-900/80 border border-white/10 text-orange-glow font-mono text-[10px]">Back Glass</span>
+        </div>
+        <div class="p-6 space-y-4 flex-1 flex flex-col justify-between">
+          <div class="space-y-2">
+            <h3 class="text-lg font-heading font-bold text-white">20W High Precision Fiber Laser Separator</h3>
+            <p class="text-xs text-gray-400 leading-relaxed">Auto-focus high speed galvanometer laser machine for effortless iPhone back glass & middle frame housing separation.</p>
+            <ul class="text-[11px] font-mono text-gray-300 space-y-1.5 pt-3 border-t border-white/10">
+              <li>✓ Continuous Auto-Focus System</li>
+              <li>✓ Wireless PC Software with Auto CAD Drawings</li>
+              <li>✓ Integrated Smoke & Fume Filtration Core</li>
+            </ul>
+          </div>
+          <a href="https://wa.me/917051383473?text=Hello%20Guru%20Communication%2C%20I%20want%20to%20enquire%20price%20for%2020W%20Fiber%20Laser%20Separator." target="_blank" class="w-full py-3 text-xs font-heading font-bold text-dark-900 uppercase bg-gradient-to-r from-orange-glow to-amber-500 rounded-xl text-center flex items-center justify-center gap-2 hover:brightness-110 transition-all">
+            <i data-lucide="message-square" class="w-4 h-4"></i> Get Quote on WhatsApp
+          </a>
+        </div>
+      </div>
+
+      <!-- Machine 3 -->
+      <div class="glass-card glass-card-orange rounded-2xl overflow-hidden border border-orange-glow/30 flex flex-col justify-between group hover:border-orange-glow transition-all">
+        <div class="relative h-56 overflow-hidden bg-dark-800">
+          <img src="https://images.unsplash.com/photo-1581092580497-e0d23cbdf1dc?auto=format&fit=crop&w=600&q=80" alt="YMT Vacuum Screen Separator" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 opacity-90 group-hover:opacity-100">
+          <span class="absolute top-3 left-3 px-2.5 py-1 rounded-full bg-orange-glow text-dark-900 font-heading font-bold text-[10px] uppercase">Essential</span>
+          <span class="absolute top-3 right-3 px-2.5 py-1 rounded-full bg-dark-900/80 border border-white/10 text-orange-glow font-mono text-[10px]">Separators</span>
+        </div>
+        <div class="p-6 space-y-4 flex-1 flex flex-col justify-between">
+          <div class="space-y-2">
+            <h3 class="text-lg font-heading font-bold text-white">YMT Micro-Pneumatic Screen Separator</h3>
+            <p class="text-xs text-gray-400 leading-relaxed">Dual built-in vacuum suction heating plate with digital PID temperature controller for precise glass wire cutting.</p>
+            <ul class="text-[11px] font-mono text-gray-300 space-y-1.5 pt-3 border-t border-white/10">
+              <li>✓ Fast Heating: 0 - 150°C Constant Temperature</li>
+              <li>✓ Dual Vacuum Pumps for Extra Holding Force</li>
+              <li>✓ Non-Stick Heat-Resistant Silicone Mat</li>
+            </ul>
+          </div>
+          <a href="https://wa.me/917051383473?text=Hello%20Guru%20Communication%2C%20I%20want%20to%20enquire%20price%20for%20YMT%20Screen%20Separator." target="_blank" class="w-full py-3 text-xs font-heading font-bold text-dark-900 uppercase bg-gradient-to-r from-orange-glow to-amber-500 rounded-xl text-center flex items-center justify-center gap-2 hover:brightness-110 transition-all">
+            <i data-lucide="message-square" class="w-4 h-4"></i> Get Quote on WhatsApp
+          </a>
+        </div>
+      </div>
+
+      <!-- Machine 4 -->
+      <div class="glass-card glass-card-orange rounded-2xl overflow-hidden border border-orange-glow/30 flex flex-col justify-between group hover:border-orange-glow transition-all">
+        <div class="relative h-56 overflow-hidden bg-dark-800">
+          <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=600&q=80" alt="High Pressure Autoclave De-bubbler" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 opacity-90 group-hover:opacity-100">
+          <span class="absolute top-3 left-3 px-2.5 py-1 rounded-full bg-orange-glow text-dark-900 font-heading font-bold text-[10px] uppercase">High Capacity</span>
+          <span class="absolute top-3 right-3 px-2.5 py-1 rounded-full bg-dark-900/80 border border-white/10 text-orange-glow font-mono text-[10px]">Autoclave</span>
+        </div>
+        <div class="p-6 space-y-4 flex-1 flex flex-col justify-between">
+          <div class="space-y-2">
+            <h3 class="text-lg font-heading font-bold text-white">High Pressure Autoclave De-bubbler</h3>
+            <p class="text-xs text-gray-400 leading-relaxed">Industrial pneumatic pressure chamber for 100% micro-bubble elimination on refurbished OLED & AMOLED screens.</p>
+            <ul class="text-[11px] font-mono text-gray-300 space-y-1.5 pt-3 border-t border-white/10">
+              <li>✓ Heavy-Gauge Stainless Steel Chamber (20cm x 30cm)</li>
+              <li>✓ Max Working Pressure: 0.8 Mpa</li>
+              <li>✓ Automatic Overpressure Emergency Relief Valve</li>
+            </ul>
+          </div>
+          <a href="https://wa.me/917051383473?text=Hello%20Guru%20Communication%2C%20I%20want%20to%20enquire%20price%20for%20High%20Pressure%20Autoclave%20De-bubbler." target="_blank" class="w-full py-3 text-xs font-heading font-bold text-dark-900 uppercase bg-gradient-to-r from-orange-glow to-amber-500 rounded-xl text-center flex items-center justify-center gap-2 hover:brightness-110 transition-all">
+            <i data-lucide="message-square" class="w-4 h-4"></i> Get Quote on WhatsApp
+          </a>
+        </div>
+      </div>
+
+      <!-- Machine 5 -->
+      <div class="glass-card glass-card-orange rounded-2xl overflow-hidden border border-orange-glow/30 flex flex-col justify-between group hover:border-orange-glow transition-all">
+        <div class="relative h-56 overflow-hidden bg-dark-800">
+          <img src="https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=600&q=80" alt="Fume Extractor" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 opacity-90 group-hover:opacity-100">
+          <span class="absolute top-3 left-3 px-2.5 py-1 rounded-full bg-orange-glow text-dark-900 font-heading font-bold text-[10px] uppercase">Safety Lab</span>
+          <span class="absolute top-3 right-3 px-2.5 py-1 rounded-full bg-dark-900/80 border border-white/10 text-orange-glow font-mono text-[10px]">Air Filtration</span>
+        </div>
+        <div class="p-6 space-y-4 flex-1 flex flex-col justify-between">
+          <div class="space-y-2">
+            <h3 class="text-lg font-heading font-bold text-white">Multi-Stage Fume Extractor System</h3>
+            <p class="text-xs text-gray-400 leading-relaxed">High-suction cleanroom air purifier removing toxic rosin flux smoke and laser vaporization fumes from workstations.</p>
+            <ul class="text-[11px] font-mono text-gray-300 space-y-1.5 pt-3 border-t border-white/10">
+              <li>✓ 3-Stage HEPA + Activated Carbon Filtration</li>
+              <li>✓ Dual Flexible Extraction Arms</li>
+              <li>✓ Ultra Silent Brushless Motor Operation</li>
+            </ul>
+          </div>
+          <a href="https://wa.me/917051383473?text=Hello%20Guru%20Communication%2C%20I%20want%20to%20enquire%20price%20for%20Fume%20Extractor." target="_blank" class="w-full py-3 text-xs font-heading font-bold text-dark-900 uppercase bg-gradient-to-r from-orange-glow to-amber-500 rounded-xl text-center flex items-center justify-center gap-2 hover:brightness-110 transition-all">
+            <i data-lucide="message-square" class="w-4 h-4"></i> Get Quote on WhatsApp
+          </a>
+        </div>
+      </div>
+
+      <!-- Machine 6 -->
+      <div class="glass-card glass-card-orange rounded-2xl overflow-hidden border border-orange-glow/30 flex flex-col justify-between group hover:border-orange-glow transition-all">
+        <div class="relative h-56 overflow-hidden bg-dark-800">
+          <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=600&q=80" alt="Stereo Microscope" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 opacity-90 group-hover:opacity-100">
+          <span class="absolute top-3 left-3 px-2.5 py-1 rounded-full bg-orange-glow text-dark-900 font-heading font-bold text-[10px] uppercase">Inspection</span>
+          <span class="absolute top-3 right-3 px-2.5 py-1 rounded-full bg-dark-900/80 border border-white/10 text-orange-glow font-mono text-[10px]">Optics</span>
+        </div>
+        <div class="p-6 space-y-4 flex-1 flex flex-col justify-between">
+          <div class="space-y-2">
+            <h3 class="text-lg font-heading font-bold text-white">Trinocular Stereo Microscope with 4K HDMI</h3>
+            <p class="text-xs text-gray-400 leading-relaxed">Continuous 7X-45X zoom stereo microscope with 4K Ultra HD HDMI industrial camera for precision trace micro-soldering.</p>
+            <ul class="text-[11px] font-mono text-gray-300 space-y-1.5 pt-3 border-t border-white/10">
+              <li>✓ 7X to 45X Continuous Optical Zoom</li>
+              <li>✓ Ultra High Definition 4K Sensor Camera</li>
+              <li>✓ Dual LED Ring Light with Brightness Control</li>
+            </ul>
+          </div>
+          <a href="https://wa.me/917051383473?text=Hello%20Guru%20Communication%2C%20I%20want%20to%20enquire%20price%20for%20Trinocular%20Microscope." target="_blank" class="w-full py-3 text-xs font-heading font-bold text-dark-900 uppercase bg-gradient-to-r from-orange-glow to-amber-500 rounded-xl text-center flex items-center justify-center gap-2 hover:brightness-110 transition-all">
+            <i data-lucide="message-square" class="w-4 h-4"></i> Get Quote on WhatsApp
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- COMMERCIAL SETUP CONSULTATION BANNER -->
+  <section class="py-16 bg-gradient-to-b from-dark-900 to-dark-950 border-t border-white/10">
+    <div class="max-w-4xl mx-auto px-4 text-center space-y-6">
+      <h2 class="text-3xl font-heading font-extrabold text-white">Setting Up a New Mobile Repair or Refurbishing Lab?</h2>
+      <p class="text-gray-400 text-sm">We provide complete turnkey repair lab setup bundles: machines, compressors, molds, training, and ongoing technical support.</p>
+      <div class="flex flex-wrap items-center justify-center gap-4">
+        <a href="https://wa.me/917051383473?text=Hello%20Guru%20Communication%2C%20I%20want%20consultation%20on%20setting%20up%20a%20commercial%20repair%20lab." target="_blank" class="px-8 py-3.5 text-xs font-heading font-bold text-dark-900 uppercase bg-gradient-to-r from-orange-glow to-amber-500 rounded-xl shadow-glow-orange flex items-center gap-2 hover:brightness-110 transition-all">
+          <i data-lucide="message-square" class="w-4 h-4"></i> WhatsApp Lab Consultation (+91 70513 83473)
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="bg-dark-950 border-t border-white/10 py-12 text-gray-400 text-xs text-center">
+    <div class="max-w-7xl mx-auto px-4 space-y-4">
+      <p class="font-heading font-bold text-white text-base">GURU <span class="text-orange-glow">COMMUNICATION</span></p>
+      <p>Authorized Machinery Supplier & Repair Tech Partner | WhatsApp: +91 70513 83473</p>
+      <p class="text-gray-500">© 2026 Guru Communication. All Rights Reserved.</p>
+    </div>
+  </footer>
+
+  <!-- FLOATING WHATSAPP -->
+  <a id="floating-whatsapp" href="https://wa.me/917051383473" target="_blank" class="fixed bottom-6 right-6 z-50 w-14 h-14 bg-emerald-500 text-white rounded-full flex items-center justify-center shadow-2xl hover:scale-110 active:scale-95 transition-transform border border-emerald-300/40">
+    <i data-lucide="message-circle" class="w-7 h-7"></i>
+  </a>
+
+  <script src="./config.js"></script>
+  <script src="./main.js"></script>
+</body>
+</html>

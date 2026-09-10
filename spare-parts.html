@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Spare Parts Catalog & Purchase | Guru Communication - Tested Technician Supplies</title>
+  <meta name="description" content="Quality Spare Parts for Mobile Technicians: Original Grade OLED Displays, OEM Batteries, BGA ICs, Micro-soldering Supplies, and Flex Cables. Direct WhatsApp Order.">
+  <link rel="icon" type="image/png" href="./guru-logo.png">
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          maxWidth: {
+            '7xl': '100%',
+            '6xl': '100%',
+            '5xl': '100%',
+            '8xl': '100%',
+          },
+          colors: {
+            dark: { 950: '#050505', 900: '#0a0b0e', 800: '#12141a', 700: '#1a1d26' },
+            cyan: { glow: '#00f2fe' },
+            emerald: { glow: '#10b981' }
+          },
+          fontFamily: { sans: ['Inter', 'sans-serif'], heading: ['Space Grotesk', 'sans-serif'] },
+          boxShadow: { 'glow-cyan': '0 0 25px -5px rgba(0, 242, 254, 0.4)', 'glass': '0 8px 32px 0 rgba(0, 0, 0, 0.37)' }
+        }
+      }
+    }
+  </script>
+  <link rel="stylesheet" href="./index.css">
+  <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body class="bg-dark-900 text-gray-100 font-sans antialiased selection:bg-cyan-glow selection:text-dark-900">
+
+  <!-- NAVBAR -->
+  <header id="navbar" class="fixed top-0 left-0 w-full z-40 py-4 px-4 lg:px-8">
+    <div class="max-w-7xl mx-auto glass-panel rounded-2xl px-6 py-3 flex items-center justify-between border border-white/10 shadow-glass">
+      <a href="index.html" class="flex items-center gap-3 group">
+        <div class="p-1 bg-dark-900/90 border border-cyan-glow/40 rounded-xl shadow-glow-cyan">
+          <img src="./guru-logo.png" alt="Guru Communication Logo" class="w-10 h-10 object-contain group-hover:scale-105 transition-transform">
+        </div>
+        <div>
+          <span class="text-lg md:text-xl font-heading font-bold text-white tracking-wide group-hover:text-cyan-glow transition-colors">GURU <span class="text-cyan-glow">COMMUNICATION</span></span>
+          <span class="block text-[10px] text-gray-400 font-mono tracking-wider uppercase">Spare Parts Hub</span>
+        </div>
+      </a>
+      <nav class="hidden xl:flex items-center gap-6 text-sm font-medium text-gray-300">
+        <a href="index.html" class="hover:text-cyan-glow transition-colors">Home</a>
+        <a href="services.html" class="hover:text-cyan-glow transition-colors">Services</a>
+        <a href="iphone-repair.html" class="hover:text-cyan-glow transition-colors">iPhone Repair</a>
+        <a href="machinery.html" class="hover:text-cyan-glow transition-colors">Machinery</a>
+        <a href="spare-parts.html" class="text-cyan-glow font-bold">Spare Parts</a>
+        <a href="accessories.html" class="hover:text-cyan-glow transition-colors">Accessories</a>
+        <a href="about.html" class="hover:text-cyan-glow transition-colors">About</a>
+        <a href="contact.html" class="hover:text-cyan-glow transition-colors">Contact</a>
+      </nav>
+      <a href="https://wa.me/917051383473?text=Hello%20Guru%20Communication%2C%20I%20want%20to%20buy%20mobile%20spare%20parts." target="_blank" class="hidden sm:inline-flex items-center justify-center px-5 py-2.5 text-xs font-heading font-bold text-white uppercase bg-emerald-600 rounded-xl shadow-lg hover:bg-emerald-500 transition-all">
+        <i data-lucide="message-square" class="w-4 h-4 mr-2"></i> WhatsApp Order
+      </a>
+      <button id="mobile-menu-btn" class="xl:hidden flex flex-col justify-center items-center gap-1.5 w-11 h-11 rounded-xl bg-dark-800 border border-white/10 hover:border-cyan-glow/50 focus:outline-none z-50 cursor-pointer" aria-label="Toggle Menu" aria-expanded="false">
+        <span class="w-5 h-0.5 bg-cyan-glow rounded-full pointer-events-none"></span>
+        <span class="w-5 h-0.5 bg-cyan-glow rounded-full pointer-events-none"></span>
+        <span class="w-5 h-0.5 bg-cyan-glow rounded-full pointer-events-none"></span>
+      </button>
+    </div>
+
+    <!-- Mobile Drawer -->
+    <div id="mobile-drawer" class="hidden xl:hidden max-w-7xl mx-auto mt-2 glass-panel rounded-2xl p-6 border border-white/10 shadow-2xl transition-all duration-300">
+      <nav class="flex flex-col gap-4 text-sm font-medium text-gray-300">
+        <a href="index.html" class="mobile-nav-link hover:text-cyan-glow py-1">Home</a>
+        <a href="services.html" class="mobile-nav-link hover:text-cyan-glow py-1">Services</a>
+        <a href="iphone-repair.html" class="mobile-nav-link hover:text-cyan-glow py-1">iPhone Repair</a>
+        <a href="machinery.html" class="mobile-nav-link hover:text-cyan-glow py-1">Machinery</a>
+        <a href="spare-parts.html" class="mobile-nav-link text-cyan-glow font-bold py-1">Spare Parts</a>
+        <a href="accessories.html" class="mobile-nav-link hover:text-cyan-glow py-1">Accessories</a>
+        <a href="about.html" class="mobile-nav-link hover:text-cyan-glow py-1">About</a>
+        <a href="contact.html" class="mobile-nav-link hover:text-cyan-glow py-1">Contact</a>
+        <div class="pt-4 border-t border-white/10 flex flex-col gap-2">
+          <a href="https://wa.me/917051383473?text=Hello%20Guru%20Communication%2C%20I%20want%20to%20buy%20mobile%20spare%20parts." target="_blank" class="w-full inline-flex items-center justify-center px-4 py-3 text-xs font-heading font-bold text-white uppercase bg-emerald-600 rounded-xl">
+            <i data-lucide="message-square" class="w-4 h-4 mr-2"></i> WhatsApp Order
+          </a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="pt-36 pb-20 relative overflow-hidden bg-dark-800/60 border-b border-white/10">
+    <div class="max-w-7xl mx-auto px-4 lg:px-8 text-center space-y-4">
+      <span class="text-xs font-mono text-cyan-glow uppercase tracking-widest">Wholesale & Technician Stock</span>
+      <h1 class="text-4xl sm:text-6xl font-heading font-black text-white">
+        QUALITY <span class="text-gradient-cyan">SPARE PARTS</span>
+      </h1>
+      <p class="text-gray-400 text-sm sm:text-base max-w-2xl mx-auto">100% lab-tested smartphone spare parts. Click Purchase on any product to initiate an instant WhatsApp order with our sales team.</p>
+    </div>
+  </section>
+
+  <!-- SPARE PARTS PRODUCT CATALOG -->
+  <section class="py-20 max-w-7xl mx-auto px-4 lg:px-8">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      
+      <!-- Product 1 -->
+      <div class="glass-card rounded-2xl overflow-hidden border border-white/10 flex flex-col justify-between hover:border-cyan-glow/50 transition-all group">
+        <div class="relative h-52 overflow-hidden bg-dark-800 border-b border-white/5">
+          <img src="https://images.unsplash.com/photo-1598327105666-5b89351aff97?auto=format&fit=crop&w=600&q=80" alt="OLED Screen Assembly" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+          <span class="absolute top-3 left-3 px-2.5 py-1 rounded-full bg-cyan-glow text-dark-900 font-heading font-bold text-[10px] uppercase">OLED Display</span>
+          <span class="absolute top-3 right-3 px-2.5 py-1 rounded-full bg-emerald-500/20 border border-emerald-500/40 text-emerald-400 font-mono text-[10px]">In Stock</span>
+        </div>
+        <div class="p-6 space-y-4 flex-1 flex flex-col justify-between">
+          <div class="space-y-2">
+            <h3 class="text-lg font-heading font-bold text-white group-hover:text-cyan-glow transition-colors">Original Grade OLED Screen Assemblies</h3>
+            <p class="text-xs text-gray-400 leading-relaxed">High gamut color accuracy, 120Hz smooth touch digitization, TrueTone support, and zero dead pixels guaranteed.</p>
+          </div>
+          <a href="https://wa.me/917051383473?text=Hello%20Guru%20Communication%2C%20I%20want%20to%20purchase%20Original%20Grade%20OLED%20Screen%20Assemblies." target="_blank" class="w-full py-3 text-xs font-heading font-bold text-white uppercase bg-emerald-600 hover:bg-emerald-500 rounded-xl text-center flex items-center justify-center gap-2 shadow-lg transition-all">
+            <i data-lucide="shopping-cart" class="w-4 h-4"></i> Purchase on WhatsApp
+          </a>
+        </div>
+      </div>
+
+      <!-- Product 2 -->
+      <div class="glass-card rounded-2xl overflow-hidden border border-white/10 flex flex-col justify-between hover:border-cyan-glow/50 transition-all group">
+        <div class="relative h-52 overflow-hidden bg-dark-800 border-b border-white/5">
+          <img src="https://images.unsplash.com/photo-1584438784894-089d6a62b8fa?auto=format&fit=crop&w=600&q=80" alt="OEM Batteries" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+          <span class="absolute top-3 left-3 px-2.5 py-1 rounded-full bg-cyan-glow text-dark-900 font-heading font-bold text-[10px] uppercase">Batteries</span>
+          <span class="absolute top-3 right-3 px-2.5 py-1 rounded-full bg-emerald-500/20 border border-emerald-500/40 text-emerald-400 font-mono text-[10px]">Zero Cycle</span>
+        </div>
+        <div class="p-6 space-y-4 flex-1 flex flex-col justify-between">
+          <div class="space-y-2">
+            <h3 class="text-lg font-heading font-bold text-white group-hover:text-cyan-glow transition-colors">OEM High-Capacity Batteries</h3>
+            <p class="text-xs text-gray-400 leading-relaxed">Pure cobalt lithium-ion cells with 100% health, internal short protection, and BMS flex boards for all flagship devices.</p>
+          </div>
+          <a href="https://wa.me/917051383473?text=Hello%20Guru%20Communication%2C%20I%20want%20to%20purchase%20OEM%20High-Capacity%20Batteries." target="_blank" class="w-full py-3 text-xs font-heading font-bold text-white uppercase bg-emerald-600 hover:bg-emerald-500 rounded-xl text-center flex items-center justify-center gap-2 shadow-lg transition-all">
+            <i data-lucide="shopping-cart" class="w-4 h-4"></i> Purchase on WhatsApp
+          </a>
+        </div>
+      </div>
+
+      <!-- Product 3 -->
+      <div class="glass-card rounded-2xl overflow-hidden border border-white/10 flex flex-col justify-between hover:border-cyan-glow/50 transition-all group">
+        <div class="relative h-52 overflow-hidden bg-dark-800 border-b border-white/5">
+          <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=600&q=80" alt="BGA Micro IC Chips" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+          <span class="absolute top-3 left-3 px-2.5 py-1 rounded-full bg-cyan-glow text-dark-900 font-heading font-bold text-[10px] uppercase">Micro ICs</span>
+          <span class="absolute top-3 right-3 px-2.5 py-1 rounded-full bg-emerald-500/20 border border-emerald-500/40 text-emerald-400 font-mono text-[10px]">Original IC</span>
+        </div>
+        <div class="p-6 space-y-4 flex-1 flex flex-col justify-between">
+          <div class="space-y-2">
+            <h3 class="text-lg font-heading font-bold text-white group-hover:text-cyan-glow transition-colors">Micro-Soldering BGA IC Chips</h3>
+            <p class="text-xs text-gray-400 leading-relaxed">PMIC Power Management ICs, Audio ICs, Touch ICs, Baseband processors, and Wi-Fi modules for iPhone and Android boards.</p>
+          </div>
+          <a href="https://wa.me/917051383473?text=Hello%20Guru%20Communication%2C%20I%20want%20to%20purchase%20Micro-Soldering%20BGA%20IC%20Chips." target="_blank" class="w-full py-3 text-xs font-heading font-bold text-white uppercase bg-emerald-600 hover:bg-emerald-500 rounded-xl text-center flex items-center justify-center gap-2 shadow-lg transition-all">
+            <i data-lucide="shopping-cart" class="w-4 h-4"></i> Purchase on WhatsApp
+          </a>
+        </div>
+      </div>
+
+      <!-- Product 4 -->
+      <div class="glass-card rounded-2xl overflow-hidden border border-white/10 flex flex-col justify-between hover:border-cyan-glow/50 transition-all group">
+        <div class="relative h-52 overflow-hidden bg-dark-800 border-b border-white/5">
+          <img src="https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?auto=format&fit=crop&w=600&q=80" alt="Charging Flex Cable" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+          <span class="absolute top-3 left-3 px-2.5 py-1 rounded-full bg-cyan-glow text-dark-900 font-heading font-bold text-[10px] uppercase">Charging Flex</span>
+          <span class="absolute top-3 right-3 px-2.5 py-1 rounded-full bg-emerald-500/20 border border-emerald-500/40 text-emerald-400 font-mono text-[10px]">In Stock</span>
+        </div>
+        <div class="p-6 space-y-4 flex-1 flex flex-col justify-between">
+          <div class="space-y-2">
+            <h3 class="text-lg font-heading font-bold text-white group-hover:text-cyan-glow transition-colors">Type-C Fast Charging Flex Cables</h3>
+            <p class="text-xs text-gray-400 leading-relaxed">Original connector flex cables supporting USB PD ultra-fast charging and high-clarity microphone connectivity.</p>
+          </div>
+          <a href="https://wa.me/917051383473?text=Hello%20Guru%20Communication%2C%20I%20want%20to%20purchase%20Type-C%20Fast%20Charging%20Flex%20Cable." target="_blank" class="w-full py-3 text-xs font-heading font-bold text-white uppercase bg-emerald-600 hover:bg-emerald-500 rounded-xl text-center flex items-center justify-center gap-2 shadow-lg transition-all">
+            <i data-lucide="shopping-cart" class="w-4 h-4"></i> Purchase on WhatsApp
+          </a>
+        </div>
+      </div>
+
+      <!-- Product 5 -->
+      <div class="glass-card rounded-2xl overflow-hidden border border-white/10 flex flex-col justify-between hover:border-cyan-glow/50 transition-all group">
+        <div class="relative h-52 overflow-hidden bg-dark-800 border-b border-white/5">
+          <img src="https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=600&q=80" alt="OCA Sheets" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+          <span class="absolute top-3 left-3 px-2.5 py-1 rounded-full bg-cyan-glow text-dark-900 font-heading font-bold text-[10px] uppercase">OCA Glass Glue</span>
+          <span class="absolute top-3 right-3 px-2.5 py-1 rounded-full bg-emerald-500/20 border border-emerald-500/40 text-emerald-400 font-mono text-[10px]">Mitsubishi</span>
+        </div>
+        <div class="p-6 space-y-4 flex-1 flex flex-col justify-between">
+          <div class="space-y-2">
+            <h3 class="text-lg font-heading font-bold text-white group-hover:text-cyan-glow transition-colors">Mitsubishi OCA Optical Glue Sheets</h3>
+            <p class="text-xs text-gray-400 leading-relaxed">High optical clarity 250um OCA film sheets for bubble-free curved and flat OLED screen glass lamination.</p>
+          </div>
+          <a href="https://wa.me/917051383473?text=Hello%20Guru%20Communication%2C%20I%20want%20to%20purchase%20Mitsubishi%20OCA%20Optical%20Glue%20Sheets." target="_blank" class="w-full py-3 text-xs font-heading font-bold text-white uppercase bg-emerald-600 hover:bg-emerald-500 rounded-xl text-center flex items-center justify-center gap-2 shadow-lg transition-all">
+            <i data-lucide="shopping-cart" class="w-4 h-4"></i> Purchase on WhatsApp
+          </a>
+        </div>
+      </div>
+
+      <!-- Product 6 -->
+      <div class="glass-card rounded-2xl overflow-hidden border border-white/10 flex flex-col justify-between hover:border-cyan-glow/50 transition-all group">
+        <div class="relative h-52 overflow-hidden bg-dark-800 border-b border-white/5">
+          <img src="https://images.unsplash.com/photo-1581092335397-9583fe92d232?auto=format&fit=crop&w=600&q=80" alt="Jumper Wire & Flux" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+          <span class="absolute top-3 left-3 px-2.5 py-1 rounded-full bg-cyan-glow text-dark-900 font-heading font-bold text-[10px] uppercase">Soldering Wire</span>
+          <span class="absolute top-3 right-3 px-2.5 py-1 rounded-full bg-emerald-500/20 border border-emerald-500/40 text-emerald-400 font-mono text-[10px]">0.009mm</span>
+        </div>
+        <div class="p-6 space-y-4 flex-1 flex flex-col justify-between">
+          <div class="space-y-2">
+            <h3 class="text-lg font-heading font-bold text-white group-hover:text-cyan-glow transition-colors">0.009mm Insulated Jumper Wire & Flux</h3>
+            <p class="text-xs text-gray-400 leading-relaxed">Ultra-thin enameled copper jumper wire and non-corrosive Mechanic rosin flux paste for microscopic circuit traces.</p>
+          </div>
+          <a href="https://wa.me/917051383473?text=Hello%20Guru%20Communication%2C%20I%20want%20to%20purchase%200.009mm%20Insulated%20Jumper%20Wire%20%26%20Flux." target="_blank" class="w-full py-3 text-xs font-heading font-bold text-white uppercase bg-emerald-600 hover:bg-emerald-500 rounded-xl text-center flex items-center justify-center gap-2 shadow-lg transition-all">
+            <i data-lucide="shopping-cart" class="w-4 h-4"></i> Purchase on WhatsApp
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- WHOLESALE STOCK BANNER -->
+  <section class="py-16 bg-gradient-to-b from-dark-900 to-dark-950 border-t border-white/10">
+    <div class="max-w-4xl mx-auto px-4 text-center space-y-6">
+      <h2 class="text-3xl font-heading font-extrabold text-white">Need Bulk Wholesale Parts for Your Repair Shop?</h2>
+      <p class="text-gray-400 text-sm">We supply repair centers and technicians nationwide with discounted bulk pricing on displays, batteries, and consumables.</p>
+      <a href="https://wa.me/917051383473?text=Hello%20Guru%20Communication%2C%20I%20want%20to%20inquire%20about%20Wholesale%20Spare%20Parts%20Rates." target="_blank" class="inline-flex items-center gap-2 px-8 py-4 text-xs font-heading font-bold text-white uppercase bg-emerald-600 hover:bg-emerald-500 rounded-xl shadow-lg transition-all">
+        <i data-lucide="message-square" class="w-4 h-4"></i> Request Wholesale Rate Card (+91 70513 83473)
+      </a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="bg-dark-950 border-t border-white/10 py-12 text-gray-400 text-xs text-center">
+    <div class="max-w-7xl mx-auto px-4 space-y-4">
+      <p class="font-heading font-bold text-white text-base">GURU <span class="text-cyan-glow">COMMUNICATION</span></p>
+      <p>Mobile Technician Supplies & Tested Spare Stock | WhatsApp: +91 70513 83473</p>
+      <p class="text-gray-500">© 2026 Guru Communication. All Rights Reserved.</p>
+    </div>
+  </footer>
+
+  <!-- FLOATING WHATSAPP -->
+  <a id="floating-whatsapp" href="https://wa.me/917051383473" target="_blank" class="fixed bottom-6 right-6 z-50 w-14 h-14 bg-emerald-500 text-white rounded-full flex items-center justify-center shadow-2xl hover:scale-110 active:scale-95 transition-transform border border-emerald-300/40">
+    <i data-lucide="message-circle" class="w-7 h-7"></i>
+  </a>
+
+  <script src="./config.js"></script>
+  <script src="./main.js"></script>
+</body>
+</html>

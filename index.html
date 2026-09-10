@@ -1,0 +1,757 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- SEO Primary Meta Tags -->
+  <title>Guru Communication | Mobile Repair, iPhone Repair, Spare Parts & Machinery</title>
+  <meta name="title" content="Guru Communication | Mobile Repair, iPhone Repair, Spare Parts & Machinery">
+  <meta name="description" content="Guru Communication provides professional mobile and iPhone repairing, spare parts, OCA solutions, mobile accessories and professional repairing machinery.">
+  <meta name="keywords" content="Mobile Repair, iPhone Repair, OCA Machine, YMT Machinery, Laser Glass Separator, Mobile Spare Parts, Micro Soldering, Display Refurbishing">
+  <meta name="robots" content="index, follow">
+  <meta name="author" content="Guru Communication">
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Guru Communication | Professional Mobile Technology & Machinery">
+  <meta property="og:description" content="Expert Mobile Repairing & Professional Repair Technology Under One Roof. Repair. Refurbish. Upgrade. Equip.">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Tailwind CSS CDN for instant browser styling -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          maxWidth: {
+            '7xl': '100%',
+            '6xl': '100%',
+            '5xl': '100%',
+            '8xl': '100%',
+          },
+          colors: {
+            dark: { 950: '#050505', 900: '#0b0f14', 800: '#111827', 700: '#1a2333', 600: '#252936' },
+            cyan: { glow: '#00f2fe', bright: '#4facfe' },
+            electric: '#00d2ff',
+            purple: { glow: '#7928ca', accent: '#9333ea' },
+            orange: { glow: '#ff4e00' }
+          },
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+            heading: ['Space Grotesk', 'sans-serif'],
+            body: ['Poppins', 'sans-serif']
+          },
+          boxShadow: {
+            'glow-cyan': '0 0 30px -5px rgba(0, 242, 254, 0.4)',
+            'glow-purple': '0 0 30px -5px rgba(121, 40, 202, 0.4)',
+            'glow-orange': '0 0 30px -5px rgba(255, 78, 0, 0.4)',
+            'glass': '0 8px 32px 0 rgba(0, 0, 0, 0.47)'
+          }
+        }
+      }
+    }
+  </script>
+  <link rel="icon" type="image/png" href="./guru-logo.png">
+  <link rel="stylesheet" href="./index.css">
+
+  <!-- Lucide Icons & GSAP Animation CDNs -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+
+  <!-- Schema.org JSON-LD Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ElectronicsRepairShop",
+    "name": "Guru Communication",
+    "image": "./guru-logo.png",
+    "description": "Expert Mobile Repairing & Professional Repair Technology Under One Roof. iPhone Repair, OCA Solutions, YMT Equipment & Spare Parts.",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Opp. Punjab National Bank (PNB), Near Bus Stand Market",
+      "addressLocality": "Ramban",
+      "addressRegion": "Jammu and Kashmir",
+      "postalCode": "182148",
+      "addressCountry": "IN"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": 33.2377969,
+      "longitude": 75.2404733
+    },
+    "hasMap": "https://www.google.com/maps/place/Guru+Communication/@33.2378014,75.2378984,909m/data=!3m2!1e3!4b1!4m6!3m5!1s0x391dc3a435da446b:0x70ff042584d68217!8m2!3d33.2377969!4d75.2404733!16s%2Fg%2F11kn0m6s7y",
+    "telephone": "+917051383473",
+    "priceRange": "$$"
+  }
+  </script>
+</head>
+<body class="bg-[#050505] text-gray-100 font-sans antialiased selection:bg-cyan-glow selection:text-dark-950">
+
+  <!-- PRELOADER -->
+  <div id="preloader" class="fixed inset-0 z-50 bg-[#050505] flex flex-col items-center justify-center transition-opacity duration-700">
+    <div class="relative flex flex-col items-center">
+      <img src="./guru-logo.png" alt="Guru Communication Logo" class="w-32 h-32 object-contain mb-4 animate-pulse drop-shadow-[0_0_15px_rgba(0,242,254,0.5)]">
+      <h1 class="text-2xl md:text-3xl font-heading font-extrabold tracking-wider text-white flex items-center gap-2">
+        <span class="text-cyan-glow">GURU</span>
+        <span class="text-gray-300">COMMUNICATION</span>
+      </h1>
+      <p class="text-xs text-gray-500 font-mono tracking-widest uppercase mt-2 animate-pulse">Initializing Technology Laboratory Systems...</p>
+    </div>
+  </div>
+
+  <script>
+    window.addEventListener('load', function() {
+      setTimeout(function() {
+        var loader = document.getElementById('preloader');
+        if (loader) {
+          loader.style.opacity = '0';
+          setTimeout(function() { loader.style.display = 'none'; }, 700);
+        }
+      }, 500);
+    });
+  </script>
+
+  <!-- STICKY NAVBAR -->
+  <header id="navbar" class="fixed top-0 left-0 w-full z-40 transition-all duration-300 py-4 px-4 lg:px-8">
+    <div class="max-w-7xl mx-auto glass-panel rounded-2xl px-6 py-3 flex items-center justify-between transition-all duration-300 border border-white/10 shadow-glass">
+      
+      <a href="index.html" class="flex items-center gap-3 group">
+        <div class="p-1 bg-dark-900/90 border border-cyan-glow/40 rounded-xl shadow-glow-cyan">
+          <img src="./guru-logo.png" alt="Guru Communication Logo" class="w-10 h-10 object-contain group-hover:scale-105 transition-transform">
+        </div>
+        <div>
+          <span class="text-lg md:text-xl font-heading font-bold text-white tracking-wide group-hover:text-cyan-glow transition-colors">GURU <span class="text-cyan-glow">COMMUNICATION</span></span>
+          <span class="block text-[10px] text-gray-400 font-mono tracking-wider uppercase">Tech & Repair Lab</span>
+        </div>
+      </a>
+
+      <nav class="hidden xl:flex items-center gap-6 text-sm font-medium text-gray-300">
+        <a href="index.html" class="hover:text-cyan-glow transition-colors font-bold text-cyan-glow">Home</a>
+        <a href="services.html" class="hover:text-cyan-glow transition-colors">Services</a>
+        <a href="iphone-repair.html" class="hover:text-cyan-glow transition-colors">iPhone Repair</a>
+        <a href="machinery.html" class="hover:text-cyan-glow transition-colors">Machinery</a>
+        <a href="spare-parts.html" class="hover:text-cyan-glow transition-colors">Spare Parts</a>
+        <a href="accessories.html" class="hover:text-cyan-glow transition-colors">Accessories</a>
+        <a href="about.html" class="hover:text-cyan-glow transition-colors">About</a>
+        <a href="contact.html" class="hover:text-cyan-glow transition-colors">Contact</a>
+      </nav>
+
+      <div class="hidden sm:flex items-center gap-3">
+        <a href="contact.html" class="relative inline-flex items-center justify-center px-5 py-2.5 text-xs font-heading font-bold tracking-wider text-dark-950 uppercase bg-gradient-to-r from-cyan-glow to-electric rounded-xl shadow-glow-cyan hover:brightness-110 active:scale-95 transition-all">
+          <i data-lucide="wrench" class="w-4 h-4 mr-2"></i> Book a Repair
+        </a>
+      </div>
+
+      <button id="mobile-menu-btn" class="xl:hidden flex flex-col justify-center items-center gap-1.5 w-11 h-11 rounded-xl bg-dark-900 border border-white/10 hover:border-cyan-glow/50 focus:outline-none z-50 cursor-pointer" aria-label="Toggle Menu" aria-expanded="false">
+        <span class="w-5 h-0.5 bg-cyan-glow rounded-full pointer-events-none"></span>
+        <span class="w-5 h-0.5 bg-cyan-glow rounded-full pointer-events-none"></span>
+        <span class="w-5 h-0.5 bg-cyan-glow rounded-full pointer-events-none"></span>
+      </button>
+    </div>
+
+    <!-- Mobile Drawer -->
+    <div id="mobile-drawer" class="hidden xl:hidden max-w-7xl mx-auto mt-2 glass-panel rounded-2xl p-6 border border-white/10 shadow-2xl transition-all duration-300">
+      <nav class="flex flex-col gap-4 text-sm font-medium text-gray-300">
+        <a href="index.html" class="mobile-nav-link hover:text-cyan-glow py-1 text-cyan-glow font-bold">Home</a>
+        <a href="services.html" class="mobile-nav-link hover:text-cyan-glow py-1">Services</a>
+        <a href="iphone-repair.html" class="mobile-nav-link hover:text-cyan-glow py-1">iPhone Repair</a>
+        <a href="machinery.html" class="mobile-nav-link hover:text-cyan-glow py-1">Machinery</a>
+        <a href="spare-parts.html" class="mobile-nav-link hover:text-cyan-glow py-1">Spare Parts</a>
+        <a href="accessories.html" class="mobile-nav-link hover:text-cyan-glow py-1">Accessories</a>
+        <a href="about.html" class="mobile-nav-link hover:text-cyan-glow py-1">About</a>
+        <a href="contact.html" class="mobile-nav-link hover:text-cyan-glow py-1">Contact</a>
+        <div class="pt-4 border-t border-white/10 flex flex-col gap-2">
+          <a href="contact.html" class="w-full inline-flex items-center justify-center px-4 py-3 text-xs font-heading font-bold text-dark-950 uppercase bg-cyan-glow rounded-xl">Book a Repair</a>
+          <a id="mobile-whatsapp-btn" href="https://wa.me/917051383473" target="_blank" class="w-full inline-flex items-center justify-center px-4 py-3 text-xs font-heading font-bold text-white uppercase bg-emerald-600 rounded-xl">
+            <i data-lucide="message-square" class="w-4 h-4 mr-2"></i> WhatsApp Us
+          </a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <!-- 3. CINEMATIC HERO SECTION (75-90vh) -->
+  <section id="hero" class="relative min-h-[85vh] lg:min-h-[90vh] pt-32 pb-20 flex items-center justify-center overflow-hidden bg-gradient-to-b from-[#050505] via-[#0b0f14] to-[#050505]">
+    
+    <!-- Cinematic Background Image with Gradient Overlay -->
+    <div class="absolute inset-0 z-0">
+      <img src="https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=1920&q=80" alt="Repair Lab Workshop" class="w-full h-full object-cover opacity-15 filter blur-sm">
+      <div class="absolute inset-0 bg-gradient-to-r from-[#050505] via-[#050505]/90 to-transparent"></div>
+      <div class="absolute inset-0 bg-gradient-to-b from-transparent via-[#050505]/50 to-[#050505]"></div>
+    </div>
+
+    <!-- Ambient Lighting Orbs -->
+    <div class="absolute top-1/4 left-1/3 w-[500px] h-[500px] bg-cyan-glow/10 rounded-full blur-[150px] pointer-events-none"></div>
+    <div class="absolute bottom-10 right-10 w-[400px] h-[400px] bg-purple-glow/15 rounded-full blur-[140px] pointer-events-none"></div>
+
+    <div class="max-w-7xl mx-auto px-4 lg:px-8 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center relative z-10">
+      
+      <!-- Left Headline Content -->
+      <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+        <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-cyan-glow/10 border border-cyan-glow/30 text-cyan-glow text-xs font-mono tracking-wider uppercase">
+          <span class="w-2 h-2 rounded-full bg-cyan-glow animate-ping"></span>
+          PROFESSIONAL MOBILE TECHNOLOGY CENTER
+        </div>
+
+        <h1 class="text-4xl sm:text-6xl lg:text-7xl font-heading font-black tracking-tight leading-none text-white">
+          YOUR DEVICE.<br>
+          <span class="text-gradient-cyan">OUR EXPERTISE.</span>
+        </h1>
+
+        <p class="text-base sm:text-lg text-gray-300 font-body max-w-2xl mx-auto lg:mx-0 leading-relaxed">
+          From everyday smartphone repairs to advanced iPhone motherboard work, OCA display refurbishment, spare parts, accessories and professional repair machinery — <span class="text-cyan-glow font-medium">Guru Communication brings everything together under one roof.</span>
+        </p>
+
+        <div class="flex flex-wrap items-center justify-center lg:justify-start gap-4 pt-4">
+          <a href="contact.html" class="px-8 py-4 text-xs sm:text-sm font-heading font-bold tracking-wider text-dark-950 uppercase bg-gradient-to-r from-cyan-glow to-electric rounded-xl shadow-glow-cyan hover:scale-105 transition-transform flex items-center gap-2">
+            <i data-lucide="wrench" class="w-4 h-4"></i> Book a Repair
+          </a>
+          <a href="services.html" class="px-8 py-4 text-xs sm:text-sm font-heading font-bold tracking-wider text-white uppercase glass-card rounded-xl hover:border-cyan-glow/50 transition-all flex items-center gap-2">
+            <i data-lucide="compass" class="w-4 h-4"></i> Explore Services
+          </a>
+          <a id="hero-whatsapp-link" href="https://wa.me/917051383473" target="_blank" class="px-6 py-4 text-xs sm:text-sm font-heading font-bold tracking-wider text-emerald-400 border border-emerald-500/30 bg-emerald-950/30 rounded-xl hover:bg-emerald-900/40 transition-all flex items-center gap-2">
+            <i data-lucide="message-circle" class="w-4 h-4"></i> WhatsApp Us
+          </a>
+        </div>
+
+        <div class="pt-4 flex items-center justify-center lg:justify-start gap-2 text-[11px] font-mono text-gray-400">
+          <i data-lucide="shield-check" class="w-4 h-4 text-cyan-glow"></i>
+          <span>Mobile Repair • iPhone • OCA • Spare Parts • Machinery</span>
+        </div>
+      </div>
+
+      <!-- Right Visual & 4. FLOATING CARDS -->
+      <div class="lg:col-span-5 relative flex items-center justify-center">
+        
+        <div class="relative w-full max-w-md aspect-square glass-card rounded-3xl p-6 border border-cyan-glow/20 shadow-glow-cyan flex flex-col items-center justify-center overflow-hidden">
+          
+          <img src="https://images.unsplash.com/photo-1598327105666-5b89351aff97?auto=format&fit=crop&w=800&q=80" alt="Precision Micro Soldering" class="absolute inset-0 w-full h-full object-cover opacity-40 mix-blend-overlay">
+          
+          <!-- Outer Circuit Ring -->
+          <div class="absolute inset-0 border border-cyan-glow/20 rounded-3xl m-3 border-dashed animate-[spin_60s_linear_infinite]"></div>
+
+          <!-- Smartphone Core Graphic -->
+          <div class="relative w-48 h-96 bg-dark-900 rounded-[3rem] border-4 border-gray-700 shadow-2xl p-2 flex flex-col justify-between overflow-hidden z-10">
+            <div class="w-20 h-4 bg-black rounded-full mx-auto mt-1 flex items-center justify-end px-2">
+              <div class="w-2 h-2 rounded-full bg-cyan-glow/80 animate-pulse"></div>
+            </div>
+
+            <div class="flex-1 my-3 bg-[#050505] rounded-[2rem] p-4 flex flex-col justify-between border border-cyan-glow/20 relative overflow-hidden">
+              <div class="absolute inset-x-0 h-1 bg-cyan-glow/60 shadow-glow-cyan animate-[bounce_3s_infinite]"></div>
+              <div class="flex items-center justify-between text-[10px] font-mono text-cyan-glow">
+                <span>GURU-LAB</span>
+                <span>SYSTEM OK</span>
+              </div>
+              <div class="space-y-3 my-auto text-center">
+                <i data-lucide="cpu" class="w-10 h-10 text-cyan-glow mx-auto animate-pulse"></i>
+                <span class="text-xs font-heading font-semibold text-white block">MICRO-SOLDERING READY</span>
+              </div>
+              <div class="flex items-center justify-between text-[9px] text-gray-500 font-mono">
+                <span>LAB-v2.6</span>
+                <i data-lucide="check-circle" class="w-3 h-3 text-cyan-glow"></i>
+              </div>
+            </div>
+
+            <div class="w-16 h-1 bg-gray-600 rounded-full mx-auto mb-1"></div>
+          </div>
+
+          <!-- FLOATING INFORMATION CARDS -->
+          <div class="absolute top-4 left-2 glass-panel rounded-xl p-3 border border-cyan-glow/30 text-xs shadow-2xl animate-bounce z-20">
+            <span class="block font-heading font-bold text-white">iPhone Repair</span>
+            <span class="text-[10px] text-cyan-glow font-mono">Advanced Hardware</span>
+          </div>
+
+          <div class="absolute bottom-6 right-2 glass-panel rounded-xl p-3 border border-purple-glow/30 text-xs shadow-2xl z-20">
+            <span class="block font-heading font-bold text-white">OCA Technology</span>
+            <span class="text-[10px] text-purple-300 font-mono">Display Refurbishment</span>
+          </div>
+
+          <div class="absolute top-1/2 -right-4 -translate-y-1/2 glass-panel rounded-xl p-3 border border-orange-glow/30 text-xs shadow-2xl hidden sm:block z-20">
+            <span class="block font-heading font-bold text-white">Repair Machinery</span>
+            <span class="text-[10px] text-orange-glow font-mono">YMT • Laser • OCA</span>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5. TRUST STRIP -->
+  <section class="py-8 bg-dark-900 border-y border-white/10 relative z-20">
+    <div class="max-w-7xl mx-auto px-4 lg:px-8 grid grid-cols-2 md:grid-cols-5 gap-6 text-center">
+      <div class="flex items-center justify-center gap-2 text-xs sm:text-sm font-heading font-semibold text-gray-300">
+        <i data-lucide="wrench" class="w-5 h-5 text-cyan-glow"></i> Professional Repair
+      </div>
+      <div class="flex items-center justify-center gap-2 text-xs sm:text-sm font-heading font-semibold text-gray-300">
+        <i data-lucide="cpu" class="w-5 h-5 text-purple-400"></i> Advanced Equipment
+      </div>
+      <div class="flex items-center justify-center gap-2 text-xs sm:text-sm font-heading font-semibold text-gray-300">
+        <i data-lucide="shield-check" class="w-5 h-5 text-cyan-glow"></i> Quality Parts
+      </div>
+      <div class="flex items-center justify-center gap-2 text-xs sm:text-sm font-heading font-semibold text-gray-300">
+        <i data-lucide="award" class="w-5 h-5 text-orange-glow"></i> Technical Expertise
+      </div>
+      <div class="flex items-center justify-center gap-2 text-xs sm:text-sm font-heading font-semibold text-gray-300 col-span-2 md:col-span-1">
+        <i data-lucide="users" class="w-5 h-5 text-cyan-glow"></i> Customer Focus
+      </div>
+    </div>
+  </section>
+
+  <!-- 6. INTRODUCTION SPLIT SECTION -->
+  <section class="py-24 max-w-7xl mx-auto px-4 lg:px-8">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+      <div class="lg:col-span-6 relative">
+        <div class="glass-card rounded-3xl p-3 border border-white/10 shadow-2xl overflow-hidden">
+          <img src="https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=800&q=80" alt="Guru Communication Lab" class="w-full h-[400px] object-cover rounded-2xl">
+        </div>
+        <div class="absolute -bottom-6 -right-6 glass-panel px-6 py-3 rounded-2xl border border-cyan-glow/30 hidden sm:block">
+          <span class="text-xs font-mono text-cyan-glow font-bold tracking-wider">REPAIR • REFURBISH • EQUIP</span>
+        </div>
+      </div>
+      <div class="lg:col-span-6 space-y-6">
+        <span class="text-xs font-mono text-cyan-glow uppercase tracking-widest">ABOUT GURU COMMUNICATION</span>
+        <h2 class="text-3xl sm:text-5xl font-heading font-extrabold text-white">
+          MORE THAN A <span class="text-gradient-cyan">MOBILE REPAIR SHOP.</span>
+        </h2>
+        <p class="text-gray-300 text-sm sm:text-base leading-relaxed">
+          Guru Communication is a professional mobile technology and repair destination focused on reliable smartphone and iPhone repairs, advanced motherboard solutions, display refurbishment, spare parts, accessories and professional repairing equipment.
+        </p>
+        <p class="text-gray-400 text-sm leading-relaxed">
+          Whether you need to repair your personal device or equip a professional repair workshop, our goal is simple — provide practical solutions, quality products and professional service.
+        </p>
+        <a href="about.html" class="inline-flex items-center gap-2 px-6 py-3 text-xs font-heading font-bold text-dark-950 uppercase bg-cyan-glow rounded-xl shadow-glow-cyan hover:scale-105 transition-transform">
+          Discover Guru Communication <i data-lucide="arrow-right" class="w-4 h-4"></i>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 7. PREMIUM SERVICE SHOWCASE -->
+  <section id="services" class="py-24 bg-dark-900 border-y border-white/10">
+    <div class="max-w-7xl mx-auto px-4 lg:px-8 space-y-16">
+      
+      <div class="text-center max-w-3xl mx-auto space-y-4">
+        <span class="text-xs font-mono text-cyan-glow uppercase tracking-widest">COMPLETE MOBILE SOLUTIONS</span>
+        <h2 class="text-3xl sm:text-5xl font-heading font-extrabold text-white">
+          EVERYTHING YOUR PHONE NEEDS.<br>
+          <span class="text-gradient-cyan">ONE DESTINATION.</span>
+        </h2>
+        <p class="text-gray-400 text-sm sm:text-base">From a broken charging port to advanced motherboard repair — from a replacement display to professional OCA machinery.</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        
+        <!-- Card 01 -->
+        <div class="glass-card rounded-3xl overflow-hidden border border-white/10 flex flex-col justify-between group hover:border-cyan-glow/50 transition-all">
+          <div class="h-48 overflow-hidden relative">
+            <img src="https://images.unsplash.com/photo-1598327105666-5b89351aff97?auto=format&fit=crop&w=600&q=80" alt="Mobile Repair" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+            <span class="absolute top-3 left-3 px-3 py-1 rounded-full bg-dark-950/80 text-cyan-glow text-[10px] font-mono">CARD 01</span>
+          </div>
+          <div class="p-6 space-y-3 flex-1 flex flex-col justify-between">
+            <div>
+              <h3 class="text-xl font-heading font-bold text-white">MOBILE REPAIR</h3>
+              <p class="text-xs text-gray-400 mt-2">Display • Battery • Charging • Software • Hardware</p>
+            </div>
+            <a href="services.html" class="inline-flex items-center text-xs font-mono text-cyan-glow hover:underline gap-1 pt-4 border-t border-white/5">
+              Explore Repair <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Card 02 -->
+        <div class="glass-card rounded-3xl overflow-hidden border border-white/10 flex flex-col justify-between group hover:border-purple-glow/50 transition-all">
+          <div class="h-48 overflow-hidden relative">
+            <img src="https://images.unsplash.com/photo-1512499617640-c74ae3a79d37?auto=format&fit=crop&w=600&q=80" alt="iPhone Repair" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+            <span class="absolute top-3 left-3 px-3 py-1 rounded-full bg-dark-950/80 text-purple-300 text-[10px] font-mono">CARD 02</span>
+          </div>
+          <div class="p-6 space-y-3 flex-1 flex flex-col justify-between">
+            <div>
+              <h3 class="text-xl font-heading font-bold text-white">iPHONE REPAIR</h3>
+              <p class="text-xs text-gray-400 mt-2">Screen • Battery • Camera • Face ID Diagnostics • Motherboard</p>
+            </div>
+            <a href="iphone-repair.html" class="inline-flex items-center text-xs font-mono text-purple-300 hover:underline gap-1 pt-4 border-t border-white/5">
+              iPhone Services <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Card 03 -->
+        <div class="glass-card rounded-3xl overflow-hidden border border-white/10 flex flex-col justify-between group hover:border-cyan-glow/50 transition-all">
+          <div class="h-48 overflow-hidden relative">
+            <img src="https://images.unsplash.com/photo-1581092580497-e0d23cbdf1dc?auto=format&fit=crop&w=600&q=80" alt="OCA Refurbishing" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+            <span class="absolute top-3 left-3 px-3 py-1 rounded-full bg-dark-950/80 text-cyan-glow text-[10px] font-mono">CARD 03</span>
+          </div>
+          <div class="p-6 space-y-3 flex-1 flex flex-col justify-between">
+            <div>
+              <h3 class="text-xl font-heading font-bold text-white">OCA & REFURBISHING</h3>
+              <p class="text-xs text-gray-400 mt-2">Glass Separation • OCA • Lamination • Bubble Removal</p>
+            </div>
+            <a href="services.html" class="inline-flex items-center text-xs font-mono text-cyan-glow hover:underline gap-1 pt-4 border-t border-white/5">
+              Explore OCA <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Card 04 -->
+        <div class="glass-card rounded-3xl overflow-hidden border border-white/10 flex flex-col justify-between group hover:border-orange-glow/50 transition-all">
+          <div class="h-48 overflow-hidden relative">
+            <img src="https://images.unsplash.com/photo-1581092335397-9583fe92d232?auto=format&fit=crop&w=600&q=80" alt="Machinery" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+            <span class="absolute top-3 left-3 px-3 py-1 rounded-full bg-dark-950/80 text-orange-glow text-[10px] font-mono">CARD 04</span>
+          </div>
+          <div class="p-6 space-y-3 flex-1 flex flex-col justify-between">
+            <div>
+              <h3 class="text-xl font-heading font-bold text-white">MACHINERY</h3>
+              <p class="text-xs text-gray-400 mt-2">YMT • Laser • Separators • Laminators • Repair Tools</p>
+            </div>
+            <a href="machinery.html" class="inline-flex items-center text-xs font-mono text-orange-glow hover:underline gap-1 pt-4 border-t border-white/5">
+              View Machinery <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- 8. LARGE FEATURED IMMERSIVE IMAGE SECTION -->
+  <section class="py-24 relative overflow-hidden bg-dark-950">
+    <div class="absolute inset-0 z-0">
+      <img src="https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=1920&q=80" alt="Technician Workspace" class="w-full h-full object-cover opacity-20 filter contrast-125">
+      <div class="absolute inset-0 bg-gradient-to-t from-[#050505] via-transparent to-[#050505]"></div>
+    </div>
+
+    <div class="max-w-5xl mx-auto px-4 lg:px-8 text-center relative z-10 space-y-6">
+      <span class="text-xs font-mono text-cyan-glow uppercase tracking-widest">COMPONENT LEVEL ACCURACY</span>
+      <h2 class="text-4xl sm:text-6xl font-heading font-black text-white">
+        PRECISION AT <span class="text-gradient-cyan">EVERY COMPONENT.</span>
+      </h2>
+      <p class="text-gray-300 text-sm sm:text-base max-w-2xl mx-auto leading-relaxed">
+        Modern smartphones demand more than basic repairs. Precision tools, professional equipment and technical expertise make the difference.
+      </p>
+
+      <div class="flex flex-wrap items-center justify-center gap-3 pt-6">
+        <span class="px-4 py-2 rounded-xl glass-panel text-xs font-mono text-cyan-glow border border-cyan-glow/30">MICRO-SOLDERING</span>
+        <span class="px-4 py-2 rounded-xl glass-panel text-xs font-mono text-purple-300 border border-purple-glow/30">IC REPAIR</span>
+        <span class="px-4 py-2 rounded-xl glass-panel text-xs font-mono text-orange-glow border border-orange-glow/30">PCB DIAGNOSTICS</span>
+        <span class="px-4 py-2 rounded-xl glass-panel text-xs font-mono text-cyan-glow border border-cyan-glow/30">DISPLAY REFURBISHING</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- 9. iPHONE PREMIUM SECTION -->
+  <section id="iphone" class="py-24 bg-dark-900 border-y border-white/10">
+    <div class="max-w-7xl mx-auto px-4 lg:px-8 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+      <div class="lg:col-span-6 space-y-6">
+        <span class="text-xs font-mono text-purple-400 uppercase tracking-widest">Apple iOS Hardware Experts</span>
+        <h2 class="text-3xl sm:text-5xl font-heading font-extrabold text-white">
+          iPHONE REPAIR.<br>
+          <span class="text-gradient-purple">WITH PRECISION.</span>
+        </h2>
+        <p class="text-gray-300 text-sm sm:text-base leading-relaxed">
+          From display and battery replacement to advanced component-level diagnostics, Guru Communication provides professional iPhone repair solutions with OEM standard quality.
+        </p>
+
+        <div class="flex flex-wrap gap-2 pt-2">
+          <span class="px-3 py-1 rounded-lg bg-purple-glow/20 text-purple-300 text-xs font-mono">Display</span>
+          <span class="px-3 py-1 rounded-lg bg-purple-glow/20 text-purple-300 text-xs font-mono">Battery</span>
+          <span class="px-3 py-1 rounded-lg bg-purple-glow/20 text-purple-300 text-xs font-mono">Charging</span>
+          <span class="px-3 py-1 rounded-lg bg-purple-glow/20 text-purple-300 text-xs font-mono">Camera</span>
+          <span class="px-3 py-1 rounded-lg bg-purple-glow/20 text-purple-300 text-xs font-mono">Speaker</span>
+          <span class="px-3 py-1 rounded-lg bg-purple-glow/20 text-purple-300 text-xs font-mono">Face ID</span>
+          <span class="px-3 py-1 rounded-lg bg-purple-glow/20 text-purple-300 text-xs font-mono">Motherboard</span>
+          <span class="px-3 py-1 rounded-lg bg-purple-glow/20 text-purple-300 text-xs font-mono">IC Repair</span>
+        </div>
+
+        <a href="iphone-repair.html" class="inline-flex items-center gap-2 px-6 py-3 text-xs font-heading font-bold text-white uppercase bg-purple-glow rounded-xl shadow-glow-purple hover:bg-purple-600 transition-all">
+          Get iPhone Repair <i data-lucide="arrow-right" class="w-4 h-4"></i>
+        </a>
+      </div>
+
+      <div class="lg:col-span-6 relative">
+        <div class="glass-card rounded-3xl p-3 border border-purple-glow/30 shadow-2xl overflow-hidden">
+          <img src="https://images.unsplash.com/photo-1512499617640-c74ae3a79d37?auto=format&fit=crop&w=800&q=80" alt="iPhone Repair Close Up" class="w-full h-[400px] object-cover rounded-2xl">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 10. OCA TECHNOLOGY SECTION -->
+  <section class="py-24 max-w-7xl mx-auto px-4 lg:px-8">
+    <div class="text-center max-w-3xl mx-auto space-y-4 mb-16">
+      <span class="text-xs font-mono text-cyan-glow uppercase tracking-widest">DISPLAY GLASS REFURBISHMENT</span>
+      <h2 class="text-3xl sm:text-5xl font-heading font-extrabold text-white">
+        RESTORE THE DISPLAY.<br>
+        <span class="text-gradient-cyan">NOT JUST THE PHONE.</span>
+      </h2>
+    </div>
+
+    <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4 text-center">
+      <div class="glass-card rounded-2xl p-5 border border-red-500/20 space-y-2">
+        <span class="text-xs font-mono text-red-400">STAGE 01</span>
+        <h4 class="text-xs font-heading font-bold text-white">DAMAGED DISPLAY</h4>
+      </div>
+      <div class="glass-card rounded-2xl p-5 border border-white/10 space-y-2">
+        <span class="text-xs font-mono text-gray-400">STAGE 02</span>
+        <h4 class="text-xs font-heading font-bold text-white">GLASS SEPARATION</h4>
+      </div>
+      <div class="glass-card rounded-2xl p-5 border border-white/10 space-y-2">
+        <span class="text-xs font-mono text-gray-400">STAGE 03</span>
+        <h4 class="text-xs font-heading font-bold text-white">OCA LAMINATION</h4>
+      </div>
+      <div class="glass-card rounded-2xl p-5 border border-white/10 space-y-2">
+        <span class="text-xs font-mono text-gray-400">STAGE 04</span>
+        <h4 class="text-xs font-heading font-bold text-white">BUBBLE REMOVAL</h4>
+      </div>
+      <div class="glass-card rounded-2xl p-5 border border-white/10 space-y-2">
+        <span class="text-xs font-mono text-gray-400">STAGE 05</span>
+        <h4 class="text-xs font-heading font-bold text-white">QUALITY CHECK</h4>
+      </div>
+      <div class="glass-card rounded-2xl p-5 border border-emerald-500/20 space-y-2">
+        <span class="text-xs font-mono text-emerald-400">STAGE 06</span>
+        <h4 class="text-xs font-heading font-bold text-emerald-400">REFURBISHED PANEL</h4>
+      </div>
+    </div>
+
+    <div class="mt-12 text-center">
+      <a href="services.html" class="px-8 py-3.5 text-xs font-heading font-bold text-dark-950 uppercase bg-cyan-glow rounded-xl shadow-glow-cyan hover:scale-105 transition-transform inline-flex items-center gap-2">
+        Explore OCA Solutions <i data-lucide="arrow-right" class="w-4 h-4"></i>
+      </a>
+    </div>
+  </section>
+
+  <!-- 11 & 12. MACHINERY & LASER TECHNOLOGY SHOWCASE -->
+  <section id="machinery" class="py-24 bg-dark-900 border-y border-white/10">
+    <div class="max-w-7xl mx-auto px-4 lg:px-8 space-y-16">
+      
+      <div class="text-center max-w-3xl mx-auto space-y-4">
+        <span class="text-xs font-mono text-orange-glow uppercase tracking-widest">WORKSHOP MACHINERY SUPPLIES</span>
+        <h2 class="text-3xl sm:text-5xl font-heading font-extrabold text-white">
+          EQUIP YOUR <span class="text-gradient-orange">REPAIR WORKSHOP.</span>
+        </h2>
+        <p class="text-gray-400 text-sm sm:text-base">Professional equipment for professionals who demand precision.</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div class="glass-card rounded-2xl overflow-hidden border border-white/10 p-5 space-y-3">
+          <img src="https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=600&q=80" alt="YMT OCA Machine" class="w-full h-40 object-cover rounded-xl">
+          <span class="text-[10px] font-mono text-orange-glow">OCA LAMINATION</span>
+          <h3 class="text-base font-heading font-bold text-white">YMT Vacuum OCA Machine</h3>
+          <a href="machinery.html" class="w-full py-2 text-xs font-heading font-bold text-dark-950 bg-orange-glow rounded-xl text-center block">Enquire Now</a>
+        </div>
+
+        <div class="glass-card rounded-2xl overflow-hidden border border-white/10 p-5 space-y-3">
+          <img src="https://images.unsplash.com/photo-1581092335397-9583fe92d232?auto=format&fit=crop&w=600&q=80" alt="Laser Machine" class="w-full h-40 object-cover rounded-xl">
+          <span class="text-[10px] font-mono text-orange-glow">LASER TECH</span>
+          <h3 class="text-base font-heading font-bold text-white">20W Fiber Laser Separator</h3>
+          <a href="machinery.html" class="w-full py-2 text-xs font-heading font-bold text-dark-950 bg-orange-glow rounded-xl text-center block">Enquire Now</a>
+        </div>
+
+        <div class="glass-card rounded-2xl overflow-hidden border border-white/10 p-5 space-y-3">
+          <img src="https://images.unsplash.com/photo-1581092580497-e0d23cbdf1dc?auto=format&fit=crop&w=600&q=80" alt="Screen Separator" class="w-full h-40 object-cover rounded-xl">
+          <span class="text-[10px] font-mono text-orange-glow">SEPARATORS</span>
+          <h3 class="text-base font-heading font-bold text-white">Vacuum Screen Separator</h3>
+          <a href="machinery.html" class="w-full py-2 text-xs font-heading font-bold text-dark-950 bg-orange-glow rounded-xl text-center block">Enquire Now</a>
+        </div>
+
+        <div class="glass-card rounded-2xl overflow-hidden border border-white/10 p-5 space-y-3">
+          <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=600&q=80" alt="Autoclave" class="w-full h-40 object-cover rounded-xl">
+          <span class="text-[10px] font-mono text-orange-glow">DE-BUBBLER</span>
+          <h3 class="text-base font-heading font-bold text-white">High Pressure Autoclave</h3>
+          <a href="machinery.html" class="w-full py-2 text-xs font-heading font-bold text-dark-950 bg-orange-glow rounded-xl text-center block">Enquire Now</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 13. SPARE PARTS SECTION -->
+  <section id="spare-parts" class="py-24 max-w-7xl mx-auto px-4 lg:px-8 space-y-12">
+    <div class="text-center max-w-3xl mx-auto space-y-4">
+      <span class="text-xs font-mono text-cyan-glow uppercase tracking-widest">TECHNICIAN GRADE COMPONENT STOCK</span>
+      <h2 class="text-3xl sm:text-5xl font-heading font-extrabold text-white">
+        THE RIGHT PART.<br>
+        <span class="text-gradient-cyan">THE RIGHT REPAIR.</span>
+      </h2>
+    </div>
+
+    <div class="grid grid-cols-2 sm:grid-cols-4 gap-4">
+      <a href="spare-parts.html" class="glass-card rounded-2xl p-4 text-center space-y-2 border border-white/10 hover:border-cyan-glow/50 transition-all">
+        <i data-lucide="monitor" class="w-6 h-6 mx-auto text-cyan-glow"></i>
+        <h4 class="text-xs font-heading font-bold text-white">Displays</h4>
+      </a>
+      <a href="spare-parts.html" class="glass-card rounded-2xl p-4 text-center space-y-2 border border-white/10 hover:border-cyan-glow/50 transition-all">
+        <i data-lucide="battery-charging" class="w-6 h-6 mx-auto text-cyan-glow"></i>
+        <h4 class="text-xs font-heading font-bold text-white">Batteries</h4>
+      </a>
+      <a href="spare-parts.html" class="glass-card rounded-2xl p-4 text-center space-y-2 border border-white/10 hover:border-cyan-glow/50 transition-all">
+        <i data-lucide="zap" class="w-6 h-6 mx-auto text-cyan-glow"></i>
+        <h4 class="text-xs font-heading font-bold text-white">Charging Flex</h4>
+      </a>
+      <a href="spare-parts.html" class="glass-card rounded-2xl p-4 text-center space-y-2 border border-white/10 hover:border-cyan-glow/50 transition-all">
+        <i data-lucide="cpu" class="w-6 h-6 mx-auto text-cyan-glow"></i>
+        <h4 class="text-xs font-heading font-bold text-white">IC Chips</h4>
+      </a>
+    </div>
+
+    <div class="text-center">
+      <a href="spare-parts.html" class="px-8 py-3.5 text-xs font-heading font-bold text-dark-950 uppercase bg-cyan-glow rounded-xl shadow-glow-cyan">Explore Spare Parts Store →</a>
+    </div>
+  </section>
+
+  <!-- 14. ACCESSORIES SECTION -->
+  <section id="accessories" class="py-24 bg-dark-900 border-y border-white/10">
+    <div class="max-w-7xl mx-auto px-4 lg:px-8 space-y-12">
+      <div class="text-center max-w-3xl mx-auto space-y-4">
+        <span class="text-xs font-mono text-purple-400 uppercase tracking-widest">PREMIUM MOBILE GEAR</span>
+        <h2 class="text-3xl sm:text-5xl font-heading font-extrabold text-white">
+          EVERYDAY ACCESSORIES.<br>
+          <span class="text-gradient-purple">BETTER CHOICES.</span>
+        </h2>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-6">
+        <div class="glass-card rounded-2xl p-6 border border-white/10 space-y-3">
+          <i data-lucide="zap" class="w-8 h-8 text-purple-400"></i>
+          <h3 class="font-heading font-bold text-white text-lg">Fast Chargers & Cables</h3>
+          <p class="text-xs text-gray-400">65W GaN chargers, Kevlar braided Type-C & Lightning fast cables.</p>
+        </div>
+
+        <div class="glass-card rounded-2xl p-6 border border-white/10 space-y-3">
+          <i data-lucide="shield" class="w-8 h-8 text-purple-400"></i>
+          <h3 class="font-heading font-bold text-white text-lg">Tempered Glass & Covers</h3>
+          <p class="text-xs text-gray-400">9H optical UV curved screen protectors & MagSafe armor protective covers.</p>
+        </div>
+
+        <div class="glass-card rounded-2xl p-6 border border-white/10 space-y-3">
+          <i data-lucide="headphones" class="w-8 h-8 text-purple-400"></i>
+          <h3 class="font-heading font-bold text-white text-lg">Audio & Desk Stands</h3>
+          <p class="text-xs text-gray-400">Active noise cancelling wireless earbuds & 360-degree aluminum desktop stands.</p>
+        </div>
+      </div>
+
+      <div class="text-center">
+        <a href="accessories.html" class="px-8 py-3.5 text-xs font-heading font-bold text-white uppercase bg-purple-glow rounded-xl shadow-glow-purple">View All Accessories →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 16 & 17. WHY CHOOSE GURU & STATISTICS -->
+  <section class="py-24 max-w-7xl mx-auto px-4 lg:px-8 space-y-20">
+    <div>
+      <div class="text-center max-w-3xl mx-auto space-y-4 mb-12">
+        <span class="text-xs font-mono text-cyan-glow uppercase tracking-widest">WHY GURU COMMUNICATION</span>
+        <h2 class="text-3xl sm:text-5xl font-heading font-extrabold text-white">PROVEN <span class="text-gradient-cyan">REPAIR EXCELLENCE</span></h2>
+      </div>
+
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center bg-dark-900 p-8 rounded-3xl border border-white/10">
+        <div>
+          <div class="text-4xl font-heading font-black text-cyan-glow"><span class="stat-counter" data-target="10">0</span>+</div>
+          <p class="text-xs text-gray-400 font-mono uppercase mt-1">Years Experience</p>
+        </div>
+        <div>
+          <div class="text-4xl font-heading font-black text-white"><span class="stat-counter" data-target="5000">0</span>+</div>
+          <p class="text-xs text-gray-400 font-mono uppercase mt-1">Repairs Done</p>
+        </div>
+        <div>
+          <div class="text-4xl font-heading font-black text-cyan-glow"><span class="stat-counter" data-target="1000">0</span>+</div>
+          <p class="text-xs text-gray-400 font-mono uppercase mt-1">Happy Clients</p>
+        </div>
+        <div>
+          <div class="text-4xl font-heading font-black text-white"><span class="stat-counter" data-target="100">0</span>%</div>
+          <p class="text-xs text-gray-400 font-mono uppercase mt-1">Quality Focus</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 19. INTERACTIVE BEFORE / AFTER SLIDER -->
+  <section class="py-24 bg-dark-900 border-y border-white/10">
+    <div class="max-w-4xl mx-auto px-4 text-center space-y-8">
+      <div class="space-y-4">
+        <span class="text-xs font-mono text-cyan-glow uppercase tracking-widest">DISPLAY TRANSFORMATION</span>
+        <h2 class="text-3xl sm:text-5xl font-heading font-extrabold text-white">BEFORE / AFTER <span class="text-gradient-cyan">SHOWCASE</span></h2>
+      </div>
+
+      <div id="before-after-container" class="relative w-full aspect-video glass-card rounded-3xl overflow-hidden border border-cyan-glow/30 select-none shadow-glow-cyan">
+        <div class="absolute inset-0 bg-dark-900 flex items-center justify-center">
+          <span class="px-3 py-1 rounded-full bg-emerald-500/20 text-emerald-400 text-xs font-mono">AFTER: REBURBISHED 100% OK</span>
+        </div>
+        <div id="before-image-layer" class="absolute inset-y-0 left-0 w-1/2 bg-red-950/40 flex items-center justify-center overflow-hidden border-r-2 border-cyan-glow">
+          <span class="px-3 py-1 rounded-full bg-red-500/20 text-red-400 text-xs font-mono">BEFORE: BROKEN GLASS</span>
+        </div>
+        <input type="range" min="0" max="100" value="50" id="before-after-slider" class="absolute inset-0 w-full h-full opacity-0 cursor-ew-resize z-20">
+      </div>
+    </div>
+  </section>
+
+  <!-- 22. FINAL CINEMATIC CTA -->
+  <section class="py-24 relative overflow-hidden bg-dark-950">
+    <div class="max-w-5xl mx-auto px-4 text-center relative z-10 space-y-8">
+      <h2 class="text-4xl sm:text-6xl font-heading font-black text-white">
+        NEED A REPAIR?<br>
+        <span class="text-gradient-cyan">NEED THE RIGHT EQUIPMENT?</span>
+      </h2>
+      <p class="text-gray-300 text-sm sm:text-base max-w-2xl mx-auto">
+        Whether you need your phone repaired, a genuine spare part, a mobile accessory or professional repair machinery — Guru Communication is ready to help.
+      </p>
+      <div class="flex flex-wrap justify-center gap-4">
+        <a href="contact.html" class="px-8 py-4 text-xs font-heading font-bold text-dark-950 uppercase bg-cyan-glow rounded-xl shadow-glow-cyan">Book a Repair</a>
+        <a href="https://wa.me/917051383473" target="_blank" class="px-8 py-4 text-xs font-heading font-bold text-white uppercase bg-emerald-600 rounded-xl">WhatsApp Us (+91 70513 83473)</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="bg-dark-950 border-t border-white/10 pt-16 pb-8 text-gray-400 text-xs">
+    <div class="max-w-7xl mx-auto px-4 lg:px-8 grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
+      <div class="space-y-4">
+        <span class="text-lg font-heading font-bold text-white">GURU <span class="text-cyan-glow">COMMUNICATION</span></span>
+        <p>Repair. Refurbish. Upgrade. Equip.</p>
+        <p class="text-gray-500">Professional Mobile Technology & Repair Laboratory</p>
+      </div>
+
+      <div>
+        <h4 class="font-heading font-bold text-white uppercase mb-3">Services</h4>
+        <ul class="space-y-2">
+          <li><a href="services.html" class="hover:text-cyan-glow">Mobile Repairing</a></li>
+          <li><a href="iphone-repair.html" class="hover:text-cyan-glow">iPhone Repair Lab</a></li>
+          <li><a href="machinery.html" class="hover:text-cyan-glow">Machinery Showroom</a></li>
+          <li><a href="spare-parts.html" class="hover:text-cyan-glow">Spare Parts Store</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4 class="font-heading font-bold text-white uppercase mb-3">Company</h4>
+        <ul class="space-y-2">
+          <li><a href="about.html" class="hover:text-cyan-glow">About Us</a></li>
+          <li><a href="contact.html" class="hover:text-cyan-glow">Contact Us</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4 class="font-heading font-bold text-white uppercase mb-3">Direct Support</h4>
+        <ul class="space-y-2">
+          <li><a href="https://wa.me/917051383473" target="_blank" class="hover:text-emerald-400">WhatsApp: +91 70513 83473</a></li>
+          <li><a href="tel:+917051383473" class="hover:text-cyan-glow">Call: +91 70513 83473</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="max-w-7xl mx-auto px-4 pt-8 border-t border-white/5 text-center">
+      <p>© 2026 Guru Communication. All Rights Reserved.</p>
+    </div>
+  </footer>
+
+  <!-- FLOATING WHATSAPP -->
+  <a id="floating-whatsapp" href="https://wa.me/917051383473" target="_blank" class="fixed bottom-6 right-6 z-50 w-14 h-14 bg-emerald-500 text-white rounded-full flex items-center justify-center shadow-2xl hover:scale-110 active:scale-95 transition-transform border border-emerald-300/40">
+    <i data-lucide="message-circle" class="w-7 h-7"></i>
+  </a>
+
+  <script src="./config.js"></script>
+  <script src="./main.js"></script>
+</body>
+</html>

@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Services | Guru Communication - Expert Mobile & iPhone Repair Lab</title>
+  <meta name="description" content="Explore comprehensive mobile repair services by Guru Communication: iPhone repair, motherboard micro-soldering, OCA display refurbishing, water damage repair, and diagnostics.">
+  <link rel="icon" type="image/png" href="./guru-logo.png">
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          maxWidth: {
+            '7xl': '100%',
+            '6xl': '100%',
+            '5xl': '100%',
+            '8xl': '100%',
+          },
+          colors: {
+            dark: { 950: '#050505', 900: '#0a0b0e', 800: '#12141a', 700: '#1a1d26', 600: '#252936' },
+            cyan: { glow: '#00f2fe', bright: '#4facfe' },
+            electric: '#00d2ff',
+            purple: { glow: '#7928ca', accent: '#9333ea' },
+            orange: { glow: '#ff4e00' }
+          },
+          fontFamily: { sans: ['Inter', 'sans-serif'], heading: ['Space Grotesk', 'sans-serif'], body: ['Poppins', 'sans-serif'] },
+          boxShadow: { 'glow-cyan': '0 0 25px -5px rgba(0, 242, 254, 0.4)', 'glow-purple': '0 0 25px -5px rgba(121, 40, 202, 0.4)', 'glass': '0 8px 32px 0 rgba(0, 0, 0, 0.37)' }
+        }
+      }
+    }
+  </script>
+  <link rel="stylesheet" href="./index.css">
+  <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body class="bg-dark-900 text-gray-100 font-sans antialiased selection:bg-cyan-glow selection:text-dark-900">
+
+  <!-- STICKY NAVBAR -->
+  <header id="navbar" class="fixed top-0 left-0 w-full z-40 py-4 px-4 lg:px-8">
+    <div class="max-w-7xl mx-auto glass-panel rounded-2xl px-6 py-3 flex items-center justify-between border border-white/10 shadow-glass">
+      <a href="index.html" class="flex items-center gap-3 group">
+        <div class="p-1 bg-dark-900/90 border border-cyan-glow/40 rounded-xl shadow-glow-cyan">
+          <img src="./guru-logo.png" alt="Guru Communication Logo" class="w-10 h-10 object-contain group-hover:scale-105 transition-transform">
+        </div>
+        <div>
+          <span class="text-lg md:text-xl font-heading font-bold text-white tracking-wide group-hover:text-cyan-glow transition-colors">GURU <span class="text-cyan-glow">COMMUNICATION</span></span>
+          <span class="block text-[10px] text-gray-400 font-mono tracking-wider uppercase">Tech & Repair Lab</span>
+        </div>
+      </a>
+      <nav class="hidden xl:flex items-center gap-6 text-sm font-medium text-gray-300">
+        <a href="index.html" class="hover:text-cyan-glow transition-colors">Home</a>
+        <a href="services.html" class="text-cyan-glow font-bold">Services</a>
+        <a href="iphone-repair.html" class="hover:text-cyan-glow transition-colors">iPhone Repair</a>
+        <a href="machinery.html" class="hover:text-cyan-glow transition-colors">Machinery</a>
+        <a href="spare-parts.html" class="hover:text-cyan-glow transition-colors">Spare Parts</a>
+        <a href="accessories.html" class="hover:text-cyan-glow transition-colors">Accessories</a>
+        <a href="about.html" class="hover:text-cyan-glow transition-colors">About</a>
+        <a href="contact.html" class="hover:text-cyan-glow transition-colors">Contact</a>
+      </nav>
+      <a href="contact.html" class="hidden sm:inline-flex items-center justify-center px-5 py-2.5 text-xs font-heading font-bold text-dark-900 uppercase bg-cyan-glow rounded-xl shadow-glow-cyan hover:brightness-110 transition-all">
+        <i data-lucide="wrench" class="w-4 h-4 mr-2"></i> Book Repair
+      </a>
+      <button id="mobile-menu-btn" class="xl:hidden flex flex-col justify-center items-center gap-1.5 w-11 h-11 rounded-xl bg-dark-800 border border-white/10 hover:border-cyan-glow/50 focus:outline-none z-50 cursor-pointer" aria-label="Toggle Menu" aria-expanded="false">
+        <span class="w-5 h-0.5 bg-cyan-glow rounded-full pointer-events-none"></span>
+        <span class="w-5 h-0.5 bg-cyan-glow rounded-full pointer-events-none"></span>
+        <span class="w-5 h-0.5 bg-cyan-glow rounded-full pointer-events-none"></span>
+      </button>
+    </div>
+
+    <!-- Mobile Drawer -->
+    <div id="mobile-drawer" class="hidden xl:hidden max-w-7xl mx-auto mt-2 glass-panel rounded-2xl p-6 border border-white/10 shadow-2xl transition-all duration-300">
+      <nav class="flex flex-col gap-4 text-sm font-medium text-gray-300">
+        <a href="index.html" class="mobile-nav-link hover:text-cyan-glow py-1">Home</a>
+        <a href="services.html" class="mobile-nav-link text-cyan-glow font-bold py-1">Services</a>
+        <a href="iphone-repair.html" class="mobile-nav-link hover:text-cyan-glow py-1">iPhone Repair</a>
+        <a href="machinery.html" class="mobile-nav-link hover:text-cyan-glow py-1">Machinery</a>
+        <a href="spare-parts.html" class="mobile-nav-link hover:text-cyan-glow py-1">Spare Parts</a>
+        <a href="accessories.html" class="mobile-nav-link hover:text-cyan-glow py-1">Accessories</a>
+        <a href="about.html" class="mobile-nav-link hover:text-cyan-glow py-1">About</a>
+        <a href="contact.html" class="mobile-nav-link hover:text-cyan-glow py-1">Contact</a>
+        <div class="pt-4 border-t border-white/10 flex flex-col gap-2">
+          <a href="contact.html" class="w-full inline-flex items-center justify-center px-4 py-3 text-xs font-heading font-bold text-dark-900 uppercase bg-cyan-glow rounded-xl">Book a Repair</a>
+          <a href="https://wa.me/917051383473" target="_blank" class="w-full inline-flex items-center justify-center px-4 py-3 text-xs font-heading font-bold text-white uppercase bg-emerald-600 rounded-xl">
+            <i data-lucide="message-square" class="w-4 h-4 mr-2"></i> WhatsApp Us
+          </a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <!-- PAGE HERO HEADER -->
+  <section class="pt-36 pb-16 relative overflow-hidden bg-dark-800/60 border-b border-white/10">
+    <div class="max-w-7xl mx-auto px-4 lg:px-8 text-center space-y-4">
+      <span class="text-xs font-mono text-cyan-glow uppercase tracking-widest">Complete Technical Catalogue</span>
+      <h1 class="text-4xl sm:text-6xl font-heading font-black text-white">
+        OUR <span class="text-gradient-cyan">REPAIR SERVICES</span>
+      </h1>
+      <p class="text-gray-400 text-sm sm:text-base max-w-2xl mx-auto">From chip-level BGA micro-soldering to industrial vacuum OCA lamination, explore our full suite of smartphone repair capabilities.</p>
+    </div>
+  </section>
+
+  <!-- DETAILED SERVICES GRID -->
+  <section class="py-20 max-w-7xl mx-auto px-4 lg:px-8">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      
+      <!-- Service 1 -->
+      <div class="glass-card rounded-2xl p-6 border border-white/10 space-y-4 hover:border-cyan-glow/50 transition-all flex flex-col justify-between">
+        <div class="space-y-4">
+          <div class="w-12 h-12 rounded-xl bg-cyan-glow/10 text-cyan-glow flex items-center justify-center border border-cyan-glow/30">
+            <i data-lucide="smartphone" class="w-6 h-6"></i>
+          </div>
+          <h3 class="text-xl font-heading font-bold text-white">Mobile Repairing</h3>
+          <p class="text-xs text-gray-400 leading-relaxed">Comprehensive multi-brand smartphone troubleshooting for Samsung, Xiaomi, OnePlus, Vivo, Oppo, Realme, Motorola & Google Pixel.</p>
+          <ul class="text-xs font-mono text-cyan-glow space-y-1.5 pt-2 border-t border-white/5">
+            <li>✓ All Android & iOS Brands</li>
+            <li>✓ Express 30-Min Fast Diagnostics</li>
+            <li>✓ 100% Guaranteed Workmanship</li>
+          </ul>
+        </div>
+        <a href="https://wa.me/917051383473?text=Hello%20Guru%20Communication%2C%20I%20need%20General%20Mobile%20Repair." target="_blank" class="w-full py-2.5 text-xs font-heading font-bold text-dark-900 uppercase bg-cyan-glow rounded-xl text-center block hover:brightness-110 transition-all">
+          Book Repair on WhatsApp
+        </a>
+      </div>
+
+      <!-- Service 2 -->
+      <div class="glass-card rounded-2xl p-6 border border-purple-glow/30 space-y-4 hover:border-purple-glow/60 transition-all flex flex-col justify-between">
+        <div class="space-y-4">
+          <div class="w-12 h-12 rounded-xl bg-purple-glow/20 text-purple-300 flex items-center justify-center border border-purple-glow/40">
+            <i data-lucide="apple" class="w-6 h-6"></i>
+          </div>
+          <h3 class="text-xl font-heading font-bold text-white">iPhone Repair Lab</h3>
+          <p class="text-xs text-gray-400 leading-relaxed">Specialized iPhone motherboard micro-soldering, Face ID dot projector alignment, True Tone programming & logic board separation.</p>
+          <ul class="text-xs font-mono text-purple-300 space-y-1.5 pt-2 border-t border-white/5">
+            <li>✓ Component-Level Micro Soldering</li>
+            <li>✓ TrueTone & Face ID Restoration</li>
+            <li>✓ Apple Sandwich Board Reballing</li>
+          </ul>
+        </div>
+        <a href="https://wa.me/917051383473?text=Hello%20Guru%20Communication%2C%20I%20need%20iPhone%20Repair%20Service." target="_blank" class="w-full py-2.5 text-xs font-heading font-bold text-white uppercase bg-purple-glow rounded-xl text-center block hover:brightness-110 transition-all">
+          Book iPhone Service
+        </a>
+      </div>
+
+      <!-- Service 3 -->
+      <div class="glass-card rounded-2xl p-6 border border-white/10 space-y-4 hover:border-cyan-glow/50 transition-all flex flex-col justify-between">
+        <div class="space-y-4">
+          <div class="w-12 h-12 rounded-xl bg-cyan-glow/10 text-cyan-glow flex items-center justify-center border border-cyan-glow/30">
+            <i data-lucide="monitor" class="w-6 h-6"></i>
+          </div>
+          <h3 class="text-xl font-heading font-bold text-white">Display Replacement</h3>
+          <p class="text-xs text-gray-400 leading-relaxed">Original grade OLED, Super Retina XDR & Fluid AMOLED display glass installations with 100% touch response calibration.</p>
+          <ul class="text-xs font-mono text-cyan-glow space-y-1.5 pt-2 border-t border-white/5">
+            <li>✓ Original Grade Panels</li>
+            <li>✓ 120Hz High Refresh Rate Support</li>
+            <li>✓ Express Screen Replacement</li>
+          </ul>
+        </div>
+        <a href="https://wa.me/917051383473?text=Hello%20Guru%20Communication%2C%20I%20need%20Display%20Replacement." target="_blank" class="w-full py-2.5 text-xs font-heading font-bold text-dark-900 uppercase bg-cyan-glow rounded-xl text-center block hover:brightness-110 transition-all">
+          Enquire Screen Price
+        </a>
+      </div>
+
+      <!-- Service 4 -->
+      <div class="glass-card rounded-2xl p-6 border border-white/10 space-y-4 hover:border-cyan-glow/50 transition-all flex flex-col justify-between">
+        <div class="space-y-4">
+          <div class="w-12 h-12 rounded-xl bg-cyan-glow/10 text-cyan-glow flex items-center justify-center border border-cyan-glow/30">
+            <i data-lucide="battery-charging" class="w-6 h-6"></i>
+          </div>
+          <h3 class="text-xl font-heading font-bold text-white">Battery Replacement</h3>
+          <p class="text-xs text-gray-400 leading-relaxed">High health capacity OEM battery swaps with zero battery warning popup programming for iOS & flagship Android devices.</p>
+          <ul class="text-xs font-mono text-cyan-glow space-y-1.5 pt-2 border-t border-white/5">
+            <li>✓ 100% Battery Health Status</li>
+            <li>✓ Thermal & Overcharge Protection</li>
+            <li>✓ 6-Month Warranty</li>
+          </ul>
+        </div>
+        <a href="https://wa.me/917051383473?text=Hello%20Guru%20Communication%2C%20I%20need%20Battery%20Replacement." target="_blank" class="w-full py-2.5 text-xs font-heading font-bold text-dark-900 uppercase bg-cyan-glow rounded-xl text-center block hover:brightness-110 transition-all">
+          Book Battery Swap
+        </a>
+      </div>
+
+      <!-- Service 5 -->
+      <div class="glass-card rounded-2xl p-6 border border-white/10 space-y-4 hover:border-cyan-glow/50 transition-all flex flex-col justify-between">
+        <div class="space-y-4">
+          <div class="w-12 h-12 rounded-xl bg-cyan-glow/10 text-cyan-glow flex items-center justify-center border border-cyan-glow/30">
+            <i data-lucide="cpu" class="w-6 h-6"></i>
+          </div>
+          <h3 class="text-xl font-heading font-bold text-white">Motherboard IC Repair</h3>
+          <p class="text-xs text-gray-400 leading-relaxed">Microscope-guided micro soldering for Power IC, Audio IC, Baseband, Touch IC, and short circuit motherboard diagnostics.</p>
+          <ul class="text-xs font-mono text-cyan-glow space-y-1.5 pt-2 border-t border-white/5">
+            <li>✓ CPU Reballing & Jumper Fixes</li>
+            <li>✓ NAND Storage Expansion</li>
+            <li>✓ Dead Motherboard Revival</li>
+          </ul>
+        </div>
+        <a href="https://wa.me/917051383473?text=Hello%20Guru%20Communication%2C%20I%20need%20Motherboard%20IC%20Repair." target="_blank" class="w-full py-2.5 text-xs font-heading font-bold text-dark-900 uppercase bg-cyan-glow rounded-xl text-center block hover:brightness-110 transition-all">
+          Consult Lab Technician
+        </a>
+      </div>
+
+      <!-- Service 6 -->
+      <div class="glass-card rounded-2xl p-6 border border-white/10 space-y-4 hover:border-cyan-glow/50 transition-all flex flex-col justify-between">
+        <div class="space-y-4">
+          <div class="w-12 h-12 rounded-xl bg-cyan-glow/10 text-cyan-glow flex items-center justify-center border border-cyan-glow/30">
+            <i data-lucide="layers" class="w-6 h-6"></i>
+          </div>
+          <h3 class="text-xl font-heading font-bold text-white">OCA Display Refurbishing</h3>
+          <p class="text-xs text-gray-400 leading-relaxed">Replace only the broken outer glass while preserving your original OLED panel using industrial YMT vacuum laminators.</p>
+          <ul class="text-xs font-mono text-cyan-glow space-y-1.5 pt-2 border-t border-white/5">
+            <li>✓ Save up to 60% Screen Cost</li>
+            <li>✓ 100% Original AMOLED Retained</li>
+            <li>✓ Bubble-Free Autoclave Finish</li>
+          </ul>
+        </div>
+        <a href="https://wa.me/917051383473?text=Hello%20Guru%20Communication%2C%20I%20need%20OCA%20Display%20Refurbishing." target="_blank" class="w-full py-2.5 text-xs font-heading font-bold text-dark-900 uppercase bg-cyan-glow rounded-xl text-center block hover:brightness-110 transition-all">
+          Refurbish Screen
+        </a>
+      </div>
+
+      <!-- Service 7 -->
+      <div class="glass-card rounded-2xl p-6 border border-white/10 space-y-4 hover:border-cyan-glow/50 transition-all flex flex-col justify-between">
+        <div class="space-y-4">
+          <div class="w-12 h-12 rounded-xl bg-cyan-glow/10 text-cyan-glow flex items-center justify-center border border-cyan-glow/30">
+            <i data-lucide="zap" class="w-6 h-6"></i>
+          </div>
+          <h3 class="text-xl font-heading font-bold text-white">Charging Port & Fast Charge Fix</h3>
+          <p class="text-xs text-gray-400 leading-relaxed">USB Type-C & Lightning connector repair, loose cable connection fixes, charging flex replacement, and high-wattage fast charging restoration.</p>
+          <ul class="text-xs font-mono text-cyan-glow space-y-1.5 pt-2 border-t border-white/5">
+            <li>✓ Clean Microphone & Headphone Jack</li>
+            <li>✓ USB PD / Dash / Warp Charging Restored</li>
+            <li>✓ Express 20-Min Port Replacement</li>
+          </ul>
+        </div>
+        <a href="https://wa.me/917051383473?text=Hello%20Guru%20Communication%2C%20I%20need%20Charging%20Port%20Repair." target="_blank" class="w-full py-2.5 text-xs font-heading font-bold text-dark-900 uppercase bg-cyan-glow rounded-xl text-center block hover:brightness-110 transition-all">
+          Fix Charging Port
+        </a>
+      </div>
+
+      <!-- Service 8 -->
+      <div class="glass-card rounded-2xl p-6 border border-white/10 space-y-4 hover:border-cyan-glow/50 transition-all flex flex-col justify-between">
+        <div class="space-y-4">
+          <div class="w-12 h-12 rounded-xl bg-cyan-glow/10 text-cyan-glow flex items-center justify-center border border-cyan-glow/30">
+            <i data-lucide="droplets" class="w-6 h-6"></i>
+          </div>
+          <h3 class="text-xl font-heading font-bold text-white">Water Damage & Data Recovery</h3>
+          <p class="text-xs text-gray-400 leading-relaxed">Immediate ultrasonic chemical decontamination bath, board oxidation treatment, short-circuit diagnostic, and critical photos/contacts recovery.</p>
+          <ul class="text-xs font-mono text-cyan-glow space-y-1.5 pt-2 border-t border-white/5">
+            <li>✓ Ultrasonic PCB Chemical Cleaning</li>
+            <li>✓ High Success Data Recovery</li>
+            <li>✓ Corrosion Protection Sealing</li>
+          </ul>
+        </div>
+        <a href="https://wa.me/917051383473?text=Hello%20Guru%20Communication%2C%20I%20need%20Water%20Damage%20Rescue." target="_blank" class="w-full py-2.5 text-xs font-heading font-bold text-dark-900 uppercase bg-cyan-glow rounded-xl text-center block hover:brightness-110 transition-all">
+          Emergency Water Rescue
+        </a>
+      </div>
+
+      <!-- Service 9 -->
+      <div class="glass-card rounded-2xl p-6 border border-white/10 space-y-4 hover:border-cyan-glow/50 transition-all flex flex-col justify-between">
+        <div class="space-y-4">
+          <div class="w-12 h-12 rounded-xl bg-cyan-glow/10 text-cyan-glow flex items-center justify-center border border-cyan-glow/30">
+            <i data-lucide="code-2" class="w-6 h-6"></i>
+          </div>
+          <h3 class="text-xl font-heading font-bold text-white">Software Solutions & Unbricking</h3>
+          <p class="text-xs text-gray-400 leading-relaxed">Official firmware flashing, stuck-on-logo bootloop resolution, locked phone recovery, and storage cache optimization.</p>
+          <ul class="text-xs font-mono text-cyan-glow space-y-1.5 pt-2 border-t border-white/5">
+            <li>✓ Bootloop & Hard Brick Recovery</li>
+            <li>✓ Official Stock ROM Flashing</li>
+            <li>✓ Safe Data Preservation</li>
+          </ul>
+        </div>
+        <a href="https://wa.me/917051383473?text=Hello%20Guru%20Communication%2C%20I%20need%20Software%20Support." target="_blank" class="w-full py-2.5 text-xs font-heading font-bold text-dark-900 uppercase bg-cyan-glow rounded-xl text-center block hover:brightness-110 transition-all">
+          Get Software Help
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- CALL TO ACTION BANNER -->
+  <section class="py-16 bg-gradient-to-b from-dark-900 via-dark-800 to-dark-950 border-t border-white/10">
+    <div class="max-w-4xl mx-auto px-4 text-center space-y-6">
+      <h2 class="text-3xl font-heading font-extrabold text-white">Need a Custom Diagnostic or Instant Quote?</h2>
+      <p class="text-gray-400 text-sm">Drop your device at our lab or connect with our technician on WhatsApp. We provide instant cost estimates before starting any repair.</p>
+      <div class="flex flex-wrap items-center justify-center gap-4">
+        <a href="https://wa.me/917051383473" target="_blank" class="px-8 py-3.5 text-xs font-heading font-bold text-white uppercase bg-emerald-600 hover:bg-emerald-500 rounded-xl shadow-lg flex items-center gap-2 transition-all">
+          <i data-lucide="message-square" class="w-4 h-4"></i> Chat on WhatsApp (+91 70513 83473)
+        </a>
+        <a href="contact.html" class="px-8 py-3.5 text-xs font-heading font-bold text-dark-900 uppercase bg-cyan-glow hover:brightness-110 rounded-xl transition-all">
+          Visit Our Lab
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="bg-dark-950 border-t border-white/10 py-12 text-gray-400 text-xs text-center">
+    <div class="max-w-7xl mx-auto px-4 space-y-4">
+      <p class="font-heading font-bold text-white text-base">GURU <span class="text-cyan-glow">COMMUNICATION</span></p>
+      <p>Repair. Refurbish. Upgrade. Equip. | WhatsApp: +91 70513 83473</p>
+      <p class="text-gray-500">© 2026 Guru Communication. All Rights Reserved.</p>
+    </div>
+  </footer>
+
+  <!-- FLOATING WHATSAPP -->
+  <a id="floating-whatsapp" href="https://wa.me/917051383473" target="_blank" class="fixed bottom-6 right-6 z-50 w-14 h-14 bg-emerald-500 text-white rounded-full flex items-center justify-center shadow-2xl hover:scale-110 active:scale-95 transition-transform border border-emerald-300/40">
+    <i data-lucide="message-circle" class="w-7 h-7"></i>
+  </a>
+
+  <script src="./config.js"></script>
+  <script src="./main.js"></script>
+</body>
+</html>
