@@ -1,0 +1,758 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Command Center | Guru Communication</title>
+  <meta name="description" content="Centralized management portal for Guru Communication products, machinery, spare parts, and Supabase storage image library.">
+  <link rel="icon" type="image/png" href="./guru-logo.png">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            dark: {
+              950: '#040507',
+              900: '#0a0c10',
+              850: '#0f1218',
+              800: '#141822',
+              700: '#1e2433',
+              600: '#2b3347'
+            },
+            cyan: {
+              glow: '#00f2fe',
+              bright: '#38bdf8'
+            },
+            orange: {
+              glow: '#ff4e00',
+              bright: '#fb923c'
+            },
+            purple: {
+              glow: '#7928ca',
+              accent: '#a855f7'
+            }
+          },
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+            heading: ['Space Grotesk', 'sans-serif'],
+            mono: ['Space Mono', 'monospace', 'Courier New']
+          },
+          boxShadow: {
+            'glow-cyan': '0 0 25px -5px rgba(0, 242, 254, 0.4)',
+            'glow-orange': '0 0 25px -5px rgba(255, 78, 0, 0.4)',
+            'glow-purple': '0 0 25px -5px rgba(121, 40, 202, 0.4)',
+            'glass': '0 8px 32px 0 rgba(0, 0, 0, 0.45)'
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Base Custom CSS -->
+  <link rel="stylesheet" href="./index.css">
+
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <!-- Supabase JS Client v2 CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+  <style>
+    /* Custom Admin Theme Enhancements */
+    .glass-surface {
+      background: rgba(15, 18, 24, 0.75);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+    }
+    .glass-surface-hover:hover {
+      border-color: rgba(0, 242, 254, 0.3);
+      box-shadow: 0 0 25px -5px rgba(0, 242, 254, 0.15);
+    }
+    .cyber-input {
+      background: rgba(10, 12, 16, 0.8);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      color: #f3f4f6;
+      transition: all 0.2s ease;
+    }
+    .cyber-input:focus {
+      outline: none;
+      border-color: #00f2fe;
+      box-shadow: 0 0 15px -3px rgba(0, 242, 254, 0.3);
+      background: rgba(14, 18, 26, 0.95);
+    }
+    *, *::before, *::after {
+      box-sizing: border-box;
+    }
+    html, body {
+      overflow-x: hidden;
+      max-width: 100vw;
+      position: relative;
+    }
+    .scrollbar-none::-webkit-scrollbar {
+      display: none;
+    }
+    .scrollbar-none {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+  </style>
+</head>
+<body class="bg-dark-950 text-gray-100 font-sans min-h-screen selection:bg-cyan-glow selection:text-dark-950 flex flex-col justify-between">
+
+  <!-- TOAST NOTIFICATION CONTAINER -->
+  <div id="toast-container" class="fixed top-5 right-5 z-50 flex flex-col gap-2 pointer-events-none max-w-md w-full"></div>
+
+  <!-- ========================================================================= -->
+  <!-- 1. AUTHENTICATION OVERLAY / LOGIN SCREEN (Shown if not logged in) -->
+  <!-- ========================================================================= -->
+  <div id="auth-screen" class="fixed inset-0 z-40 bg-dark-950/95 backdrop-blur-xl flex items-center justify-center p-3 sm:p-4 overflow-y-auto">
+    <div class="max-w-md w-full glass-surface rounded-3xl p-6 sm:p-8 border border-white/10 shadow-2xl relative overflow-hidden my-auto">
+      <!-- Glow background circles -->
+      <div class="absolute -top-24 -left-24 w-48 h-48 bg-cyan-glow/20 rounded-full blur-3xl pointer-events-none"></div>
+      <div class="absolute -bottom-24 -right-24 w-48 h-48 bg-orange-glow/20 rounded-full blur-3xl pointer-events-none"></div>
+
+      <!-- Header -->
+      <div class="text-center space-y-3 relative z-10">
+        <div class="inline-flex p-3 bg-dark-900 border border-cyan-glow/30 rounded-2xl shadow-glow-cyan">
+          <img src="./guru-logo.png" alt="Guru Communication" class="w-12 h-12 object-contain">
+        </div>
+        <div>
+          <h1 class="text-2xl font-heading font-black text-white tracking-wide">
+            ADMIN <span class="text-cyan-glow">PORTAL</span>
+          </h1>
+          <p class="text-xs text-gray-400 mt-1 font-body">Guru Communication Control Center & Supabase Cloud</p>
+        </div>
+      </div>
+
+      <!-- Connection Status Banner -->
+      <div id="auth-conn-status" class="mt-6 p-3 rounded-xl border border-white/10 bg-dark-900/60 flex items-center justify-center text-xs font-mono">
+        <span class="flex items-center gap-2 text-gray-300">
+          <span id="auth-status-dot" class="w-2.5 h-2.5 rounded-full bg-emerald-400"></span>
+          <span id="auth-status-label">Supabase Cloud Connected</span>
+        </span>
+      </div>
+
+      <!-- Sign In Header -->
+      <div class="mt-6 text-center border-b border-white/10 pb-3 relative z-10">
+        <span class="text-xs font-heading uppercase tracking-widest text-cyan-glow font-bold">Admin Sign In</span>
+      </div>
+
+      <!-- Auth Form -->
+      <form id="auth-form" class="mt-6 space-y-4 relative z-10">
+        <div>
+          <label class="block text-xs font-mono text-gray-400 mb-1.5 uppercase tracking-wider">Email Address</label>
+          <div class="relative">
+            <i data-lucide="mail" class="w-4 h-4 text-gray-400 absolute left-3.5 top-3.5"></i>
+            <input type="email" id="auth-email" required placeholder="admin@gurucommunication.com" class="w-full cyber-input rounded-xl pl-10 pr-4 py-2.5 text-sm">
+          </div>
+        </div>
+
+        <div>
+          <label class="block text-xs font-mono text-gray-400 mb-1.5 uppercase tracking-wider">Password</label>
+          <div class="relative">
+            <i data-lucide="lock" class="w-4 h-4 text-gray-400 absolute left-3.5 top-3.5"></i>
+            <input type="password" id="auth-password" required minlength="6" placeholder="••••••••••••" class="w-full cyber-input rounded-xl pl-10 pr-4 py-2.5 text-sm">
+          </div>
+        </div>
+
+        <div id="auth-error-box" class="hidden p-3 rounded-xl bg-red-500/10 border border-red-500/30 text-red-400 text-xs"></div>
+
+        <button type="submit" id="auth-submit-btn" class="w-full py-3.5 rounded-xl text-xs font-heading font-bold text-dark-950 uppercase tracking-wider bg-gradient-to-r from-cyan-glow to-blue-500 hover:brightness-110 shadow-glow-cyan transition-all flex items-center justify-center gap-2">
+          <span id="auth-submit-text">Sign In to Dashboard</span>
+          <i data-lucide="arrow-right" class="w-4 h-4"></i>
+        </button>
+      </form>
+
+      <!-- Back to Store link -->
+      <div class="mt-6 pt-4 border-t border-white/10 text-center relative z-10">
+        <a href="index.html" class="inline-flex items-center gap-1.5 text-xs text-gray-400 hover:text-cyan-glow transition-colors font-mono">
+          <i data-lucide="arrow-left" class="w-3.5 h-3.5"></i> Return to Guru Communication Store
+        </a>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- ========================================================================= -->
+  <!-- 2. MAIN ADMIN PORTAL (Visible once authenticated) -->
+  <!-- ========================================================================= -->
+  <div id="admin-app" class="flex-1 flex flex-col hidden">
+
+    <!-- Top Navigation Header -->
+    <header class="sticky top-0 z-30 glass-surface border-b border-white/10 px-4 lg:px-8 py-3.5">
+      <div class="max-w-7xl mx-auto flex items-center justify-between gap-4">
+        
+        <!-- Brand & Title -->
+        <div class="flex items-center gap-3">
+          <a href="index.html" target="_blank" class="p-1 bg-dark-900 border border-cyan-glow/40 rounded-xl shadow-glow-cyan hover:scale-105 transition-transform flex items-center justify-center">
+            <img src="./guru-logo.png" alt="Logo" class="w-8 h-8 object-contain">
+          </a>
+          <div>
+            <div class="flex items-center gap-2">
+              <span class="text-base font-heading font-black text-white tracking-wide">GURU <span class="text-cyan-glow">ADMIN</span></span>
+              <span class="px-2 py-0.5 rounded-full bg-cyan-glow/10 border border-cyan-glow/30 text-cyan-glow text-[10px] font-mono uppercase">Control Hub</span>
+            </div>
+            <span class="hidden sm:block text-[11px] text-gray-400 font-mono">Supabase Auth • Realtime DB • Storage Bucket</span>
+          </div>
+        </div>
+
+        <!-- Connection Indicator & User Controls -->
+        <div class="flex items-center gap-3">
+          <div id="top-conn-badge" class="hidden md:flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 text-xs font-mono">
+            <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+            <span>Supabase Online</span>
+          </div>
+
+          <a href="index.html" target="_blank" class="hidden sm:inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-xl border border-white/10 hover:border-cyan-glow/40 bg-dark-900 text-xs font-mono text-gray-300 hover:text-white transition-all">
+            <i data-lucide="external-link" class="w-3.5 h-3.5 text-cyan-glow"></i>
+            <span>View Site</span>
+          </a>
+
+          <div class="flex items-center gap-2 pl-2 border-l border-white/10">
+            <div class="text-right hidden sm:block">
+              <span id="user-email-display" class="block text-xs font-mono text-gray-200">admin@guru.com</span>
+              <span class="block text-[10px] text-cyan-glow font-mono uppercase">Administrator</span>
+            </div>
+            <button id="logout-btn" title="Sign Out" class="p-2 rounded-xl bg-dark-900 border border-white/10 hover:border-red-500/40 text-gray-400 hover:text-red-400 transition-colors">
+              <i data-lucide="log-out" class="w-4 h-4"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Sub Navigation Tabs Bar -->
+    <nav class="bg-dark-900/80 border-b border-white/5 px-4 lg:px-8 py-2 sticky top-[61px] z-20 backdrop-blur-md">
+      <div class="max-w-7xl mx-auto flex items-center justify-between overflow-x-auto gap-2 py-1 scrollbar-none">
+        <div class="flex items-center gap-1.5 sm:gap-2 flex-nowrap">
+          <button data-tab="catalog" class="tab-btn active px-3 sm:px-4 py-2 rounded-xl text-xs font-heading font-bold uppercase tracking-wider border border-transparent transition-all flex items-center gap-1.5 sm:gap-2 whitespace-nowrap flex-shrink-0">
+            <i data-lucide="package" class="w-4 h-4"></i>
+            <span>Products Catalog</span>
+            <span id="badge-product-count" class="px-1.5 py-0.2 rounded-full bg-cyan-glow/20 text-cyan-bright text-[10px] font-mono">0</span>
+          </button>
+
+          <button data-tab="editor" class="tab-btn px-3 sm:px-4 py-2 rounded-xl text-xs font-heading font-bold uppercase tracking-wider text-gray-400 hover:text-white border border-transparent transition-all flex items-center gap-1.5 sm:gap-2 whitespace-nowrap flex-shrink-0">
+            <i data-lucide="plus-circle" class="w-4 h-4"></i>
+            <span id="tab-editor-title">Add Product</span>
+          </button>
+
+          <button data-tab="storage" class="tab-btn px-3 sm:px-4 py-2 rounded-xl text-xs font-heading font-bold uppercase tracking-wider text-gray-400 hover:text-white border border-transparent transition-all flex items-center gap-1.5 sm:gap-2 whitespace-nowrap flex-shrink-0">
+            <i data-lucide="image" class="w-4 h-4"></i>
+            <span>Storage Images</span>
+            <span id="badge-storage-count" class="px-1.5 py-0.2 rounded-full bg-purple-glow/20 text-purple-300 text-[10px] font-mono">0</span>
+          </button>
+        </div>
+
+        <button id="quick-add-btn" class="hidden sm:inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-xl bg-gradient-to-r from-cyan-glow to-blue-500 text-dark-950 font-heading font-bold text-xs uppercase tracking-wider hover:brightness-110 shadow-glow-cyan transition-all">
+          <i data-lucide="plus" class="w-4 h-4"></i> New Item
+        </button>
+      </div>
+    </nav>
+
+    <!-- Main Content Body -->
+    <main class="max-w-7xl mx-auto w-full px-4 lg:px-8 py-8 flex-1">
+
+      <!-- ===================================================================== -->
+      <!-- TAB 1: PRODUCTS CATALOG & MANAGEMENT -->
+      <!-- ===================================================================== -->
+      <section id="tab-section-catalog" class="space-y-6">
+        
+        <!-- Summary Metric Cards -->
+        <div class="grid grid-cols-2 lg:grid-cols-4 gap-4">
+          <div class="glass-surface rounded-2xl p-4 border border-white/10 space-y-2">
+            <div class="flex items-center justify-between text-gray-400">
+              <span class="text-xs font-mono uppercase">Total Catalog</span>
+              <i data-lucide="layers" class="w-4 h-4 text-cyan-glow"></i>
+            </div>
+            <div class="text-2xl font-heading font-black text-white" id="stat-total">0</div>
+            <div class="text-[11px] text-gray-500 font-mono">Across all store categories</div>
+          </div>
+
+          <div class="glass-surface rounded-2xl p-4 border border-white/10 space-y-2">
+            <div class="flex items-center justify-between text-gray-400">
+              <span class="text-xs font-mono uppercase">Machinery</span>
+              <i data-lucide="cpu" class="w-4 h-4 text-orange-glow"></i>
+            </div>
+            <div class="text-2xl font-heading font-black text-white" id="stat-machinery">0</div>
+            <div class="text-[11px] text-orange-glow font-mono">YMT, Lasers & Autoclaves</div>
+          </div>
+
+          <div class="glass-surface rounded-2xl p-4 border border-white/10 space-y-2">
+            <div class="flex items-center justify-between text-gray-400">
+              <span class="text-xs font-mono uppercase">Spare Parts</span>
+              <i data-lucide="hard-drive" class="w-4 h-4 text-cyan-bright"></i>
+            </div>
+            <div class="text-2xl font-heading font-black text-white" id="stat-spareparts">0</div>
+            <div class="text-[11px] text-cyan-bright font-mono">Displays, ICs, Batteries</div>
+          </div>
+
+          <div class="glass-surface rounded-2xl p-4 border border-white/10 space-y-2">
+            <div class="flex items-center justify-between text-gray-400">
+              <span class="text-xs font-mono uppercase">Accessories</span>
+              <i data-lucide="headphones" class="w-4 h-4 text-purple-accent"></i>
+            </div>
+            <div class="text-2xl font-heading font-black text-white" id="stat-accessories">0</div>
+            <div class="text-[11px] text-purple-accent font-mono">GaN, UV Glass & Cables</div>
+          </div>
+        </div>
+
+        <!-- Filter & Search Toolbar -->
+        <div class="glass-surface rounded-2xl p-4 border border-white/10 flex flex-col md:flex-row items-stretch md:items-center justify-between gap-4">
+          <!-- Category Filters -->
+          <div class="flex items-center flex-wrap gap-1.5" id="category-filter-pills">
+            <button data-cat="all" class="cat-pill active px-3.5 py-1.5 rounded-xl bg-cyan-glow/20 text-cyan-glow border border-cyan-glow/40 text-xs font-mono uppercase">All</button>
+            <button data-cat="machinery" class="cat-pill px-3.5 py-1.5 rounded-xl bg-dark-900 text-gray-400 hover:text-white border border-white/10 text-xs font-mono uppercase">Machinery</button>
+            <button data-cat="spare_parts" class="cat-pill px-3.5 py-1.5 rounded-xl bg-dark-900 text-gray-400 hover:text-white border border-white/10 text-xs font-mono uppercase">Spare Parts</button>
+            <button data-cat="accessories" class="cat-pill px-3.5 py-1.5 rounded-xl bg-dark-900 text-gray-400 hover:text-white border border-white/10 text-xs font-mono uppercase">Accessories</button>
+          </div>
+
+          <!-- Search & Stock Filter -->
+          <div class="flex flex-wrap sm:flex-nowrap items-center gap-2 sm:gap-3">
+            <div class="relative flex-1 min-w-[140px] md:w-64">
+              <i data-lucide="search" class="w-4 h-4 text-gray-500 absolute left-3 top-2.5"></i>
+              <input type="text" id="catalog-search-input" placeholder="Search products..." class="w-full cyber-input rounded-xl pl-9 pr-3 py-1.5 text-xs">
+            </div>
+
+            <select id="catalog-stock-filter" class="cyber-input rounded-xl px-3 py-1.5 text-xs">
+              <option value="all">All Stock</option>
+              <option value="in_stock">In Stock Only</option>
+              <option value="out_of_stock">Out of Stock</option>
+            </select>
+
+            <button id="refresh-products-btn" title="Refresh from Supabase" class="p-2 rounded-xl bg-dark-900 border border-white/10 hover:border-cyan-glow/40 text-gray-400 hover:text-cyan-glow transition-colors flex-shrink-0">
+              <i data-lucide="refresh-cw" class="w-4 h-4"></i>
+            </button>
+          </div>
+        </div>
+
+        <!-- Products List / Grid -->
+        <div id="products-loading" class="text-center py-20 space-y-3">
+          <div class="w-10 h-10 border-4 border-cyan-glow border-t-transparent rounded-full animate-spin mx-auto"></div>
+          <p class="text-xs text-gray-400 font-mono">Syncing products from Supabase database...</p>
+        </div>
+
+        <div id="products-empty" class="hidden text-center py-20 glass-surface rounded-3xl border border-white/10 space-y-4">
+          <div class="w-16 h-16 rounded-2xl bg-dark-900 border border-white/10 flex items-center justify-center mx-auto text-gray-500">
+            <i data-lucide="package-open" class="w-8 h-8"></i>
+          </div>
+          <div>
+            <h3 class="text-lg font-heading font-bold text-white">No Products Found</h3>
+            <p class="text-xs text-gray-400 max-w-sm mx-auto mt-1">There are no products matching your filter criteria in the Supabase table.</p>
+          </div>
+          <div class="flex items-center justify-center gap-3 pt-2">
+            <button id="empty-add-btn" class="px-4 py-2 rounded-xl bg-cyan-glow text-dark-950 text-xs font-heading font-bold uppercase tracking-wider">
+              Add First Product
+            </button>
+            <button id="empty-seed-btn" class="px-4 py-2 rounded-xl bg-dark-800 border border-white/10 hover:border-orange-glow text-white text-xs font-heading font-bold uppercase tracking-wider">
+              Seed Default Catalog
+            </button>
+          </div>
+        </div>
+
+        <div id="products-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <!-- Dynamically Injected Product Cards -->
+        </div>
+      </section>
+
+
+      <!-- ===================================================================== -->
+      <!-- TAB 2: PRODUCT EDITOR (ADD & EDIT) -->
+      <!-- ===================================================================== -->
+      <section id="tab-section-editor" class="hidden space-y-6">
+        <div class="glass-surface rounded-3xl p-6 lg:p-8 border border-white/10 relative overflow-hidden">
+          
+          <!-- Header -->
+          <div class="flex flex-col sm:flex-row sm:items-center justify-between pb-6 border-b border-white/10 gap-3">
+            <div>
+              <div class="flex items-center gap-2">
+                <span class="w-2.5 h-2.5 rounded-full bg-cyan-glow"></span>
+                <h2 id="editor-heading" class="text-xl font-heading font-bold text-white">Upload New Product</h2>
+              </div>
+              <p class="text-xs text-gray-400 mt-1 font-body">Create or update products in Supabase database with instant site synchronization.</p>
+            </div>
+            <div class="flex items-center gap-2">
+              <button type="button" id="editor-cancel-btn" class="px-4 py-2 rounded-xl bg-dark-900 border border-white/10 text-xs font-heading font-bold text-gray-300 hover:text-white uppercase">
+                Cancel
+              </button>
+              <button type="button" id="editor-save-btn" class="px-6 py-2 rounded-xl bg-gradient-to-r from-cyan-glow to-blue-500 text-dark-950 text-xs font-heading font-bold uppercase tracking-wider shadow-glow-cyan hover:brightness-110 flex items-center gap-2">
+                <i data-lucide="save" class="w-4 h-4"></i>
+                <span id="editor-save-text">Save to Supabase</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Product Form -->
+          <form id="product-form" class="mt-6 grid grid-cols-1 lg:grid-cols-3 gap-8">
+            <input type="hidden" id="edit-product-id" value="">
+
+            <!-- Left 2 Columns: Details & Specs -->
+            <div class="lg:col-span-2 space-y-5">
+              
+              <!-- Product Title -->
+              <div>
+                <label class="block text-xs font-mono text-gray-400 mb-1.5 uppercase tracking-wider">Product Name *</label>
+                <input type="text" id="prod-name" required placeholder="e.g. YMT Automatic OCA Vacuum Laminating Machine" class="w-full cyber-input rounded-xl px-4 py-3 text-sm font-medium">
+              </div>
+
+              <!-- Category & Subcategory Row -->
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div>
+                  <label class="block text-xs font-mono text-gray-400 mb-1.5 uppercase tracking-wider">Primary Category *</label>
+                  <select id="prod-category" required class="w-full cyber-input rounded-xl px-4 py-3 text-sm">
+                    <option value="machinery">Machinery (YMT, Laser, Separator)</option>
+                    <option value="spare_parts">Spare Parts (Displays, ICs, Batteries)</option>
+                    <option value="accessories">Mobile Accessories (Chargers, Covers)</option>
+                    <option value="services">Repair Service Spec</option>
+                  </select>
+                </div>
+
+                <div>
+                  <label class="block text-xs font-mono text-gray-400 mb-1.5 uppercase tracking-wider">Subcategory / Tag</label>
+                  <input type="text" id="prod-subcategory" placeholder="e.g. OCA Machinery, OLED Display, GaN Charger" class="w-full cyber-input rounded-xl px-4 py-3 text-sm">
+                </div>
+              </div>
+
+              <!-- Badge & Pricing Row -->
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div>
+                  <label class="block text-xs font-mono text-gray-400 mb-1.5 uppercase tracking-wider">Promotional Badge</label>
+                  <input type="text" id="prod-badge" placeholder="e.g. Best Seller, A+ Grade, 100% Tested" class="w-full cyber-input rounded-xl px-4 py-3 text-sm">
+                </div>
+
+                <div>
+                  <label class="block text-xs font-mono text-gray-400 mb-1.5 uppercase tracking-wider">Price (Optional)</label>
+                  <input type="number" step="0.01" id="prod-price" placeholder="e.g. 45000 (Leave blank for WhatsApp Enquiry)" class="w-full cyber-input rounded-xl px-4 py-3 text-sm">
+                </div>
+              </div>
+
+              <!-- Description -->
+              <div>
+                <label class="block text-xs font-mono text-gray-400 mb-1.5 uppercase tracking-wider">Product Description</label>
+                <textarea id="prod-desc" rows="3" placeholder="Provide technical details, benefits, or warranty coverage..." class="w-full cyber-input rounded-xl px-4 py-3 text-sm"></textarea>
+              </div>
+
+              <!-- Technical Specifications Builder -->
+              <div>
+                <div class="flex items-center justify-between mb-2">
+                  <label class="text-xs font-mono text-gray-400 uppercase tracking-wider">Key Specifications / Bullet Points</label>
+                  <button type="button" id="add-spec-btn" class="text-xs font-mono text-cyan-glow hover:underline flex items-center gap-1">
+                    <i data-lucide="plus" class="w-3.5 h-3.5"></i> Add Spec Point
+                  </button>
+                </div>
+                <div id="specs-list" class="space-y-2">
+                  <!-- Dynamic Spec inputs -->
+                </div>
+              </div>
+
+              <!-- Stock & Sort Order -->
+              <div class="pt-2 flex items-center justify-between border-t border-white/10">
+                <label class="flex items-center gap-3 cursor-pointer">
+                  <input type="checkbox" id="prod-stock" checked class="w-5 h-5 rounded border-white/20 bg-dark-900 text-cyan-glow focus:ring-0">
+                  <div>
+                    <span class="block text-xs font-heading font-bold text-white uppercase">Product In Stock</span>
+                    <span class="block text-[11px] text-gray-400">Controls visibility and WhatsApp 'Order Now' button</span>
+                  </div>
+                </label>
+
+                <div class="flex items-center gap-2">
+                  <label class="text-xs font-mono text-gray-400 uppercase">Sort Order:</label>
+                  <input type="number" id="prod-sort" value="0" class="w-16 cyber-input rounded-xl px-2 py-1.5 text-xs text-center">
+                </div>
+              </div>
+            </div>
+
+            <!-- Right 1 Column: Storage Image Upload & Preview -->
+            <div class="space-y-5">
+              <label class="block text-xs font-mono text-cyan-glow uppercase tracking-wider font-bold">
+                Product Image & Supabase Storage
+              </label>
+
+              <!-- Image Dropzone -->
+              <div id="image-dropzone" class="border-2 border-dashed border-white/20 hover:border-cyan-glow/60 rounded-2xl p-6 text-center transition-all cursor-pointer bg-dark-900/50 flex flex-col items-center justify-center gap-3 min-h-[220px]">
+                <input type="file" id="image-file-input" accept="image/png, image/jpeg, image/webp" class="hidden">
+                <div class="w-12 h-12 rounded-xl bg-cyan-glow/10 border border-cyan-glow/30 text-cyan-glow flex items-center justify-center">
+                  <i data-lucide="upload-cloud" class="w-6 h-6"></i>
+                </div>
+                <div>
+                  <p class="text-xs font-heading font-bold text-white">Click or drag image here</p>
+                  <p class="text-[10px] text-gray-400 mt-1 font-mono">PNG, JPG, WEBP up to 10MB</p>
+                </div>
+                <span class="px-3 py-1 rounded-full bg-dark-800 text-gray-300 text-[10px] font-mono border border-white/10">Uploads to Supabase 'product-images' bucket</span>
+              </div>
+
+              <!-- Upload Progress bar -->
+              <div id="upload-progress-box" class="hidden space-y-1.5">
+                <div class="flex justify-between text-[11px] font-mono text-gray-400">
+                  <span id="upload-progress-text">Uploading to Supabase Storage...</span>
+                  <span id="upload-progress-pct">0%</span>
+                </div>
+                <div class="w-full bg-dark-900 h-2 rounded-full overflow-hidden border border-white/10">
+                  <div id="upload-progress-bar" class="bg-gradient-to-r from-cyan-glow to-blue-500 h-full w-0 transition-all duration-300"></div>
+                </div>
+              </div>
+
+              <!-- Image Preview Box -->
+              <div id="image-preview-container" class="hidden space-y-2">
+                <div class="relative rounded-2xl overflow-hidden border border-cyan-glow/40 bg-dark-900 h-48 group">
+                  <img id="image-preview" src="" alt="Preview" class="w-full h-full object-cover">
+                  <div class="absolute inset-0 bg-dark-950/70 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center gap-2">
+                    <button type="button" id="remove-image-btn" class="px-3 py-1.5 rounded-lg bg-red-600 text-white text-xs font-mono flex items-center gap-1">
+                      <i data-lucide="trash-2" class="w-3.5 h-3.5"></i> Clear Image
+                    </button>
+                  </div>
+                </div>
+                <p class="text-[10px] text-emerald-400 font-mono flex items-center gap-1">
+                  <i data-lucide="check-circle" class="w-3 h-3"></i> Image linked and ready
+                </p>
+              </div>
+
+              <!-- Direct Image URL Input (Fallback or External) -->
+              <div>
+                <label class="block text-[11px] font-mono text-gray-400 mb-1 uppercase tracking-wider">Image Public URL</label>
+                <div class="relative">
+                  <input type="url" id="prod-image-url" placeholder="https://..." class="w-full cyber-input rounded-xl px-3 py-2 text-xs font-mono">
+                </div>
+                <p class="text-[10px] text-gray-500 mt-1 font-mono">Auto-populated upon storage upload, or paste an external image URL.</p>
+              </div>
+
+              <!-- Pick from Storage Library button -->
+              <button type="button" id="open-gallery-picker-btn" class="w-full py-2.5 rounded-xl bg-dark-900 border border-white/10 hover:border-purple-glow/40 text-xs font-mono text-purple-300 flex items-center justify-center gap-2 transition-all">
+                <i data-lucide="image" class="w-3.5 h-3.5"></i> Pick from Storage Gallery
+              </button>
+            </div>
+          </form>
+        </div>
+      </section>
+
+
+      <!-- ===================================================================== -->
+      <!-- TAB 3: STORAGE IMAGE GALLERY -->
+      <!-- ===================================================================== -->
+      <section id="tab-section-storage" class="hidden space-y-6">
+        
+        <!-- Storage Header & Upload Zone -->
+        <div class="glass-surface rounded-3xl p-6 lg:p-8 border border-white/10 space-y-6">
+          <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-6 border-b border-white/10">
+            <div>
+              <div class="flex items-center gap-2">
+                <span class="w-2.5 h-2.5 rounded-full bg-purple-glow"></span>
+                <h2 class="text-xl font-heading font-bold text-white">Supabase Storage Image Bucket</h2>
+              </div>
+              <p class="text-xs text-gray-400 mt-1 font-body">Bucket: <span class="font-mono text-purple-300">product-images</span> • Directly view, upload, and copy URLs of high-res assets.</p>
+            </div>
+
+            <div class="flex items-center gap-3">
+              <button id="refresh-storage-btn" class="px-4 py-2 rounded-xl bg-dark-900 border border-white/10 hover:border-purple-glow/40 text-xs font-mono text-gray-300 hover:text-white flex items-center gap-1.5 transition-all">
+                <i data-lucide="refresh-cw" class="w-3.5 h-3.5 text-purple-400"></i> Refresh Bucket
+              </button>
+              <label for="direct-gallery-upload-input" class="px-4 py-2 rounded-xl bg-gradient-to-r from-purple-glow to-indigo-600 text-white text-xs font-heading font-bold uppercase tracking-wider hover:brightness-110 shadow-glow-purple cursor-pointer flex items-center gap-2 transition-all">
+                <i data-lucide="upload" class="w-3.5 h-3.5"></i> Upload Images
+                <input type="file" id="direct-gallery-upload-input" multiple accept="image/*" class="hidden">
+              </label>
+            </div>
+          </div>
+
+          <!-- Quick Drop Zone for Storage -->
+          <div id="storage-quick-drop" class="border border-dashed border-white/15 hover:border-purple-glow/50 rounded-2xl p-6 text-center bg-dark-900/40 cursor-pointer flex items-center justify-center gap-3">
+            <i data-lucide="cloud-upload" class="w-6 h-6 text-purple-400"></i>
+            <span class="text-xs font-heading font-bold text-gray-300">Drag & drop images anywhere here for immediate upload into Supabase</span>
+          </div>
+        </div>
+
+        <!-- Gallery Grid -->
+        <div id="storage-loading" class="text-center py-20 space-y-3">
+          <div class="w-10 h-10 border-4 border-purple-glow border-t-transparent rounded-full animate-spin mx-auto"></div>
+          <p class="text-xs text-gray-400 font-mono">Fetching files from Supabase Storage bucket...</p>
+        </div>
+
+        <div id="storage-empty" class="hidden text-center py-20 glass-surface rounded-3xl border border-white/10 space-y-3">
+          <div class="w-14 h-14 rounded-2xl bg-dark-900 border border-white/10 flex items-center justify-center mx-auto text-gray-500">
+            <i data-lucide="image-off" class="w-7 h-7"></i>
+          </div>
+          <h3 class="text-base font-heading font-bold text-white">No Images in Storage Bucket Yet</h3>
+          <p class="text-xs text-gray-400 max-w-sm mx-auto">Upload product photos directly above to store them permanently in Supabase Cloud.</p>
+        </div>
+
+        <div id="storage-gallery-grid" class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4">
+          <!-- Dynamically Injected Image Cards -->
+        </div>
+      </section>
+
+
+      <!-- ===================================================================== -->
+      <!-- TAB 4: SUPABASE CONFIGURATION & SQL SCHEMA MIGRATION -->
+      <!-- ===================================================================== -->
+      <section id="tab-section-settings" class="hidden space-y-6">
+        
+        <!-- Supabase Credentials Form -->
+        <div class="glass-surface rounded-3xl p-6 lg:p-8 border border-white/10 space-y-6">
+          <div class="flex items-center gap-2 pb-4 border-b border-white/10">
+            <div class="w-8 h-8 rounded-xl bg-cyan-glow/10 border border-cyan-glow/30 flex items-center justify-center text-cyan-glow">
+              <i data-lucide="settings" class="w-4 h-4"></i>
+            </div>
+            <div>
+              <h2 class="text-lg font-heading font-bold text-white">Supabase Connection Settings</h2>
+              <p class="text-xs text-gray-400 font-body">Configure your project URL and public Anon Key. Persisted in browser localStorage.</p>
+            </div>
+          </div>
+
+          <form id="settings-credentials-form" class="space-y-4 max-w-2xl">
+            <div>
+              <label class="block text-xs font-mono text-gray-400 mb-1.5 uppercase tracking-wider">Supabase Project URL *</label>
+              <input type="url" id="setting-url" required placeholder="https://xyzcompany.supabase.co" class="w-full cyber-input rounded-xl px-4 py-2.5 text-sm font-mono">
+              <p class="text-[11px] text-gray-500 mt-1 font-mono">Found in: Supabase Dashboard &gt; Project Settings &gt; API &gt; Project URL</p>
+            </div>
+
+            <div>
+              <label class="block text-xs font-mono text-gray-400 mb-1.5 uppercase tracking-wider">Supabase Anon Key *</label>
+              <input type="text" id="setting-anon-key" required placeholder="eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9..." class="w-full cyber-input rounded-xl px-4 py-2.5 text-sm font-mono">
+              <p class="text-[11px] text-gray-500 mt-1 font-mono">Found in: Supabase Dashboard &gt; Project Settings &gt; API &gt; Project API Keys &gt; 'anon' 'public'</p>
+            </div>
+
+            <div>
+              <label class="block text-xs font-mono text-gray-400 mb-1.5 uppercase tracking-wider">Storage Bucket Name</label>
+              <input type="text" id="setting-bucket" value="product-images" class="w-full cyber-input rounded-xl px-4 py-2.5 text-sm font-mono">
+            </div>
+
+            <div class="flex items-center gap-3 pt-2">
+              <button type="submit" class="px-6 py-2.5 rounded-xl bg-gradient-to-r from-cyan-glow to-blue-500 text-dark-950 text-xs font-heading font-bold uppercase tracking-wider shadow-glow-cyan hover:brightness-110 flex items-center gap-2">
+                <i data-lucide="check" class="w-4 h-4"></i> Save & Test Connection
+              </button>
+
+              <button type="button" id="setting-clear-btn" class="px-4 py-2.5 rounded-xl bg-dark-900 border border-white/10 text-xs font-mono text-red-400 hover:text-red-300">
+                Reset Keys
+              </button>
+            </div>
+          </form>
+        </div>
+
+        <!-- 1-Click Database Seeding Box -->
+        <div class="glass-surface rounded-3xl p-6 lg:p-8 border border-white/10 space-y-4">
+          <div class="flex items-center gap-2">
+            <div class="w-8 h-8 rounded-xl bg-orange-glow/10 border border-orange-glow/30 flex items-center justify-center text-orange-glow">
+              <i data-lucide="zap" class="w-4 h-4"></i>
+            </div>
+            <div>
+              <h3 class="text-base font-heading font-bold text-white">One-Click Database Seeder</h3>
+              <p class="text-xs text-gray-400 font-body">Quickly populate your Supabase database with all Guru Communication catalog items (machinery, spare parts, accessories).</p>
+            </div>
+          </div>
+          <p class="text-xs text-gray-300 leading-relaxed max-w-2xl">
+            If your Supabase products table is currently empty, this button will immediately insert all current store items from <code class="text-cyan-glow font-mono">config.js</code> so your live site is fully stocked right away.
+          </p>
+          <button id="seed-database-action-btn" class="px-5 py-2.5 rounded-xl bg-gradient-to-r from-orange-glow to-amber-500 text-dark-950 text-xs font-heading font-bold uppercase tracking-wider shadow-glow-orange hover:brightness-110 flex items-center gap-2">
+            <i data-lucide="database" class="w-4 h-4"></i> Seed Store Catalog into Supabase
+          </button>
+        </div>
+
+        <!-- Step-by-Step Supabase Setup & SQL Schema Script -->
+        <div class="glass-surface rounded-3xl p-6 lg:p-8 border border-white/10 space-y-6">
+          <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-4 border-b border-white/10">
+            <div>
+              <h3 class="text-base font-heading font-bold text-white">Supabase SQL Schema Script</h3>
+              <p class="text-xs text-gray-400 font-body">Execute this script in Supabase SQL Editor to create tables, buckets, and security policies.</p>
+            </div>
+            <button id="copy-sql-btn" class="px-4 py-2 rounded-xl bg-cyan-glow/10 border border-cyan-glow/30 text-cyan-glow hover:bg-cyan-glow/20 text-xs font-mono flex items-center gap-2 transition-all">
+              <i data-lucide="copy" class="w-3.5 h-3.5"></i> Copy Complete SQL
+            </button>
+          </div>
+
+          <!-- Quick 3-Step Guide -->
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-4 text-xs">
+            <div class="p-4 rounded-2xl bg-dark-900 border border-white/10 space-y-1.5">
+              <span class="text-cyan-glow font-mono font-bold">STEP 1</span>
+              <h4 class="font-heading font-bold text-white">Create Free Project</h4>
+              <p class="text-gray-400 text-[11px] leading-relaxed">Sign up at <a href="https://supabase.com" target="_blank" class="text-cyan-glow underline">supabase.com</a> and click 'New Project'.</p>
+            </div>
+
+            <div class="p-4 rounded-2xl bg-dark-900 border border-white/10 space-y-1.5">
+              <span class="text-cyan-glow font-mono font-bold">STEP 2</span>
+              <h4 class="font-heading font-bold text-white">Run SQL Editor</h4>
+              <p class="text-gray-400 text-[11px] leading-relaxed">Go to SQL Editor in Supabase, click 'New query', paste the SQL code below, and click 'Run'.</p>
+            </div>
+
+            <div class="p-4 rounded-2xl bg-dark-900 border border-white/10 space-y-1.5">
+              <span class="text-cyan-glow font-mono font-bold">STEP 3</span>
+              <h4 class="font-heading font-bold text-white">Connect & Administer</h4>
+              <p class="text-gray-400 text-[11px] leading-relaxed">Copy your Project URL & Anon Key above. Now you have full live control of products & storage images!</p>
+            </div>
+          </div>
+
+          <!-- Code Box -->
+          <div class="relative">
+            <pre class="bg-dark-950 p-4 rounded-2xl border border-white/10 text-[11px] font-mono text-cyan-glow/90 overflow-x-auto max-h-80 scrollbar-thin"><code id="sql-schema-display">-- Click Copy button above or load from supabase-schema.sql</code></pre>
+          </div>
+        </div>
+
+      </section>
+
+    </main>
+
+    <!-- Admin Footer -->
+    <footer class="glass-surface border-t border-white/10 py-4 px-4 lg:px-8 mt-12 text-center text-xs text-gray-500 font-mono">
+      <div class="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-2">
+        <span>Guru Communication Admin Portal &bull; Supabase Storage & Database Connected</span>
+        <span>Version 2.0 &bull; Secure Realtime Sync</span>
+      </div>
+    </footer>
+
+  </div>
+
+
+  <!-- ========================================================================= -->
+  <!-- 3. MODALS & OVERLAYS -->
+  <!-- ========================================================================= -->
+
+  <!-- Delete Confirmation Modal -->
+  <div id="delete-modal" class="fixed inset-0 z-50 bg-dark-950/80 backdrop-blur-md flex items-center justify-center p-4 hidden">
+    <div class="max-w-md w-full glass-surface rounded-3xl p-6 border border-red-500/30 space-y-4 shadow-2xl">
+      <div class="w-12 h-12 rounded-2xl bg-red-500/10 border border-red-500/30 text-red-400 flex items-center justify-center mx-auto">
+        <i data-lucide="alert-triangle" class="w-6 h-6"></i>
+      </div>
+      <div class="text-center space-y-1">
+        <h3 class="text-lg font-heading font-bold text-white">Delete Product?</h3>
+        <p class="text-xs text-gray-400 font-body">This will permanently remove the item from the Supabase database and public website.</p>
+        <p id="delete-item-name" class="text-xs font-mono text-red-400 pt-2"></p>
+      </div>
+      <div class="flex items-center gap-3 pt-2">
+        <button id="cancel-delete-btn" class="flex-1 py-2.5 rounded-xl bg-dark-900 border border-white/10 text-xs font-mono text-gray-300 hover:text-white">Cancel</button>
+        <button id="confirm-delete-btn" class="flex-1 py-2.5 rounded-xl bg-red-600 hover:bg-red-500 text-white text-xs font-heading font-bold uppercase tracking-wider">Delete Now</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Storage Image Picker Modal (for selecting from bucket while editing product) -->
+  <div id="image-picker-modal" class="fixed inset-0 z-50 bg-dark-950/85 backdrop-blur-md flex items-center justify-center p-4 hidden">
+    <div class="max-w-3xl w-full glass-surface rounded-3xl p-6 border border-white/10 space-y-4 shadow-2xl max-h-[85vh] flex flex-col">
+      <div class="flex items-center justify-between pb-3 border-b border-white/10">
+        <div class="flex items-center gap-2">
+          <i data-lucide="image" class="w-4 h-4 text-purple-400"></i>
+          <h3 class="text-base font-heading font-bold text-white">Select from Storage Bucket</h3>
+        </div>
+        <button id="close-image-picker-btn" class="p-1 rounded-lg text-gray-400 hover:text-white">
+          <i data-lucide="x" class="w-5 h-5"></i>
+        </button>
+      </div>
+      <div id="picker-images-grid" class="flex-1 overflow-y-auto grid grid-cols-2 sm:grid-cols-4 gap-3 py-2 pr-1">
+        <!-- Injected images -->
+      </div>
+    </div>
+  </div>
+
+
+  <!-- Application Scripts -->
+  <script src="./config.js"></script>
+  <script src="./supabase-config.js"></script>
+  <script src="./supabase-client.js"></script>
+  <script src="./admin.js"></script>
+</body>
+</html>
